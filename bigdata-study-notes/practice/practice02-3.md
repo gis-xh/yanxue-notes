@@ -1,0 +1,474 @@
+# 练习二：熟悉常用的 HBase 操作 - 编程实现
+
+- 完成时间：2022-11-21（第 13 周周一）至 2022-11-27（第 13 周周五）
+- [练习二 - 准备工作](./practice02-1.md)
+
+## 参考
+
+1. [厦门大学林子雨老师 - 大数据原理与应用 第四章 分布式数据库HBase 学习指南](https://dblab.xmu.edu.cn/blog/588/)
+1. [CSDN - 实验3 熟悉常用的HBase操作](https://blog.csdn.net/Alicia_LX/article/details/120963072)
+1. [CSDN - 【小白视角】大数据基础实践(四) 分布式数据库HBase的常用操作](https://blog.csdn.net/weixin_45304503/article/details/118096510)
+
+
+
+## 1 导入 HBase 相关的 Jar 包
+
+将以下两大部分的 `*.jar` 文件导入到新建的 JAVA 工程项目中：
+
+- `~/usr/local/hbase/lib` 目录下全部的 `*.jar` 文件
+- `~/usr/local/hbase/lib/client-facing-thirdparty` 目录下全部的 `*.jar` 文件
+
+> 导入所需的 JAVA 包
+
+```java
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.util.Bytes;
+import java.io.IOException;
+```
+
+
+
+## 2 HBase 数据库连接
+
+### 2.1 建立连接
+
+&emsp;&emsp;每次对 HBase 数据库进行操作之前，都需要先连接数据库才能进行增删查改的操作。
+
+&emsp;&emsp;`configuration.set()` 的配置与 `hbase-site.xml` 紧密相关。
+
+> 连接 HBase 数据库函数
+
+```java
+public static void init(){
+    configuration  = HBaseConfiguration.create();
+    configuration.set("hbase.rootdir","hdfs://localhost:9000/hbase");
+    try{
+        connection = ConnectionFactory.createConnection(configuration);
+        admin = connection.getAdmin();
+    }catch (IOException e){
+        e.printStackTrace();
+    }
+}
+```
+
+### 2.2 关闭连接
+
+&emsp;&emsp;在对 HBase 数据库操作结束后，最好是关闭连接以便下次其他操作的进行。
+
+> 关闭连接函数
+
+```java
+public static void close(){
+    try{
+        if(admin != null){
+            admin.close();
+        }
+        if(null != connection){
+            connection.close();
+        }
+    }catch (IOException e){
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+## 3 数据库操作
+
+### 3.1 创建表
+
+&emsp;&emsp;接下来我们将会把增删查改函数逐一封装实现，最终在 `main()` 主函数中调用。HBase 的表中会有一个系统默认的属性作为主键，主键无需自行创建，默认为 put 命令操作中表名后第一个数据，因此此处无需创建 id 列。
+
+> 创建表函数
+
+```java
+/**
+ * 创建表
+ * @param myTableName 表名
+ * @param colFamily 列族数组名
+ * @throws IOException
+ */
+public static void createTable(String myTableName, String[] colFamily) throws IOException {
+    init();
+    TableName tableName = TableName.valueOf(myTableName);
+    if(admin.tableExists(tableName)){
+        System.out.println("table is exists!");
+    }else {
+        TableDescriptorBuilder tableDescriptor = TableDescriptorBuilder.newBuilder(tableName);
+        for(String str:colFamily){
+            ColumnFamilyDescriptor family = 
+                ColumnFamilyDescriptorBuilder.newBuilder(Bytes.toBytes(str)).build();
+            tableDescriptor.setColumnFamily(family);
+        }
+        admin.createTable(tableDescriptor.build());
+    }
+    close();
+}
+```
+
+### 3.2 添加数据
+
+```java
+/**
+ * 添加数据
+ * @param tableName 表名
+ * @param rowKey 行键
+ * @param colFamily 列族
+ * @param col 列限定符
+ * @param val 数据
+ * @throws IOException
+ */
+public static void insertData(String tableName,String rowKey,String colFamily,String col,String val) throws IOException {
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Put put = new Put(rowKey.getBytes());
+    put.addColumn(colFamily.getBytes(),col.getBytes(), val.getBytes());
+    table.put(put);
+    table.close();
+    close();
+}
+```
+
+### 3.3 浏览数据
+
+```java
+/** 
+ * 获取某单元格数据
+ * @param tableName 表名
+ * @param rowKey 行键
+ * @param colFamily 列族
+ * @param col 列限定符
+ * @throws IOException
+ */
+public static void getData(String tableName,String rowKey,String colFamily, String col) throws IOException{
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Get get = new Get(rowKey.getBytes());
+    get.addColumn(colFamily.getBytes(),col.getBytes());
+    Result result = table.get(get);
+    System.out.println(new String(result.getValue(colFamily.getBytes(),col==null?null:col.getBytes())));
+    table.close();
+    close();
+}
+```
+
+### 3.4 查看 HBase 中所有表的信息
+
+```java
+/**
+ * 查看已有表
+ * @throws IOException
+ */
+public static void listTables() throws IOException {
+    init();
+    HTableDescriptor hTableDescriptors[] = admin.listTables();
+    for(HTableDescriptor hTableDescriptor :hTableDescriptors){
+        System.out.println(hTableDescriptor.getNameAsString());
+    }
+    close();
+}
+```
+
+### 3.5 向指定的单元格添加数据
+
+```java
+/**
+ * 向指定的单元格添加数据
+ * @param tableName 表名
+ * @param rowKey 行键
+ * @param colFamily 列族
+ * @param col 列限定符
+ * @param val 数据
+ * @throws IOException
+ */
+public static void addRecord(String tableName,String rowKey,String colFamily,String col,String val) throws IOException {
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Put put = new Put(rowKey.getBytes());
+    put.addColumn(colFamily.getBytes(),col.getBytes(), val.getBytes());
+    table.put(put);
+    table.close();
+    close();
+}
+```
+
+### 3.6 查看指定列的数据
+
+```java
+/** 
+ * 查看指定列的数据
+ * @param tableName 表名
+ * @param col 列限定符
+ * @throws IOException
+ */
+public static void scanColunm(String tableName, String col) throws IOException{
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Get get = new Get(rowKey.getBytes());
+    get.addColumn(colFamily.getBytes(),col.getBytes());
+    Result result = table.get(get);
+    System.out.println(new String(result.getValue(colFamily.getBytes(),col==null?null:col.getBytes())));
+    table.close();
+    close();
+}
+```
+
+### 3.7 编辑某单元格的数据
+
+```java
+/**
+ * 编辑某单元格的数据
+ * @param tableName 表名
+ * @param rowKey 行键
+ * @param colFamily 列族
+ * @param col 列限定符
+ * @param val 数据
+ * @throws IOException
+ */
+public static void modifyData(String tableName,String rowKey,String colFamily,String col,String val) throws IOException {
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Put put = new Put(rowKey.getBytes());
+    put.addColumn(colFamily.getBytes(),col.getBytes(), val.getBytes());
+    table.put(put);
+    table.close();
+    close();
+}
+```
+
+### 3.8 删除指定行的数据
+
+```java
+/**
+ * 删除指定行的数据
+ * @param tableName 表名
+ * @param rowKey 行键
+ * @param colFamily 列族名
+ * @param col 列名
+ * @throws IOException
+ */
+public static void deleteRow(String tableName,String rowKey,String colFamily,String col) throws IOException {
+    init();
+    Table table = connection.getTable(TableName.valueOf(tableName));
+    Delete delete = new Delete(rowKey.getBytes());
+    //删除指定列族的所有数据
+    delete.addFamily(colFamily.getBytes());
+    //删除指定列的数据
+    delete.addColumn(colFamily.getBytes(), col.getBytes());
+    table.delete(delete);
+    table.close();
+    close();
+}
+```
+
+
+
+
+
+## 全部代码
+
+```java
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.util.Bytes;
+import java.io.IOException;
+ 
+public class ExampleForHbase{
+    public static Configuration configuration;
+    public static Connection connection;
+    public static Admin admin;
+ 
+    //主函数中的语句请逐句执行，只需删除其前的//即可，如：执行insertRow时请将其他语句注释
+    public static void main(String[] args)throws IOException{
+        //创建一个表，表名为Score，列族为sname,course
+        createTable("Score",new String[]{"sname","course"});
+ 
+        //在Score表中插入一条数据，其行键为95001,sname为Mary（因为sname列族下没有子列所以第四个参数为空）
+        //等价命令：put 'Score','95001','sname','Mary'
+        //insertRow("Score", "95001", "sname", "", "Mary");
+        //在Score表中插入一条数据，其行键为95001,course:Math为88（course为列族，Math为course下的子列）
+        //等价命令：put 'Score','95001','score:Math','88'
+        //insertRow("Score", "95001", "course", "Math", "88");
+        //在Score表中插入一条数据，其行键为95001,course:English为85（course为列族，English为course下的子列）
+        //等价命令：put 'Score','95001','score:English','85'
+        //insertRow("Score", "95001", "course", "English", "85");
+ 
+        //1、删除Score表中指定列数据，其行键为95001,列族为course，列为Math
+        //执行这句代码前请deleteRow方法的定义中，将删除指定列数据的代码取消注释注释，将删除制定列族的代码注释
+        //等价命令：delete 'Score','95001','score:Math'
+        //deleteRow("Score", "95001", "course", "Math");
+ 
+        //2、删除Score表中指定列族数据，其行键为95001,列族为course（95001的Math和English的值都会被删除）
+        //执行这句代码前请deleteRow方法的定义中，将删除指定列数据的代码注释，将删除制定列族的代码取消注释
+        //等价命令：delete 'Score','95001','score'
+        //deleteRow("Score", "95001", "course", "");
+ 
+        //3、删除Score表中指定行数据，其行键为95001
+        //执行这句代码前请deleteRow方法的定义中，将删除指定列数据的代码注释，以及将删除制定列族的代码注释
+        //等价命令：deleteall 'Score','95001'
+        //deleteRow("Score", "95001", "", "");
+ 
+        //查询Score表中，行键为95001，列族为course，列为Math的值
+        //getData("Score", "95001", "course", "Math");
+        //查询Score表中，行键为95001，列族为sname的值（因为sname列族下没有子列所以第四个参数为空）
+        //getData("Score", "95001", "sname", "");
+ 
+        //删除Score表
+        //deleteTable("Score");
+    }
+ 
+    //建立连接
+    public static void init(){
+        configuration  = HBaseConfiguration.create();
+        configuration.set("hbase.rootdir","hdfs://localhost:9000/hbase");
+        try{
+            connection = ConnectionFactory.createConnection(configuration);
+            admin = connection.getAdmin();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    //关闭连接
+    public static void close(){
+        try{
+            if(admin != null){
+                admin.close();
+            }
+            if(null != connection){
+                connection.close();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+ 
+    /**
+     * 建表。HBase的表中会有一个系统默认的属性作为主键，主键无需自行创建，默认为put命令操作中表名后第一个数据，因此此处无需创建id列
+     * @param myTableName 表名
+     * @param colFamily 列族名
+     * @throws IOException
+     */
+    public static void createTable(String myTableName,String[] colFamily) throws IOException {
+ 
+        init();
+        TableName tableName = TableName.valueOf(myTableName);
+ 
+        if(admin.tableExists(tableName)){
+            System.out.println("table is exists!");
+        }else {
+            HTableDescriptor hTableDescriptor = new HTableDescriptor(tableName);
+            for(String str:colFamily){
+                HColumnDescriptor hColumnDescriptor = new HColumnDescriptor(str);
+                hTableDescriptor.addFamily(hColumnDescriptor);
+            }
+            admin.createTable(hTableDescriptor);
+            System.out.println("create table success");
+        }
+        close();
+    }
+    /**
+     * 删除指定表
+     * @param tableName 表名
+     * @throws IOException
+     */
+    public static void deleteTable(String tableName) throws IOException {
+        init();
+        TableName tn = TableName.valueOf(tableName);
+        if (admin.tableExists(tn)) {
+            admin.disableTable(tn);
+            admin.deleteTable(tn);
+        }
+        close();
+    }
+ 
+    /**
+     * 查看已有表
+     * @throws IOException
+     */
+    public static void listTables() throws IOException {
+        init();
+        HTableDescriptor hTableDescriptors[] = admin.listTables();
+        for(HTableDescriptor hTableDescriptor :hTableDescriptors){
+            System.out.println(hTableDescriptor.getNameAsString());
+        }
+        close();
+    }
+    /**
+     * 向某一行的某一列插入数据
+     * @param tableName 表名
+     * @param rowKey 行键
+     * @param colFamily 列族名
+     * @param col 列名（如果其列族下没有子列，此参数可为空）
+     * @param val 值
+     * @throws IOException
+     */
+    public static void insertRow(String tableName,String rowKey,String colFamily,String col,String val) throws IOException {
+        init();
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Put put = new Put(rowKey.getBytes());
+        put.addColumn(colFamily.getBytes(), col.getBytes(), val.getBytes());
+        table.put(put);
+        table.close();
+        close();
+    }
+ 
+    /**
+     * 删除数据
+     * @param tableName 表名
+     * @param rowKey 行键
+     * @param colFamily 列族名
+     * @param col 列名
+     * @throws IOException
+     */
+    public static void deleteRow(String tableName,String rowKey,String colFamily,String col) throws IOException {
+        init();
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Delete delete = new Delete(rowKey.getBytes());
+        //删除指定列族的所有数据
+        //delete.addFamily(colFamily.getBytes());
+        //删除指定列的数据
+        //delete.addColumn(colFamily.getBytes(), col.getBytes());
+ 
+        table.delete(delete);
+        table.close();
+        close();
+    }
+    /**
+     * 根据行键rowkey查找数据
+     * @param tableName 表名
+     * @param rowKey 行键
+     * @param colFamily 列族名
+     * @param col 列名
+     * @throws IOException
+     */
+    public static void getData(String tableName,String rowKey,String colFamily,String col)throws  IOException{
+        init();
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Get get = new Get(rowKey.getBytes());
+        get.addColumn(colFamily.getBytes(),col.getBytes());
+        Result result = table.get(get);
+        showCell(result);
+        table.close();
+        close();
+    }
+    /**
+     * 格式化输出
+     * @param result
+     */
+    public static void showCell(Result result){
+        Cell[] cells = result.rawCells();
+        for(Cell cell:cells){
+            System.out.println("RowName:"+new String(CellUtil.cloneRow(cell))+" ");
+            System.out.println("Timetamp:"+cell.getTimestamp()+" ");
+            System.out.println("column Family:"+new String(CellUtil.cloneFamily(cell))+" ");
+            System.out.println("row Name:"+new String(CellUtil.cloneQualifier(cell))+" ");
+            System.out.println("value:"+new String(CellUtil.cloneValue(cell))+" ");
+        }
+    }
+}
+```
+
