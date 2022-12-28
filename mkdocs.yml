@@ -76,12 +76,8 @@ nav:
       - 练习三 安装 Jupyter 并运行 pyspark:
         - 安装 Jupyter 并运行 pyspark: BigData/practice/practice03-1.md
         - MapReduce 编程初级实践: BigData/practice/practice03-2.md
-      - 练习四 安装并使用 MongoDB:
-        - BigData/practice/practice04.md
-      - 练习五 安装并使用 HIVE:
-        - BigData/practice/practice05.md
-
-
+      - 练习四 安装并使用 MongoDB: BigData/practice/practice04.md
+      - 练习五 安装并使用 HIVE: BigData/practice/practice05.md
 
 # [Extensions]
 plugins:
