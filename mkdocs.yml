@@ -50,14 +50,38 @@ extra:
 # [Navigtion]
 nav:
   - 空间数据库: 
-    - sdb-study-notes/index.md
+    - SDB/index.md
+    - PostgreSQL9.6 & PostGIS3.2 安装教程: SDB/Install-PostgreSQL+PostGIS.md
+    - 课堂要求: SDB/class-requirement.md
+    - 课后练习: 
+      - 练习一 数字化校园: SDB/practice/practice01.md
+      - 练习二 数字化校园的数据表与 E-R 图: SDB/practice/practice02.md
+      - 练习三 SQL 的 6 个基本操作: SDB/practice/practice03.md
+      - 练习四 论文研读: SDB/practice/practice04.md
+      - 练习五 邻接矩阵: SDB/practice/practice05.md
   - 英语写作: 
     - writing-task/writing-task.md
   - 遥感数字图像分析与处理: 
-    - rs-study-notes/index.md
+    - RS-DIP/index.md
   - 地质资源与大数据: 
-    - bigdata-study-notes/index.md
-    
+    - BigData/index.md
+    - 课后练习:
+      - 练习一 配置 Hadoop 环境: 
+        - 虚拟机服务器版: BigData/practice/practice01-aliyun.md
+        - 阿里云服务器版: BigData/practice/practice01-vm.md
+      - 练习二 熟悉常用的 HBase 操作:
+        - 准备工作: BigData/practice/practice02-1.md
+        - 熟悉常用的 HBase 操作 - 提交版: BigData/practice/practice02-2.md
+        - 熟悉常用的 HBase 操作 - 自制版: BigData/practice/practice02-3.md
+      - 练习三 安装 Jupyter 并运行 pyspark:
+        - 安装 Jupyter 并运行 pyspark: BigData/practice/practice03-1.md
+        - MapReduce 编程初级实践: BigData/practice/practice03-2.md
+      - 练习四 安装并使用 MongoDB:
+        - BigData/practice/practice04.md
+      - 练习五 安装并使用 HIVE:
+        - BigData/practice/practice05.md
+
+
 
 # [Extensions]
 plugins:
@@ -66,7 +90,6 @@ plugins:
       lang:
         - en
         - ja
-        - zh
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
