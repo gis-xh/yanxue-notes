@@ -41,13 +41,13 @@
 
 #### 2.1 选择自定义安装
 
-<img src="img/image-20221214193131842.png" alt="image-20221214193131842" style="zoom:67%;" />
+<img src="../img/image-20221214193131842.png" alt="image-20221214193131842" style="zoom:67%;" />
 
 <center>图 3-1 选择自定义安装</center>
 
 #### 2.2 修改安装路径
 
-<img src="img/image-20221214193405697.png" alt="image-20221214193405697" style="zoom:67%;" />
+<img src="../img/image-20221214193405697.png" alt="image-20221214193405697" style="zoom:67%;" />
 
 <center>图 3-2 修改安装路径</center>
 
@@ -55,7 +55,7 @@
 
 - 在安装结束后，在浏览器中输入 http://127.0.0.1:27017/ ，显示如下界面即为安装成功。
 
-<img src="img/image-20221215200742221.png" alt="image-20221215200742221" style="zoom:80%;" />
+<img src="../img/image-20221215200742221.png" alt="image-20221215200742221" style="zoom:80%;" />
 
 <center>图 3-3 浏览器启动</center>
 
@@ -69,7 +69,7 @@
 
 - 修改安装路径（这里我们直接改到 MongoDB 所在路径），并取消只为当前用户安装
 
-<img src="img/image-20221215193147405.png" alt="image-20221215193147405" style="zoom: 67%;" />
+<img src="../img/image-20221215193147405.png" alt="image-20221215193147405" style="zoom: 67%;" />
 
 <center>图 3-4 安装 MongoDB Shell</center>
 
@@ -97,13 +97,13 @@ E:\program\MongoDB6\mongosh
 mongosh
 ```
 
-<img src="img/image-20221215195744950.png" alt="image-20221215195744950" style="zoom:80%;" />
+<img src="../img/image-20221215195744950.png" alt="image-20221215195744950" style="zoom:80%;" />
 
 <center>图 3-5 启动 MongoDB Shell</center>
 
 #### 5.2 Compass 启动
 
-<img src="img/image-20221215201128348.png" alt="image-20221215201128348" style="zoom:80%;" />
+<img src="../img/image-20221215201128348.png" alt="image-20221215201128348" style="zoom:80%;" />
 
 <center>图 3-6 MongDB Compass 启动界面</center>
 
@@ -123,7 +123,7 @@ use bigdata
 show dbs
 ```
 
-<img src="img/image-20221215205741784.png" alt="image-20221215205741784" style="zoom:80%;" />
+<img src="../img/image-20221215205741784.png" alt="image-20221215205741784" style="zoom:80%;" />
 
 <center>图 3-7 创建 bigdata 数据库</center>
 
@@ -155,7 +155,7 @@ db.bigdata.insert({
 db.bigdata.find()
 ```
 
-<img src="img/image-20221215212646017.png" alt="image-20221215212646017" style="zoom:80%;" />
+<img src="../img/image-20221215212646017.png" alt="image-20221215212646017" style="zoom:80%;" />
 
 <center>图 3-8 插入数据并查询</center>
 
@@ -184,7 +184,7 @@ db.bigdata.insertMany([
 db.bigdata.findOne({"Journal Name":"Remote Sensing"})
 ```
 
-<img src="img/image-20221227155004247.png" alt="image-20221227155004247" style="zoom:80%;" />
+<img src="../img/image-20221227155004247.png" alt="image-20221227155004247" style="zoom:80%;" />
 
 <center>图 3-10 条件查询数据</center>
 
@@ -217,7 +217,7 @@ db.bigdata.updateOne({"Journal Name":"test1"},{$set:{"Journal Name":"Geoscience 
 db.bigdata.deleteOne({"Journal Name":"test2"});
 ```
 
-<img src="img/image-20221227161131964.png" alt="image-20221227161131964" style="zoom:80%;" />
+<img src="../img/image-20221227161131964.png" alt="image-20221227161131964" style="zoom:80%;" />
 
 <center>图 3-12 删除一条数据</center>
 
@@ -227,7 +227,7 @@ db.bigdata.deleteOne({"Journal Name":"test2"});
 db.bigdata.deleteMany({});
 ```
 
-<img src="img/image-20221215231005188.png" alt="image-20221215231005188" style="zoom:80%;" />
+<img src="../img/image-20221215231005188.png" alt="image-20221215231005188" style="zoom:80%;" />
 
 <center>图 3-13 删除全部数据</center>
 
@@ -237,7 +237,7 @@ db.bigdata.deleteMany({});
 exit
 ```
 
-<img src="img/image-20221227161318859.png" alt="image-20221227161318859" style="zoom:67%;" />
+<img src="../img/image-20221227161318859.png" alt="image-20221227161318859" style="zoom:67%;" />
 
 <center>图 3-14 退出数据库命令行</center>
 
@@ -251,7 +251,7 @@ exit
 
 &emsp;&emsp;在 MongoDB 6 中，`insert()` 函数已经被废弃，但是仍然不影响使用。
 
-<img src="img/image-20221215214226123.png" alt="image-20221215214226123" style="zoom:80%;" />
+<img src="../img/image-20221215214226123.png" alt="image-20221215214226123" style="zoom:80%;" />
 
 <center>图 4-1 问题一实例</center>
 

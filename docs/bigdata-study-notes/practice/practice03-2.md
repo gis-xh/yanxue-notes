@@ -244,7 +244,7 @@ hdfs dfs -ls output
 hdfs dfs -cat output/*
 ```
 
-<img src="img/image-20221128172644188.png" alt="image-20221128172644188" style="zoom:80%;" />
+<img src="../img/image-20221128172644188.png" alt="image-20221128172644188" style="zoom:80%;" />
 
 <center>图 1-7 查看输出数据</center>
 
@@ -318,7 +318,7 @@ hdfs dfs -put ~/text3.txt inputSort
 hdfs dfs -ls inputSort
 ```
 
-<img src="img/image-20221128193627571.png" alt="image-20221128193627571" style="zoom:80%;" />
+<img src="../img/image-20221128193627571.png" alt="image-20221128193627571" style="zoom:80%;" />
 
 <center>图 2-1 准备排序输入文件全过程</center>
 
@@ -449,7 +449,7 @@ hdfs dfs -ls outputSort
 hdfs dfs -cat outputSort/*
 ```
 
-<img src="img/image-20221128193942776.png" alt="image-20221128193942776" style="zoom:80%;" />
+<img src="../img/image-20221128193942776.png" alt="image-20221128193942776" style="zoom:80%;" />
 
 <center>图 2-3 查看排序输出结果</center>
 
@@ -503,7 +503,7 @@ hdfs dfs -put ~/inputText.txt inputData
 hdfs dfs -ls inputData
 ```
 
-<img src="img/image-20221128195207915.png" alt="image-20221128195207915" style="zoom:80%;" />
+<img src="../img/image-20221128195207915.png" alt="image-20221128195207915" style="zoom:80%;" />
 
 <center>图 3-1 数据挖掘准备全过程</center>
 
@@ -671,6 +671,6 @@ hdfs dfs -ls outputData
 hdfs dfs -cat outputData/*
 ```
 
-<img src="img/image-20221128200239134.png" alt="image-20221128200239134" style="zoom:80%;" />
+<img src="../img/image-20221128200239134.png" alt="image-20221128200239134" style="zoom:80%;" />
 
 <center>图 3-3 查看数据挖掘输出结果</center>

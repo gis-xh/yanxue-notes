@@ -69,7 +69,7 @@ sudo su Vivian
 
 （5）全过程截图
 
-<img src="img/image-20221112142226268.png" alt="image-20221112142226268" style="zoom: 80%;" />
+<img src="../img/image-20221112142226268.png" alt="image-20221112142226268" style="zoom: 80%;" />
 
 
 <center>图 2 创建用户全过程</center>
@@ -89,7 +89,7 @@ mkdir -p usr/local
 
 （2）通过 `Xftp7` 软件，将安装包传输到 `Downloads` 目录下
 
-<img src="img/image-20221118095743543.png" alt="image-20221118095743543" style="zoom: 50%;" />
+<img src="../img/image-20221118095743543.png" alt="image-20221118095743543" style="zoom: 50%;" />
 
 <center>图 3 Xftp7 上传文件</center>
 

@@ -16,7 +16,7 @@
 
 - 在 Navicat 中查看数据表对象
 
-<img src="img/image-20221007093803555.png" alt="image-20221007093803555" style="zoom:80%;" />
+<img src="../img/image-20221007093803555.png" alt="image-20221007093803555" style="zoom:80%;" />
 
 
 

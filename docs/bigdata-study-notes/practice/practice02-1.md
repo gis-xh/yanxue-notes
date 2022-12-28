@@ -115,7 +115,7 @@ export HBASE_CLASSPATH=/home/Vivian/usr/local/hadoop/etc/hadoop/
 export HBASE_MANAGES_ZK=true 
 ```
 
-<img src="img/image-20221125125209887.png" alt="image-20221125125209887" style="zoom:80%;" />
+<img src="../img/image-20221125125209887.png" alt="image-20221125125209887" style="zoom:80%;" />
 
 <center>图 3-1 hbase-env.sh 添加内容</center>
 
@@ -353,7 +353,7 @@ stop-dfs.sh
 
 这里我们关闭 Hadoop 来测试是否仍有警告，截图如下，此时可以看到，已经没有警告信息了。
 
-<img src="img/image-20221125110058620.png" alt="image-20221125110058620" style="zoom:80%;" />
+<img src="../img/image-20221125110058620.png" alt="image-20221125110058620" style="zoom:80%;" />
 
 <center>图 5-3 问题一成功解决</center>
 

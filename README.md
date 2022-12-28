@@ -2,25 +2,7 @@
 
 ## 介绍
 
-&emsp;&emsp;这是一个存放 长江大学地球科学学院 研究生课程笔记的公开仓库。
-
-
-
-## 目录说明
-
-### 1 空间数据库笔记：[SDB-Study-Notes](./docs/sdb-study-notes/README.md)
-
-
-
-### 2 遥感数字图像分析与处理：[RS-Study-Notes](./docs/rs-study-notes/README.md)
-
-
-
-### 3 地质资源与大数据：[BigData-Study-Notes](./docs/bigdata-study-notes/README.md)
-
-
-
-
+&emsp;&emsp;这是一个存放 长江大学地球科学学院 研究生课程笔记的公开仓库。访问地址：https://gis-xh.github.io/yanxue-notes/
 
 ## 参与贡献
 

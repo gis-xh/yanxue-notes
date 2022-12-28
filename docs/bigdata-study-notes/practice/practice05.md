@@ -49,7 +49,7 @@
 
 #### 1.3 上传安装包
 
-<img src="img/image-20221216152011533.png" alt="image-20221216152011533" style="zoom:80%;" />
+<img src="../img/image-20221216152011533.png" alt="image-20221216152011533" style="zoom:80%;" />
 
 <center>图 1-3 上传安装包</center>
 
@@ -97,7 +97,7 @@ export PATH=$PATH:$HIVE_HOME/bin
 
 &emsp;&emsp;在完成上述操作后的环境变量文件至少应包含以下信息：JAVA、Hadoop、HIVE（缺一不可）。
 
-<img src="img/image-20221217105925933.png" alt="image-20221217105925933" style="zoom:80%;" />
+<img src="../img/image-20221217105925933.png" alt="image-20221217105925933" style="zoom:80%;" />
 
 <center>图 2-1 环境变量文件内容</center>
 
@@ -192,7 +192,7 @@ export HIVE_AUX_JARS_PATH=/home/Vivian/usr/local/hive/lib
 
 3. 修改内容，如图所示
 
-<img src="img/image-20221217170531465.png" alt="image-20221217170531465" style="zoom:80%;" />
+<img src="../img/image-20221217170531465.png" alt="image-20221217170531465" style="zoom:80%;" />
 
 <center>图 2-2 配置 HIVE 环境文件</center>
 
@@ -226,7 +226,7 @@ mysql -u root -p
 
 &emsp;&emsp;运行命令后，输入设置的密码即可启动 MySQL Shell。
 
-<img src="img/image-20221217103910552.png" alt="image-20221217103910552" style="zoom:80%;" />
+<img src="../img/image-20221217103910552.png" alt="image-20221217103910552" style="zoom:80%;" />
 
 <center>图 3-1 启动 MySQL Shell</center>
 
@@ -388,7 +388,7 @@ Re-enter new password:
 bigdata: ssh: connect to host bigdata port 22: Connection timed out
 ```
 
-<img src="img/image-20221217173811217.png" alt="image-20221217173811217" style="zoom:80%;" />
+<img src="../img/image-20221217173811217.png" alt="image-20221217173811217" style="zoom:80%;" />
 
 <center>问题一截图</center>
 

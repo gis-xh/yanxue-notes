@@ -67,7 +67,7 @@ create 'student1','name','score'
 create 'student2','name','score'
 ```
 
-<img src="img/image-20221126204639585.png" alt="image-20221126204639585" style="zoom:80%;" />
+<img src="../img/image-20221126204639585.png" alt="image-20221126204639585" style="zoom:80%;" />
 
 <center>图 3-1 创建数据表</center>
 
@@ -88,7 +88,7 @@ put 'student1','lisi','score:Computer','88'
 scan 'student1'
 ```
 
-<img src="img/image-20221126205303295.png" alt="image-20221126205303295" style="zoom:80%;" />
+<img src="../img/image-20221126205303295.png" alt="image-20221126205303295" style="zoom:80%;" />
 
 <center>图 3-2 添加并查看表 student1 中数据</center>
 
@@ -132,7 +132,7 @@ public static void listTables() throws IOException {
 list
 ```
 
-<img src="img/image-20221126210046133.png" alt="image-20221126210046133" style="zoom:80%;" />
+<img src="../img/image-20221126210046133.png" alt="image-20221126210046133" style="zoom:80%;" />
 
 <center>图 3-3 查看当前 HBase 中所有表的信息</center>
 
@@ -176,7 +176,7 @@ private static void printRecoder(Result result) {
 scan 'student1'
 ```
 
-<img src="img/image-20221126210226996.png" alt="image-20221126210226996" style="zoom:80%;" />
+<img src="../img/image-20221126210226996.png" alt="image-20221126210226996" style="zoom:80%;" />
 
 <center>图 3-4 查看 student1 表中所有记录数据</center>
 
@@ -184,7 +184,7 @@ scan 'student1'
 scan 'student2'
 ```
 
-<img src="img/image-20221126210342990.png" alt="image-20221126210342990" style="zoom:80%;" />
+<img src="../img/image-20221126210342990.png" alt="image-20221126210342990" style="zoom:80%;" />
 
 <center>图 3-5 查看 student2 表中所有记录数据</center>
 
@@ -237,7 +237,7 @@ delete 'student1','test','score:French'
 scan 'student1'
 ```
 
-<img src="img/image-20221126211128588.png" alt="image-20221126211128588" style="zoom:80%;" />
+<img src="../img/image-20221126211128588.png" alt="image-20221126211128588" style="zoom:80%;" />
 
 <center>图 3-6 添加和删除指定的列</center>
 
@@ -276,7 +276,7 @@ truncate 'student1'
 scan 'student1'
 ```
 
-<img src="img/image-20221126211413907.png" alt="image-20221126211413907" style="zoom:80%;" />
+<img src="../img/image-20221126211413907.png" alt="image-20221126211413907" style="zoom:80%;" />
 
 <center>图 3-7 清空表内记录</center>
 
@@ -309,7 +309,7 @@ public static void countRows(String tableName) throws IOException {
 count 'student2'
 ```
 
-<img src="img/image-20221126211521885.png" alt="image-20221126211521885" style="zoom:80%;" />
+<img src="../img/image-20221126211521885.png" alt="image-20221126211521885" style="zoom:80%;" />
 
 <center>图 3-8 统计表的行数</center>
 

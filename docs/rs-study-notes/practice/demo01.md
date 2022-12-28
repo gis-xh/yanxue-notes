@@ -113,7 +113,7 @@ plt.subplot(122), Image_Negatives()
 
 #### 3.1.3 输入输出图像对比
 
-<img src="img/image-20221115223101988.png" alt="image-20221115223101988" style="zoom:80%;" />
+<img src="../img/image-20221115223101988.png" alt="image-20221115223101988" style="zoom:80%;" />
 
 
 
@@ -170,7 +170,7 @@ plt.subplot(224), Gamma_Transformations(1.6)
 
 #### 3.2.3 输入输出图像对比
 
-<img src="img/image-20221115223141738.png" alt="image-20221115223141738" style="zoom:80%;" />
+<img src="../img/image-20221115223141738.png" alt="image-20221115223141738" style="zoom:80%;" />
 
 
 
@@ -207,7 +207,7 @@ plt.subplot(122), Image_Resized(0.5)
 
 #### 3.3.3 输入输出图像对比
 
-<img src="img/image-20221115223237201.png" alt="image-20221115223237201" style="zoom:80%;" />
+<img src="../img/image-20221115223237201.png" alt="image-20221115223237201" style="zoom:80%;" />
 
 ### 3.4 将图像的大小调整为 $2$ 倍
 
@@ -226,7 +226,7 @@ plt.subplot(122), Image_Resized(2)
 
 #### 3.4.3 输入输出图像对比
 
-<img src="img/image-20221115223315153.png" alt="image-20221115223315153" style="zoom:80%;" />
+<img src="../img/image-20221115223315153.png" alt="image-20221115223315153" style="zoom:80%;" />
 
 ### 3.5 Contrast Stretching 对比度拉伸
 
@@ -268,7 +268,7 @@ plt.subplot(122), Contrast_Stretching()
 
 #### 3.5.3 输入输出图像对比
 
-<img src="img/image-20221115223355798.png" alt="image-20221115223355798" style="zoom:80%;" />
+<img src="../img/image-20221115223355798.png" alt="image-20221115223355798" style="zoom:80%;" />
 
 ### 3.6 Gray-Level Slicing 灰度级分层
 
@@ -320,7 +320,7 @@ plt.subplot(133), Gray_Level_Slicing(155,255,2)
 
 #### 3.6.3 输入输出图像对比
 
-<img src="img/image-20221115223436552.png" alt="image-20221115223436552" style="zoom:80%;" />
+<img src="../img/image-20221115223436552.png" alt="image-20221115223436552" style="zoom:80%;" />
 
 ### 3.7 显示测试图像的所有比特平面层
 
@@ -380,5 +380,5 @@ for i in range(1,9):
 
 #### 3.7.3 输入输出图像对比
 
-<img src="img/image-20221115223553595.png" alt="image-20221115223553595" style="zoom:80%;" />
+<img src="../img/image-20221115223553595.png" alt="image-20221115223553595" style="zoom:80%;" />
 

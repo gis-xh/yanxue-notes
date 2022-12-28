@@ -54,17 +54,17 @@
 
 - 设置数据库名称
 
-<img src="img/image-20220917152433164.png" alt="image-20220917152433164" style="zoom:80%;" />
+<img src="../img/image-20220917152433164.png" alt="image-20220917152433164" style="zoom:80%;" />
 
 - 数据库定义：这里我们选择 postgis_32_sample 作为模板进行创建。
 
-<img src="img/image-20220917152508973.png" alt="image-20220917152508973" style="zoom:80%;" />
+<img src="../img/image-20220917152508973.png" alt="image-20220917152508973" style="zoom:80%;" />
 
 #### 2.2.2 报错信息及对应处理
 
 - 报错：接下来必定会报错，因为在一开始，模板数据库也就是 postgis_32_sample 数据库处于运行状态
 
-<img src="img/image-20220917152642602.png" alt="image-20220917152642602" style="zoom: 67%;" />
+<img src="../img/image-20220917152642602.png" alt="image-20220917152642602" style="zoom: 67%;" />
 
 - 此时我们将模板数据库关闭即可
 
@@ -114,7 +114,7 @@
 
 - 连接成功
 
-<img src="img/image-20220917155916540.png" alt="image-20220917155916540" style="zoom:80%;" />
+<img src="../img/image-20220917155916540.png" alt="image-20220917155916540" style="zoom:80%;" />
 
 - 在 QGIS 中查看数据库连接
 
@@ -138,7 +138,7 @@
 EPSG:4547 - CGCS2000 / 3-degree Gauss-Kruger CM 114E
 ```
 
-<img src="img/image-20221005122955451.png" alt="image-20221005122955451" style="zoom: 67%;" />
+<img src="../img/image-20221005122955451.png" alt="image-20221005122955451" style="zoom: 67%;" />
 
 #### 3.3.2 修改当前工程的坐标系
 
@@ -190,25 +190,25 @@ EPSG:4547 - CGCS2000 / 3-degree Gauss-Kruger CM 114E
 
 - 修改表格名称
 
-<img src="img/image-20221005125809655.png" alt="image-20221005125809655" style="zoom: 67%;" />
+<img src="../img/image-20221005125809655.png" alt="image-20221005125809655" style="zoom: 67%;" />
 
 - 添加名为 `name` 的长度为 `50` 的 `varchar` 文本字段，用于存放场地名称
 
-<img src="img/image-20221005125940341.png" alt="image-20221005125940341" style="zoom: 67%;" />
+<img src="../img/image-20221005125940341.png" alt="image-20221005125940341" style="zoom: 67%;" />
 
 - 由于场地是区域型的数据，所以我们几何类型选择 ***多边形***
 
-<img src="img/image-20221005130025278.png" alt="image-20221005130025278" style="zoom: 67%;" />
+<img src="../img/image-20221005130025278.png" alt="image-20221005130025278" style="zoom: 67%;" />
 
 - <font style="color:red">**！！！千万注意！！！**</font>坐标系一定要与当前工程保持一致。
 
-<img src="img/image-20221005130146024.png" alt="image-20221005130146024" style="zoom: 67%;" />
+<img src="../img/image-20221005130146024.png" alt="image-20221005130146024" style="zoom: 67%;" />
 
 #### 4.1.3 新建数据成功
 
 - 若操作无误的话，此时界面应该如下图所示。
 
-<img src="img/image-20221005130309448.png" alt="image-20221005130309448" style="zoom: 67%;" />
+<img src="../img/image-20221005130309448.png" alt="image-20221005130309448" style="zoom: 67%;" />
 
 - 成功创建后会有提示，但要注意这时数据表中是没有任何数据信息的，接下来的操作都会存储在这张数据表中。
 
@@ -246,7 +246,7 @@ EPSG:4547 - CGCS2000 / 3-degree Gauss-Kruger CM 114E
 
 - 保存前后对比，此时已经生成了一个面状的要素。
 
-<img src="img/image-20221005132255990.png" alt="image-20221005132255990" style="zoom: 50%;" />
+<img src="../img/image-20221005132255990.png" alt="image-20221005132255990" style="zoom: 50%;" />
 
 - 但是，这还没完，我们必须保存并退出编辑，才能使数据真正的存储到数据库中。
 

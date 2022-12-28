@@ -47,6 +47,17 @@ extra:
       link: https://github.com/gis-xh
       name: GitHub | gis-xh # 鼠标悬浮提示
 
+# [Navigtion]
+nav:
+  - 空间数据库: 
+    - sdb-study-notes/index.md
+  - 英语写作: 
+    - writing-task/writing-task.md
+  - 遥感数字图像分析与处理: 
+    - rs-study-notes/index.md
+  - 地质资源与大数据: 
+    - bigdata-study-notes/index.md
+    
 
 # [Extensions]
 plugins:
@@ -55,6 +66,7 @@ plugins:
       lang:
         - en
         - ja
+        - zh
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
@@ -74,7 +86,7 @@ extra_javascript:
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
   # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
-  - mkdocs/javascripts/mathjax.js
+  - mkdocs/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
 extra_css:

@@ -8,15 +8,15 @@
 
 ## 目录说明
 
-### 1 空间数据库笔记：[SDB-Study-Notes](./sdb-study-notes/README.md)
+### 1 空间数据库笔记：[SDB-Study-Notes](./sdb-study-notes/index.md)
 
 
 
-### 2 遥感数字图像分析与处理：[RS-Study-Notes](./rs-study-notes/README.md)
+### 2 遥感数字图像分析与处理：[RS-Study-Notes](./rs-study-notes/index.md)
 
 
 
-### 3 地质资源与大数据：[BigData-Study-Notes](./bigdata-study-notes/README.md)
+### 3 地质资源与大数据：[BigData-Study-Notes](./bigdata-study-notes/index.md)
 
 
 

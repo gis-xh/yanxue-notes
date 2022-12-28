@@ -43,7 +43,7 @@ conda install -c conda-forge mamba
 mamba install -c conda-forge pygis geemap 
 ```
 
-<img src="img/image-20221212112405323.png" alt="image-20221212112405323" style="zoom:80%;" />
+<img src="../img/image-20221212112405323.png" alt="image-20221212112405323" style="zoom:80%;" />
 
 <center>图 1-1 mamba 批量安装包</center>
 
@@ -107,7 +107,7 @@ connection_string = f"postgresql://{user}:{password}@{host}/{database}"
 %sql $connection_string
 ```
 
-<img src="img/image-20221212165314458.png" alt="image-20221212165314458" style="zoom:67%;" />
+<img src="../img/image-20221212165314458.png" alt="image-20221212165314458" style="zoom:67%;" />
 
 <center>图 2-1 查看数据库连接情况</center>
 

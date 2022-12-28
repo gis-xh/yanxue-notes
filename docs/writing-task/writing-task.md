@@ -152,7 +152,7 @@ This graph compares trends in animal populations. Write a summary describing the
 
 这张图表比较了动物数量的趋势。写一篇总结，描述趋势并给出变化的原因。
 
-<img src="img/image-20221129102907370.png" alt="image-20221129102907370" style="zoom:67%;" />
+<img src="../img/image-20221129102907370.png" alt="image-20221129102907370" style="zoom:67%;" />
 
 
 

@@ -69,7 +69,7 @@ pip install notebook -i https://pypi.tuna.tsinghua.edu.cn/simple
 jupyter notebook
 ```
 
-<img src="img/image-20221207151520149.png" alt="image-20221207151520149" style="zoom:80%;" />
+<img src="../img/image-20221207151520149.png" alt="image-20221207151520149" style="zoom:80%;" />
 
 <center>图 1-1 Jupyter 界面</center>
 
@@ -84,13 +84,13 @@ jupyter notebook
 
 1. 修改 JDK 安装目录（路径无中文、无空格、无符号）
 
-<img src="img/image-20221207191356157.png" alt="image-20221207191356157" style="zoom:80%;" />
+<img src="../img/image-20221207191356157.png" alt="image-20221207191356157" style="zoom:80%;" />
 
 <center>图 1-2 安装 JDK</center>
 
 2. 修改 JRE 安装目录（规则同上）
 
-<img src="img/image-20221207191805777.png" alt="image-20221207191805777" style="zoom:80%;" />
+<img src="../img/image-20221207191805777.png" alt="image-20221207191805777" style="zoom:80%;" />
 
 <center>图 1-3 安装 JRE</center>
 
@@ -98,7 +98,7 @@ jupyter notebook
    - 变量名：`JAVA_HOME`
    - 变量值：`E:\program\Java\jdk`
 
-<img src="img/image-20221207195708751.png" alt="image-20221207195708751" style="zoom:80%;" />
+<img src="../img/image-20221207195708751.png" alt="image-20221207195708751" style="zoom:80%;" />
 
 <center>图 1-4 配置 JDK 环境变量</center>
 
@@ -106,7 +106,7 @@ jupyter notebook
    - 变量名：`JAVA_CLASSPATH`
    - 变量值：`.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar`
 
-<img src="img/image-20221207192540640.png" alt="image-20221207192540640" style="zoom:80%;" />
+<img src="../img/image-20221207192540640.png" alt="image-20221207192540640" style="zoom:80%;" />
 
 <center>图 1-5 配置 JAVA_CLASSPATH 变量</center>
 
@@ -123,7 +123,7 @@ jupyter notebook
 java -version
 ```
 
-<img src="img/image-20221207193639992.png" alt="image-20221207193639992" style="zoom:80%;" />
+<img src="../img/image-20221207193639992.png" alt="image-20221207193639992" style="zoom:80%;" />
 
 <center>图 1-6 查看当前 JAVA 版本</center>
 
@@ -135,13 +135,13 @@ java -version
 pip install pyspark -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-<img src="img/image-20221203160452564.png" alt="image-20221203160452564" style="zoom:67%;" />
+<img src="../img/image-20221203160452564.png" alt="image-20221203160452564" style="zoom:67%;" />
 
 <center>图 1-7 正在安装 pyspark</center>
 
 - 验证安装情况，启动虚拟环境中的 Python 导入 PySpark 包，如果没有错误提示，即为安装成功。
 
-<img src="img/image-20221207151212572.png" alt="image-20221207151212572" style="zoom: 67%;" />
+<img src="../img/image-20221207151212572.png" alt="image-20221207151212572" style="zoom: 67%;" />
 
 <center>图 1-8 验证 pyspark 安装情况</center>
 
@@ -161,7 +161,7 @@ pip install jupyterlab -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 3. 首次运行程序时，需要选定调用 Python 环境，这里我们选择之前创建并配置好的虚拟环境
 
-<img src="img/image-20221207162936281.png" alt="image-20221207162936281" style="zoom:80%;" />
+<img src="../img/image-20221207162936281.png" alt="image-20221207162936281" style="zoom:80%;" />
 
 
 <center>图 1-9 配置 JupyterLab 启动环境</center>
@@ -400,7 +400,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 无法加载文件C:\Users\xxx\Documents\WindowsPowerShell\profile.ps1，因为在此系统上禁止运行脚本
 ```
 
-<img src="img/image-20221209113145694.png" alt="img" style="zoom:80%;" />
+<img src="../img/image-20221209113145694.png" alt="../img" style="zoom:80%;" />
 
 <center>图 4-1 问题四截图</center>
 
