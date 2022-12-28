@@ -250,7 +250,7 @@ cd ~/Downloads/mysql-connector-j-8.0.31/
 cp mysql-connector-j-8.0.31.jar  ~/usr/local/hive/lib
 ```
 
-### 4 启动 HIVE
+### 4 首次启动 HIVE
 
 &emsp;&emsp;HIVE 是基于 Hadoop 的，所以需要先启动 Hadoop 才能启动 HIVE。
 
@@ -293,6 +293,71 @@ hive
 ```hive
 exit;
 ```
+
+### 5 HIVE 的增改查删 CURD 基本操作
+
+&emsp;&emsp;经过前面的操作，我们已经配置了 HIVE 的运行环境，并成功启动了一次 HIVE，此时 hive 数据库已经被建立。接下来，我们将在 hive 数据库中进行增改查删一系列的数据库基本操作。
+
+#### 5.1 创建数据表
+
+&emsp;&emsp;在 hive 数据库中，创建测绘遥感类 SCI 期刊信息表 `journals_info `，含四个属性：
+
+-  `journal_Name`：期刊名称
+
+- `partition`：分区级别
+
+- `top`：是否顶刊
+
+- `2021_IF`：2021年影响因子
+
+> 创建表并配置存储路径
+
+```hive
+create table if not exists journals_info(
+    journal_name string,
+    partition int,
+    top boolean,
+    2021_IF double
+)
+location ‘~/usr/local/hive/warehouse/hive/journals_info’;
+```
+
+####  5.2 创建视图
+
+&emsp;&emsp;创建视图 `little_journals_info`，其中只包含 `journals_info` 表中 `journal_name`，`partition` 属性。
+```hive
+create view little_journals_info as select journal_name,partition from journals_info;
+```
+
+#### 5.3 查看数据库、表与视图
+
+> 查看 HIVE 中所有的数据库
+
+```hive
+show databases;
+```
+
+> 查看 hive 数据库中所有表
+
+```hive
+use hive;
+show tables;
+```
+
+#### 5.4 向表中插入数据
+
+&emsp;&emsp;向表 `usr1` 中插入来自 `usr` 表的数据并覆盖原有数据
+
+```hive
+insert overwrite table usr1
+select * from usr where age=10;
+```
+
+
+
+> 
+
+
 
 
 
