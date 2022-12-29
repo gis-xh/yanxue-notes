@@ -90,7 +90,7 @@ SELECT name,ST_Union(hualin.geom, campus.geom) FROM hualin, campus
 ```
 
 - `ST_Union(geom1, geom2)` 函数：几何处理函数，用于返回两个几何对象合并后的结果
-- 
+
 
 ![image-20221019205400003](img/image-20221019205400003.png)
 
@@ -112,7 +112,6 @@ SELECT ST_Difference("wuhan-yangtzeu".geom,hualin.geom) FROM hualin,"wuhan-yangt
 ```
 
 - `ST_Difference(geom A, geom B)` 函数：几何处理函数，用于获取 A 去除 B 相交部分的几何形状
-- 
 
 ![image-20221019213227839](img/image-20221019213227839.png)
 
@@ -143,7 +142,7 @@ FROM hualin, "wuhan-yangtzeu"
 ```
 
 - `ST_Intersection(geom1, geom2)` 函数：几何处理函数，获取两个几何对象相交部分的几何形状
-- 
+
 
 ![image-20221019215745099](img/image-20221019215745099.png)
 

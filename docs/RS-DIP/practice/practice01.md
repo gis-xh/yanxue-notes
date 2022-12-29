@@ -16,7 +16,7 @@
 
 ## 1 环境配置
 
-&emsp;&emsp;这里我们使用 `conda` 创建一个名为 `rs_01` 的 `Python3.9` 的虚拟环境。激活新环境后，在其内配置项目所需的运行环境，最终启动 `jupyter notebook` 在其内进行代码操作。
+&emsp;&emsp;这里我们使用 `conda` 创建一个名为 `rs01` 的 `Python3.9` 的虚拟环境。激活新环境后，在其内配置项目所需的运行环境，最终启动 `jupyter notebook` 在其内进行代码操作。
 
 > 创建虚拟环境
 
@@ -27,7 +27,7 @@ conda create -n rs01 python=3.9
 > 激活虚拟环境
 
 ```sh
-conda activate rs_01
+conda activate rs01
 ```
 
 > 安装 jupyter notebook
@@ -84,6 +84,7 @@ plt.imshow(img,cmap="gray")
 #### 3.1.1 原理及其公式
 
 &emsp;&emsp;增强嵌入在图像暗区域的白色或灰色细节，特别是当黑色区域在大小上占主导地位时。
+
 $$
 s = L - 1 - r
 $$

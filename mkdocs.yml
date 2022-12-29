@@ -1,16 +1,16 @@
-# [Info]
-site_name: 长大地科2022级研学笔记 # 左上角标题
-site_url: https://yang-xijie.github.io
+# [Info] 基本信息
+site_name: 长大地科研学笔记【2022级】 # 左上角标题
+site_url: https://github.com/gis-xh/yanxue-notes
 site_author: gis-xh
 site_description: 长大地科2022级研学笔记公开站
 
-# [UI]
+# [UI] 界面设置
 ## [top]
 theme:
   name: material
   palette: 
-      - scheme: default # 日间模式
-        primary: indigo # 上方的
+      - scheme: default # 默认日间模式
+        primary: indigo # 上方的颜色为靛蓝色
         accent: orange # 链接等可交互元件的高亮色
         toggle:
           icon: material/weather-night # 图标
@@ -40,14 +40,14 @@ copyright: Copyright &copy; 2022 gis-xh # 左下角的版权声明
 ## [bottom-right corner]
 extra:
   social: # icons
-    # - icon: fontawesome/brands/gittee
+    # - icon: fontawesome/brands/gitee
     #   link: https://gitee.com/gis-xh
     #   name: Gitee | gis-xh
     - icon: fontawesome/brands/github
       link: https://github.com/gis-xh
       name: GitHub | gis-xh # 鼠标悬浮提示
 
-# [Navigtion]
+# [Navigtion] 导航栏
 nav:
   - 空间数据库: 
     - SDB/index.md
@@ -63,6 +63,10 @@ nav:
     - writing-task/writing-task.md
   - 遥感数字图像分析与处理: 
     - RS-DIP/index.md
+    - 课后练习: 
+      - 练习一: RS-DIP/practice/practice01.md
+      - 练习二: RS-DIP/practice/practice02.md
+      - 练习三: RS-DIP/practice/practice03.md
   - 地质资源与大数据: 
     - BigData/index.md
     - 课后练习:
@@ -79,7 +83,7 @@ nav:
       - 练习四 安装并使用 MongoDB: BigData/practice/practice04.md
       - 练习五 安装并使用 HIVE: BigData/practice/practice05.md
 
-# [Extensions]
+# [Extensions] 扩展
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
     # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/

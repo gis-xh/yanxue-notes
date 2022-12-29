@@ -344,21 +344,6 @@ use hive;
 show tables;
 ```
 
-#### 5.4 向表中插入数据
-
-&emsp;&emsp;向表 `usr1` 中插入来自 `usr` 表的数据并覆盖原有数据
-
-```hive
-insert overwrite table usr1
-select * from usr where age=10;
-```
-
-
-
-> 
-
-
-
 
 
 ## 四、问题与解决方案
