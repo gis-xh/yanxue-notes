@@ -12,7 +12,9 @@
 
 
 
-## 1 绘制植被损失图
+## 1 实验目的
+
+&emsp;&emsp;本次实验，意在借助 GEE 平台的数据源及其 API 实现以武汉市为边界的 1985年 ~ 2022年的植被损失图绘制。
 
 
 
@@ -194,8 +196,8 @@ Map
 ### 5.1 定义影像集参数
 
 ```python
-startYear = 1984
-endYear = 2019
+startYear = 1985
+endYear = 2022
 startDay = '06-20'
 endDay = '09-01'
 aoi = wh
@@ -211,6 +213,10 @@ maskThese = ['cloud', 'shadow', 'snow', 'water']
 url = 'https://github.com/eMapR/LT-GEE/blob/master/LandTrendr.js'
 ltgee = geemap.requireJS(url)
 ```
+
+![image-20221230165054511](img/image-20221230165054511.png)
+
+<center>图 5-1 加载 LT-GEE API</center>
 
 > 定义 landtrendr 参数
 
@@ -316,6 +322,10 @@ Map.addLayer(exportImg.select(['yod']), yodVizParms, '年份观测')
 Map
 ```
 
+![image-20221230164924926](img/image-20221230164924926.png)
+
+<center>图 5-2 在 google colaboratory 中查看运行结果</center>
+
 ### 5.5 下载生成扰动地图
 
 ```python
@@ -328,7 +338,7 @@ geemap.download_ee_image(
 
 ### 5.6 小结
 
-&emsp;&emsp;本章（第五章）实现了 landtrendr 算法，同时生成绘制了最大的植被损失部分并显示了变化检测的年份和变化的幅度，最终导出了计算结果数据。
+&emsp;&emsp;本章（第五章）实现了 landtrendr 算法，同时绘制了最大植被损失部分并显示了变化检测的年份和变化的幅度，最终导出了计算结果数据。
 
 
 
@@ -339,3 +349,7 @@ geemap.download_ee_image(
 ![image-20221230155608445](img/image-20221230155608445.png)
 
 <center>图 6-1 查看扰动地图</center>
+
+## 7 实验总结
+
+&emsp;&emsp;本次实验，使用 Geemap 调用 GEE Python API 实现了 LandTrendr 算法，并以武汉市为边界绘制出了植被损失图，实现了本地数据 + GEE 平台云端数据 + GEE 算力 + 结果导出到本地的全流程操作，进一步熟悉了 GEE 平台的使用技巧和遥感实验的操作流程。
