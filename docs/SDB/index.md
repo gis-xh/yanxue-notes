@@ -1,22 +1,26 @@
-# 空间数据库学习笔记
+# 空间数据库课程学习
 
 
 
-## 目录
-
-1. [PostgreSQL9.6 & PostGIS3.2 安装教程](./Install-PostgreSQL+PostGIS.md)
-2. [课堂要求](./class-requirement.md)
-3. 课后练习：
-
-- [练习一：数字化校园](./practice/practice01.md)
-- [练习二：数字化校园的数据表与 E-R 图](./practice/practice02.md)
-- [练习三：SQL 的 6 个基本操作](./practice/practice03.md)
-- [练习四：论文研读](./practice/practice04.md)
-- [练习五：邻接矩阵](./practice/practice05.md)
+## 1 [PostgreSQL9.6 & PostGIS3.2 安装教程](./Install-PostgreSQL+PostGIS.md)
 
 
 
-## 相关学习资源
+## 2 [课堂要求](./class-requirement.md)
+
+
+
+## 3 课后练习：
+
+1.  [练习一 数字化校园](./practice/practice01.md)
+2.  [练习二 数字化校园的数据表与 E-R 图](./practice/practice02.md)
+3.  [练习三 SQL 的 6 个基本操作](./practice/practice03.md)
+4.  [练习四 论文研读](./practice/practice04.md)
+5.  [练习五 邻接矩阵](./practice/practice05.md)
+
+
+
+## 4 相关学习资源
 
 1. [CSDN - Python+OGR 库学习（一）：读取点矢量文件属性值和坐标，并保存为TXT（一行一个要素值）](https://blog.csdn.net/weixin_42924891/article/details/85269395)
 2. [CSDN - Python 空间数据处理-------矢量点文件读取](https://blog.csdn.net/qq_36181130/article/details/84030642)

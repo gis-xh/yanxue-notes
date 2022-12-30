@@ -1,8 +1,8 @@
 # [Info] 基本信息
-site_name: 长大地科研学笔记【2022级】 # 左上角标题
+site_name: 长大地科研学课程记录【2022级】 # 左上角标题
 site_url: https://github.com/gis-xh/yanxue-notes
 site_author: gis-xh
-site_description: 长大地科2022级研学笔记公开站
+site_description: 长大地科研学课程记录公开站【2022级】
 
 # [UI] 界面设置
 ## [top]
@@ -67,6 +67,8 @@ nav:
       - 练习一: RS-DIP/practice/practice01.md
       - 练习二: RS-DIP/practice/practice02.md
       - 练习三: RS-DIP/practice/practice03.md
+    - 结课大作业:
+      - 基于 LT-GEE 的武汉市森林扰动地图制作: RS-DIP/practice/coursework.md
   - 地质资源与大数据: 
     - BigData/index.md
     - 课后练习:
@@ -113,5 +115,5 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
 extra_css:
-  - mkdocs/css/no-footer.css # 不使用底部的翻页
+  # - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
