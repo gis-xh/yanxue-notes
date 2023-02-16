@@ -70,7 +70,7 @@
 
    虽然他们并非有意伤害当地传统，但事实上传统手工艺消失了。
 
-3、**Keeping on good terms with*** local people will help the company to survive overseas. 
+3、***Keeping on good terms with*** local people will help the company to survive overseas. 
 
    和当地人保持良好关系能帮助公司在海外立足。
 
@@ -84,11 +84,11 @@
 
 ### **Acadmic exploration 1**
 
-1、Most people with healthy imm## Unit y (免疫力) are not easily ***affected*** by bacteria on the skin, but people with a weakened immune system are more at risk.
+1、Most people with healthy immunity (免疫力) are not easily ***affected*** by bacteria on the skin, but people with a weakened immune system are more at risk.
 
    大多数免疫力良好的人不容易受到皮肤上的细菌的影响，但是免疫系统较弱的人面临感染的风险更大。
 
-2、Globally healthcare professionals are ***convinced*** that technologies like personal health monitoring devices will play a vital role in creating a positive healthcare future.
+2、Globally health care professionals are ***convinced*** that technologies like personal health monitoring devices will play a vital role in creating a positive healthcare future.
 
    全球医疗保健专业人士坚信，诸如个人健康监测设备之类的技术将发挥至关重要的作用，为医疗保健创造一个光明的未来。
 
