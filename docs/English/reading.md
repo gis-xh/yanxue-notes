@@ -178,11 +178,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+Selective colleges and universities in the U.S.
 
+B) They have been doing well in ensuring their students a successful future.
 
+A) It has contributed substantially to the nation's overall development.
 
+C) They would have added to many students5 financial burden.
+
+D) Their liberal arts education enables graduates to excel in whatever field they are in.
+
+B) All students can benefit from a diversified student population.
 
 ### **Passage Two**
+
+When a group of Australians was asked why they believed climate change was not happening,
+
+A) People seldom appeal to rationality in their thinking.
+
+D) It is something subjective based on what one perceives to be right.
+
+A) It may lead to incorrect judgment.
+
+C) Establish socially shared cognition via scientific methods.
+
+D) Collaborative efforts can overcome individuals limitations in scientific inquiry.
 
 
 
@@ -190,23 +210,29 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+Since American idol star Taryn Southern started composing music with AI in 2017,
 
+B) It would be detrimental to music production.
 
+A) AI technology is conducive to music composition.
 
+A) Music produced with AI technology lacks humanness.
 
-### **Passage Two**
+D) It is human specific.
 
-
-
-## **2022-06-3**
-
-### **Passage One**
-
-
-
-
+B) It has the prospect of becoming the norm in the future.
 
 ### **Passage Two**
 
+A few weeks ago, a well-meaning professor tried to explain the physiological process
 
+B) It is a necessary means to improve their understanding o f scientific issues.
+
+C) Turn to a specialist for professional help.
+
+D) The public's understanding of science is much better than some have claimed.
+
+C) A learned scholar is not necessarily a qualified science communicator.
+
+D) Develop communication skills.
 
