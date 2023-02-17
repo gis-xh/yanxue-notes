@@ -17,8 +17,10 @@
 ### 3 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS-DIP/index.md)
 
 
+### 4 中特: [ZT-Review](./zt-review.md)
 
-### 4 地质资源与大数据：[Bigdata-Study-Notes](./BigData/index.md)
+
+### 5 地质资源与大数据：[Bigdata-Study-Notes](./BigData/index.md)
 
 
 
