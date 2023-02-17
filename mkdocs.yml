@@ -60,9 +60,10 @@ nav:
       - 练习四 论文研读: SDB/practice/practice04.md
       - 练习五 邻接矩阵: SDB/practice/practice05.md
   - 综合英语: 
-    - 英语选择: English/words-in-use.md
-    - 英语翻译: English/translation.md
-    - 英语作文: English/writing-task.md
+    - 选词填空 (25分): English/words-in-use.md
+    - 英翻汉 (30分): English/translation.md
+    - 阅读 (30分): English/reading.md
+    - 作文 (15分): English/writing-task.md
   - 遥感数字图像分析与处理: 
     - RS-DIP/index.md
     - 课后练习: 
