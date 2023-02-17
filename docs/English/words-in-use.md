@@ -4,9 +4,10 @@
 
 ### **Acadmic exploration 1**
 
-| affiliation |   ascribe    | categorize | consequence |
-| :---------: | :----------: | :--------: | :---------: |
-|   foster    | multilingual |  rivalry   |    trait    |
+|                 |                  |                |                 |
+| :-------------: | :--------------: | :------------: | :-------------: |
+| **affiliation** |   **ascribe**    | **categorize** | **consequence** |
+|   **foster**    | **multilingual** |  **rivalry**   |    **trait**    |
 
 1、She said exactly what she thought, without thinking about the <u>***consequence / consequences***</u>. 
 
@@ -26,9 +27,10 @@
 
 ### **Acadmic exploration 2**
 
-| comprehensive | correlation | co-worker | frustrated |
-| :-----------: | :---------: | :-------: | :--------: |
-|     rate      |   suggest   |   tempt   |            |
+|                   |                 |               |                |
+| :---------------: | :-------------: | :-----------: | :------------: |
+| **comprehensive** | **correlation** | **co-worker** | **frustrated** |
+|     **rate**      |   **suggest**   |   **tempt**   |                |
 
 1、The survey was distributed to over 1,000 people, but unfortunately, only about half of the ***<u>participants</u>*** completed it correctly. 
 
@@ -48,9 +50,10 @@
 
 ### **Acadmic writing**
 
-| extroverted |  feeling   | introverted | Intuitive |
-| :---------: | :--------: | :---------: | :-------: |
-|   judging   | perceiving |   sensing   | thinking  |
+|                 |                |                 |               |
+| :-------------: | :------------: | :-------------: | :-----------: |
+| **extroverted** |  **feeling**   | **introverted** | **Intuitive** |
+|   **judging**   | **perceiving** |   **sensing**   | **thinking**  |
 
 1、***<u>Thinking</u>*** people make decisions based on logical evidence.
 
@@ -74,9 +77,10 @@
 
 ### **Acadmic exploration 1**
 
-| aesthetic | craftsman | deliberately |  flaw  |
-| :-------: | :-------: | :----------: | :----: |
-| humility  |  imitate  |   incident   | notion |
+|               |               |                  |            |
+| :-----------: | :-----------: | :--------------: | :--------: |
+| **aesthetic** | **craftsman** | **deliberately** |  **flaw**  |
+| **humility**  |  **imitate**  |   **incident**   | **notion** |
 
 1、Traditional Japanese ideas of beauty contain ***<u>notions</u>*** that may seem quite foreign to Westerners, who name them “Japaneseness.”
 
@@ -96,9 +100,10 @@
 
 ### **Acadmic exploration 2**
 
-| artistry   | delicate  | entirely |
-| ---------- | --------- | -------- |
-| functional | objection | romantic |
+|                |               |              |
+| :------------: | :-----------: | :----------: |
+|  **artistry**  | **delicate**  | **entirely** |
+| **functional** | **objection** | **romantic** |
 
 1、It is ***<u>entirely</u>*** true that no artwork can satisfy everyone.
 
@@ -118,9 +123,10 @@
 
 ### **Acadmic exploration 1**
 
-| contaminate | deposit   | evidence | pandemic |
-| ----------- | --------- | -------- | -------- |
-| procedure   | propagate | survive  | transmit |
+|                 |               |              |              |
+| :-------------: | :-----------: | :----------: | :----------: |
+| **contaminate** |  **deposit**  | **evidence** | **pandemic** |
+|  **procedure**  | **propagate** | **survive**  | **transmit** |
 
 1、The following standard operating ***<u>procedure / procedures</u>*** must be followed by all laboratory workers where laboratory work involves the use of hazardous chemicals.
 
@@ -140,9 +146,10 @@
 
 ### **Acadmic exploration 2**
 
-| catastrophic | closure        | closure       | closure |
-| ------------ | -------------- | ------------- | ------- |
-| diminish     | pharmaceutical | predominantly | vaccine |
+|                  |                    |                   |             |
+| :--------------: | :----------------: | :---------------: | :---------: |
+| **catastrophic** |    **closure**     |    **closure**    | **closure** |
+|   **diminish**   | **pharmaceutical** | **predominantly** | **vaccine** |
 
 1、In past decades, the field of cardio-oncology (肿瘤心脏病学) has ***<u>predominantly</u>*** focused on prevention and treatment of cardiovascular disease in cancer survivors.
 
@@ -162,9 +169,10 @@
 
 ### **Acadmic writing**
 
-| as a result   | because of  | consequently |
-| ------------- | ----------- | ------------ |
-| resulted from | resulted in | therefore    |
+|                   |                 |                  |
+| :---------------: | :-------------: | :--------------: |
+|  **as a result**  | **because of**  | **consequently** |
+| **resulted from** | **resulted in** |  **therefore**   |
 
 1、The disease outbreak ***<u>resulted in</u>*** a fall in tourism. 
 
@@ -184,9 +192,10 @@
 
 ### **Acadmic exploration 1**
 
-| commerce | addicted | distribution | diversity    |
-| -------- | -------- | ------------ | ------------ |
-| grant    | minority | superior     | urbanization |
+|              |              |                  |                  |
+| :----------: | :----------: | :--------------: | :--------------: |
+| **commerce** | **addicted** | **distribution** |  **diversity**   |
+|  **grant**   | **minority** |   **superior**   | **urbanization** |
 
 1、If we can embrace cultural ***<u>diversity</u>*** when interacting with others, we will be able to build bridges to trust, respect, and understanding across cultures.
 
@@ -206,9 +215,10 @@
 
 ### **Acadmic exploration 2**
 
-| breed   | dieout   | disrupt | food chain |
-| ------- | -------- | ------- | ---------- |
-| habitat | shortage | threat  | thrive     |
+|             |              |             |                |
+| :---------: | :----------: | :---------: | :------------: |
+|  **breed**  |  **dieout**  | **disrupt** | **food chain** |
+| **habitat** | **shortage** | **threat**  |   **thrive**   |
 
 1、Human activities like the widespread destruction of trees and plants can ***<u>disrupt</u>*** the environment.
 
@@ -228,9 +238,10 @@
 
 ### **Acadmic writing**
 
-| comparison | growing  | in the region of | peak      |
-| ---------- | -------- | ---------------- | --------- |
-| slight     | steadily | substantial      | well over |
+|                |              |                      |               |
+| :------------: | :----------: | :------------------: | :-----------: |
+| **comparison** | **growing**  | **in the region of** |   **peak**    |
+|   **slight**   | **steadily** |   **substantial**    | **well over** |
 
 1、***<u>Well over</u>*** a million people live in the city – perhaps close to one and a half million.
 
@@ -254,9 +265,10 @@
 
 ### **Acadmic exploration 1**
 
-| corporate |  evasion  |    illegal     | initiative |
-| :-------: | :-------: | :------------: | :--------: |
-| institute | provision | representative | ultimately |
+|               |               |                    |                |
+| :-----------: | :-----------: | :----------------: | :------------: |
+| **corporate** |  **evasion**  |    **illegal**     | **initiative** |
+| **institute** | **provision** | **representative** | **ultimately** |
 
 1、The government has introduced a(n) ***<u>initiative</u>*** to fight against tax avoidance.
 
@@ -276,9 +288,10 @@
 
 ### **Acadmic exploration 2**
 
-| clause  | conduct | declare | intention |
-| ------- | ------- | ------- | --------- |
-| recruit | state   | issue   |           |
+|             |             |             |               |
+| :---------: | :---------: | :---------: | :-----------: |
+| **clause**  | **conduct** | **declare** | **intention** |
+| **recruit** |  **state**  |  **issue**  |               |
 
 1、When companies ***<u>recruit</u>*** new employees, they should not only take the candidates’ professional capacities into account, but also evaluate their personal character.
 
@@ -296,9 +309,10 @@
 
 ### **Acadmic writing**
 
-| arrest  | crime  | defend |  judge  |
-| :-----: | :----: | :----: | :-----: |
-| justice | lawyer | trial  | witness |
+|             |            |            |             |
+| :---------: | :--------: | :--------: | :---------: |
+| **arrest**  | **crime**  | **defend** |  **judge**  |
+| **justice** | **lawyer** | **trial**  | **witness** |
 
 1、A(n) 1) ***<u>lawyer</u>*** often has to 2) ***<u>defend</u>*** someone in court even when they think that person has committed a crime. However, all people, even guilty ones, have the right to be represented legally.
 
