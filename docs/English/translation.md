@@ -88,7 +88,7 @@
 
    大多数免疫力良好的人不容易受到皮肤上的细菌的影响，但是免疫系统较弱的人面临感染的风险更大。
 
-2、Globally health care professionals are ***convinced*** that technologies like personal health monitoring devices will play a vital role in creating a positive healthcare future.
+2、Globally healthcare professionals are ***convinced*** that technologies like personal health monitoring devices will play a vital role in creating a positive healthcare future.
 
    全球医疗保健专业人士坚信，诸如个人健康监测设备之类的技术将发挥至关重要的作用，为医疗保健创造一个光明的未来。
 
