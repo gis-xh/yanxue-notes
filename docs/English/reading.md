@@ -100,15 +100,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+Humans are fascinated by the source of their failings and virtues.
 
+D) Students' academic performance is determined by their genes.
 
+A) Its result was questionable.
 
+B) It is not one of cause and effect.
+
+A) Take all relevant factors into account in interpreting their data.
+
+D) Promoting discrimination in the name of science.
 
 ### **Passage Two**
 
+Nicola Sturgeon's speech last Tuesday setting out the Scottish government's legislative programme
 
+B) Tourists will have to pay a tax to visit Scotland.
 
+C) Its ruling party is opposed to taxes and regulation.
 
+D) ease its financial burden of providing local services
+
+A) They don't seem to care about the social cost of tourism.
+
+C) Divided.
 
 
 
@@ -116,13 +132,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+We often think of drawing as something that takes inborn talent,
 
+A) It is a gift creative people are endowed with.
 
+C) They add beauty and charm to the world.
 
+A) Everybody is born with the capacity to draw.
+
+D) It helps improve concentration and memory.
+
+D) Precision in visual perception.
 
 ### **Passage Two**
 
+The car has reshaped our cities.
 
+B) They present a false picture of the autonomy cars provide.
+
+C) Only some can be put to use under current traffic conditions.
+
+A) It is likely to create traffic jams in other places.
+
+B) It seldom delivers all the benefits as promised.
+
+C) Technological innovation should be properly regulated.
 
 
 
@@ -130,11 +164,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+You can't see it, smell it, or hear it, 
 
+D) It contributes to intellectual growth but can easily be killed.
 
+B) Cultivation of creativity should permeate the entire school curriculum.
 
+C) Test-oriented teaching.
+
+B) They attach great importance to arts education.
+
+C) Providing all children with equal access to arts education.
 
 ### **Passage Two**
+
+Emulating your conversation partner's actions
+
+C) Imitate their partners' gestures without their knowing it.
+
+B) When both sides have a lot of things in common.
+
+A) It encourages people to imitate.
+
+A) It facilitates the creation of one's own writing style.
+
+D) It may do harm as well as good.
 
 
 
@@ -142,11 +196,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+Social media is absolutely everywhere.
 
+D) Whether social media should be used to screen job candidates.
 
+A) Moral or legal issues might arise.
 
+A) When it is separated from context.
+
+B) By using it in a legitimate way.
+
+C) Seeking advice from management and legal experts.
 
 ### **Passage Two**
+
+In recent years, the food industry ha s increased its use of labels. 非转基因
+
+D) Consumers, increasing desire for clear product information.
+
+A) Stressing the absence of certain elements in their products.
+
+D) They cause anxiety about food among consumers.
+
+C) Erode consumer trust and reduce sales.
+
+B) Exercise caution about the use of absence claims.
 
 
 
@@ -154,11 +228,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+The trend toward rationality and enlightenment was endangered long before the advent of the World Wide Web.
 
+A) It initiated a change from dominance of reason to supremacy of pleasure.
 
+D) It is conducive to critical thinking.
 
+D) It has rendered their interactions more superficial.
+
+C) It was viewed as a means to quest for knowledge.
+
+B) They are constantly seeking approval from their audience.
 
 ### **Passage Two**
+
+According to a recent study, a small but growing proportion of the workforce
+
+B) They feel they deserve more than they get.
+
+B) They were spoiled when growing up.
+
+D) Seek ways to sustain their motivation.
+
+C) They convey their requirements in a straightforward way.
+
+A) Those who can be counted on to fulfill commitments.
 
 
 
@@ -166,11 +260,31 @@ C) Conserve animal species in a novel and all-round way.
 
 ### **Passage One**
 
+The subject of automation and its role in our economy has taken hold in American public discourse.
 
+D) Their fading employment opportunities.
 
+B) The concerns about the effect of trade are exaggerated.
 
+B) They feel increasingly vulnerable.
+
+C) Its alleged positive effects are doubtful.
+
+C) People's economic security.
 
 ### **Passage Two**
+
+Look at the people around you. Some are passive,
+
+A) They tend to overly rely on nationality.
+
+A) They are useful in comparing cultural values across time and space.
+
+B) An individual's financial status was often underestimated.
+
+C) They may not be taught how to properly interact with overseas partners.
+
+D) Nationality is less useful than socio-economic status as an indicator of one's value.
 
 
 
