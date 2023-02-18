@@ -11,7 +11,7 @@
 ### 1 空间数据库：[SDB-Study-Notes](./SDB/index.md)
 
 
-### 2 综合英语: [English-Study-Notes](./English/words-in-use.md)
+### 2 综合英语: [English-Review](./English/words-in-use.md)
 
 
 ### 3 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS-DIP/index.md)
