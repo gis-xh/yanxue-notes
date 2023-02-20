@@ -1,4 +1,35 @@
-# 第四次课堂笔记
+ # 地质资源大数据课堂笔记
+
+
+
+## 课前重点回顾
+
+1. （数据）块：大数据最基础的数据单元，默认大小为 64MB，大数据中主要处理的数据对象。
+2. 名称节点 NameNode & 数据节点 DataNode
+4. 元数据 Metadata：
+5. HDFS 运作概念：
+
+
+
+### 通信协议
+
+1. 与名称节点通信使用 TCP/IP 协议
+2. 与数据节点交互使用 RPC（Remote Procedure Call）
+
+
+
+## 课堂重点
+
+1. 端口：
+2. HDFS 最大局限性：只设置唯一一个 NameNode 名称节点
+3. 代码编写原则：
+
+- 注意大小写
+- 注意中英文
+- 代码缩进对齐
+- 备份代码
+
+
 
 
 
@@ -36,6 +67,7 @@
 
 1. 继承了 BigTable 的所有特点
 2. HBase 是一个高可靠、高性能、***面向列、可伸缩*** 的分布式数据库。
+
 - 动态可变的行列表（誊抄图表）
 - 按时间排序（时间戳）分层叠加存储
 
@@ -135,3 +167,14 @@ Zookeeper：
 
 
 ### 4.5 物理视图
+
+
+
+
+
+## 学习一下，什么是 RDD?
+
+1. [跟着车仔入门spark：理解spark RDD和RDD属性](https://www.bilibili.com/video/BV135411X7zw/)
+
+2. [BigData MR & Spark 02-04 Spark RDD的概念与要素](https://www.bilibili.com/video/BV1if4y1Y7Th/)
+

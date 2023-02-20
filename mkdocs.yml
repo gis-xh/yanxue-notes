@@ -72,21 +72,23 @@ nav:
       - 练习三: RS-DIP/practice/practice03.md
     - 结课大作业:
       - 基于 LT-GEE 的武汉市森林扰动地图制作: RS-DIP/practice/coursework.md
-  - 地质资源与大数据: 
+  - 大数据系列课程: 
     - BigData/index.md
-    - 课后练习:
+    - 地质大数据课后练习:
       - 练习一 配置 Hadoop 环境: 
-        - 虚拟机服务器版: BigData/practice/practice01-aliyun.md
-        - 阿里云服务器版: BigData/practice/practice01-vm.md
+        - 虚拟机服务器版: BigData/GGBD-practice/practice01-aliyun.md
+        - 阿里云服务器版: BigData/GGBD-practice/practice01-vm.md
       - 练习二 熟悉常用的 HBase 操作:
-        - 准备工作: BigData/practice/practice02-1.md
-        - 熟悉常用的 HBase 操作 - 提交版: BigData/practice/practice02-2.md
-        - 熟悉常用的 HBase 操作 - 自制版: BigData/practice/practice02-3.md
+        - 准备工作: BigData/GGBD-practice/practice02-1.md
+        - 熟悉常用的 HBase 操作 - 提交版: BigData/GGBD-practice/practice02-2.md
+        - 熟悉常用的 HBase 操作 - 自制版: BigData/GGBD-practice/practice02-3.md
       - 练习三 安装 Jupyter 并运行 pyspark:
-        - 安装 Jupyter 并运行 pyspark: BigData/practice/practice03-1.md
-        - MapReduce 编程初级实践: BigData/practice/practice03-2.md
-      - 练习四 安装并使用 MongoDB: BigData/practice/practice04.md
-      - 练习五 安装并使用 HIVE: BigData/practice/practice05.md
+        - 安装 Jupyter 并运行 pyspark: BigData/GGBD-practice/practice03-1.md
+        - MapReduce 编程初级实践: BigData/GGBD-practice/practice03-2.md
+      - 练习四 安装并使用 MongoDB: BigData/GGBD-practice/practice04.md
+      - 练习五 安装并使用 HIVE: BigData/GGBD-practice/practice05.md
+    - 大数据理论与应用结课报告: BigData/BigData-reports.md
+
 
 # [Extensions] 扩展
 plugins:
