@@ -16,4 +16,5 @@ jobs: # 工作流的具体内容
         with:
           python-version: 3.x
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
+      - run: pip install mkdocs-glightbox # 安装图像缩放工具 
       - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
