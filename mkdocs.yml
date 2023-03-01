@@ -76,18 +76,22 @@ nav:
     - BigData/index.md
     - 地质大数据课后练习:
       - 练习一 配置 Hadoop 环境: 
-        - 虚拟机服务器版: BigData/GGBD-practice/practice01-aliyun.md
-        - 阿里云服务器版: BigData/GGBD-practice/practice01-vm.md
+        - 虚拟机服务器版: BigData/GGBD/practice/practice01-aliyun.md
+        - 阿里云服务器版: BigData/GGBD/practice/practice01-vm.md
       - 练习二 熟悉常用的 HBase 操作:
-        - 准备工作: BigData/GGBD-practice/practice02-1.md
-        - 熟悉常用的 HBase 操作 - 提交版: BigData/GGBD-practice/practice02-2.md
-        - 熟悉常用的 HBase 操作 - 自制版: BigData/GGBD-practice/practice02-3.md
+        - 准备工作: BigData/GGBD/practice/practice02-1.md
+        - 熟悉常用的 HBase 操作 - 提交版: BigData/GGBD/practice/practice02-2.md
+        - 熟悉常用的 HBase 操作 - 自制版: BigData/GGBD/practice/practice02-3.md
       - 练习三 安装 Jupyter 并运行 pyspark:
-        - 安装 Jupyter 并运行 pyspark: BigData/GGBD-practice/practice03-1.md
-        - MapReduce 编程初级实践: BigData/GGBD-practice/practice03-2.md
-      - 练习四 安装并使用 MongoDB: BigData/GGBD-practice/practice04.md
-      - 练习五 安装并使用 HIVE: BigData/GGBD-practice/practice05.md
+        - 安装 Jupyter 并运行 pyspark: BigData/GGBD/practice/practice03-1.md
+        - MapReduce 编程初级实践: BigData/GGBD/practice/practice03-2.md
+      - 练习四 安装并使用 MongoDB: BigData/GGBD/practice/practice04.md
+      - 练习五 安装并使用 HIVE: BigData/GGBD/practice/practice05.md
     - 大数据理论与应用结课报告: BigData/BigData-reports.md
+  - 地理信息系统三维建模:
+    - GIS-3DM/index.md
+    - 课堂实验报告: GIS-3DM/test-report.md 
+
 
 
 # [Extensions] 扩展
@@ -98,10 +102,13 @@ plugins:
         - en
         - ja
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+  - glightbox
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
   - attr_list # 给图片后面添加{width="300"}设置大小
+  - md_in_html
+  - tables
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
@@ -122,3 +129,4 @@ extra_javascript:
 extra_css:
   # - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+  - mkdocs/css/img-center.css # 图像居中

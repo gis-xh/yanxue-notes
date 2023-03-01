@@ -6,29 +6,23 @@
 
 
 
-## 第一学期
-
-### 1 空间数据库：[SDB-Study-Notes](./SDB/index.md)
+## 1 空间数据库：[SDB-Study-Notes](./SDB/index.md)
 
 
-### 2 综合英语: [English-Review](./English/words-in-use.md)
+## 2 综合英语: [English-Review](./English/words-in-use.md)
 
 
-### 3 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS-DIP/index.md)
+## 3 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS-DIP/index.md)
 
 
-### 4 中特: [ZT-Review](./zt-review.md)
+## 4 中特: [ZT-Review](./zt-review.md)
 
 
-### 5 大数据系列课程：[Bigdata-Study-Notes](./BigData/index.md)
+## 5 大数据系列课程：[Bigdata-Study-Notes](./BigData/index.md)
 
+## 6 土地信息系统：[Land Information System](./LIS/index.md)
 
-
-## 第二学期
-
-### 1 土地信息系统：[Land Information System](./LIS/index.md)
-
-### 2 GIS数据结构与算法：[GIS-DSA](./GIS-DSA/index.md)
+## 7 地理信息系统三维建模：[GIS 3D modeling](./GIS-3DM/index.md)
 
 
 
