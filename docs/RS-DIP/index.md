@@ -16,9 +16,9 @@
 
 ## 2 课后作业
 
-1. [练习一](./practice/practice01.md)
-2. [练习二](./practice/practice02.md)
-3. [练习三](./practice/practice03.md)
+1. [练习一](./practice/01.md)
+2. [练习二](./practice/02.md)
+3. [练习三](./practice/03.md)
 
 
 

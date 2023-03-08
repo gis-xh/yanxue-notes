@@ -12,11 +12,11 @@
 
 ## 3 课后练习：
 
-1.  [练习一 数字化校园](./practice/practice01.md)
-2.  [练习二 数字化校园的数据表与 E-R 图](./practice/practice02.md)
-3.  [练习三 SQL 的 6 个基本操作](./practice/practice03.md)
-4.  [练习四 论文研读](./practice/practice04.md)
-5.  [练习五 邻接矩阵](./practice/practice05.md)
+1.  [练习一 数字化校园](./practice/01.md)
+2.  [练习二 数字化校园的数据表与 E-R 图](./practice/02.md)
+3.  [练习三 SQL 的 6 个基本操作](./practice/03.md)
+4.  [练习四 论文研读](./practice/04.md)
+5.  [练习五 邻接矩阵](./practice/05.md)
 
 
 

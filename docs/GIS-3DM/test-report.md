@@ -437,3 +437,13 @@ void CGLSample1View::OnDraw(CDC* pDC)
 &emsp;&emsp;`wglMakeCurrent` 将 RC 设置成当前 RC。传入此函数的 DC 不一定就是我们产生 RC 的那个 DC，但二者的设备句柄 (Device Context) 和像素格式必须一致。假如我们在调用 `wglMakeforCurrent` 之前已经有另外一个 RC 存在，`wglMakeforCurrent` 就会把旧的 RC 冲掉，并将新 RC 设置为当前 RC。另外我们可以用 `wglMakeCurrent(NULL, NULL)` 来消除当前 RC。
 
 &emsp;&emsp;最后，我们要在 `OnDestroy` 中把绘制环境删除掉。但在删除 RC 之前，必须确定它不是当前句柄。我们是通过 `wglGetCurrentContext` 来了解是否存在一个当前绘制环境的。假如存在，那么用 `wglMakeCurrent(NULL, NULL)`来把它去掉。然后就可以通过 `wglDelete-Context` 来删除 RC 了。这时允许视类删除 DC 才是安全的。注：一般来说，使用的都是单线程的程序，产生的 RC 就是线程当前的 RC，不需要关注上述这一点。但如果使用的是多线程的程序，那我们就特别需要注意这一点了，否则会出现意想不到的后果。
+
+- 运行结果如下：
+
+![image-20230301164832841](./img/image-20230301164832841.png)
+
+
+
+## 课时二 2023.3.1 课
+
+### 课程说明
