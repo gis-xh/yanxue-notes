@@ -87,7 +87,8 @@ nav:
         - MapReduce 编程初级实践: BigData/GGBD/practice/03-2.md
       - 练习四 安装并使用 MongoDB: BigData/GGBD/practice/04.md
       - 练习五 安装并使用 HIVE: BigData/GGBD/practice/05.md
-    - 大数据理论与应用结课报告: BigData/BigData-reports.md
+    - 大数据理论与应用: BigData/BigData-reports.md
+    - 数据分析与数据挖掘: BigData/DADM/notes.md
   - 土地信息系统:
     - LIS/index.md
     - 智慧城市空间信息服务平台时空数据建库: LIS/01.md

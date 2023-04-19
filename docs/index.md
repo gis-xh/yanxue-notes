@@ -11,8 +11,10 @@
 
 ## 2 综合英语: [English-Review](./English/words-in-use.md)
 
+## 3 遥感
 
-## 3 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS-DIP/index.md)
+- 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS/RS-DIP/index.md)
+- 定量遥感：[QRS-Study-Notes](./RS/QRS/index.md)
 
 
 ## 4 中特: [ZT-Review](./zt-review.md)

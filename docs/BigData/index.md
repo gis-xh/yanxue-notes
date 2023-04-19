@@ -64,6 +64,12 @@
 
 ## 三、数据分析与数据挖掘
 
-### 1 课堂笔记 [DAMD-notes](./DAMA/DAMD-notes.md)
+### 1 课堂笔记 [DADM-notes](./DADM/notes.md)
 
 ### 2 课后练习
+
+
+
+## 四、地学数据多元统计
+
+### 

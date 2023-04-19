@@ -10,7 +10,7 @@
 
 
 
-## 课时一 2023.2.22 课
+## 课时一 OpenGL 开发环境配置【2023.2.22 课】
 
 ### 课程说明
 
@@ -41,31 +41,31 @@
 
 - 设置应用程序类型
 
-<img src="../img/image-20230223142036169.png" alt="image-20230223142036169" style="zoom:36%;" />
+<img src="./img/image-20230223142036169.png" alt="image-20230223142036169" style="zoom:36%;" />
 
 - 设置复合文档支持【维持默认即可】
 
-<img src="../img/image-20230223142221147.png" alt="image-20230223142221147" style="zoom:36%;" />
+<img src="./img/image-20230223142221147.png" alt="image-20230223142221147" style="zoom:36%;" />
 
 - 设置文档模板属性【维持默认即可】
 
-<img src="../img/image-20230223142310467.png" alt="image-20230223142310467" style="zoom:36%;" />
+<img src="./img/image-20230223142310467.png" alt="image-20230223142310467" style="zoom:36%;" />
 
 - 设置数据库支持【维持默认即可】
 
-<img src="../img/image-20230223142345317.png" alt="image-20230223142345317" style="zoom:36%;" />
+<img src="./img/image-20230223142345317.png" alt="image-20230223142345317" style="zoom:36%;" />
 
 - 设置用户界面功能【维持默认即可】
 
-<img src="../img/image-20230223142444476.png" alt="image-20230223142444476" style="zoom:36%;" />
+<img src="./img/image-20230223142444476.png" alt="image-20230223142444476" style="zoom:36%;" />
 
 - 设置高级功能【维持默认即可】
 
-<img src="../img/image-20230223142608025.png" alt="image-20230223142608025" style="zoom:36%;" />
+<img src="./img/image-20230223142608025.png" alt="image-20230223142608025" style="zoom:36%;" />
 
 - 设置生成的类【维持默认即可】
 
-<img src="../img/image-20230223142650361.png" alt="image-20230223142650361" style="zoom:36%;" />
+<img src="./img/image-20230223142650361.png" alt="image-20230223142650361" style="zoom:36%;" />
 
 #### 1.3 进入项目界面
 
@@ -79,21 +79,21 @@
 
 &emsp;&emsp;1、将相关的头文件拷贝到 `VS安装路径/VC/include/GL` 目录下
 
-<img src="../img/image-20230301150053924.png" alt="image-20230301150053924" style="zoom:36%;" />
+<img src="./img/image-20230301150053924.png" alt="image-20230301150053924" style="zoom:36%;" />
 
 &emsp;&emsp;2、将相关的 `*.lib` 文件拷贝到 `VS安装路径/VC/lib` 目录下
 
-<img src="../img/image-20230301150358052.png" alt="image-20230301150358052" style="zoom:36%;" />
+<img src="./img/image-20230301150358052.png" alt="image-20230301150358052" style="zoom:36%;" />
 
 &emsp;&emsp;3、将相关的 `*.DLL` 文件，拷贝到项目工程文件所在的目录下
 
-<img src="../img/image-20230301152410557.png" alt="image-20230301152410557" style="zoom:36%;" />
+<img src="./img/image-20230301152410557.png" alt="image-20230301152410557" style="zoom:36%;" />
 
 #### 2.2 项目属性配置
 
 &emsp;&emsp;1、在顶部工具栏 → 项目 → 属性，进入项目设置界面，将字符集改为：“使用多字节字符集”
 
-<img src="../img/image-20230223152154252.png" alt="image-20230223152154252" style="zoom: 33%;" />
+<img src="./img/image-20230223152154252.png" alt="image-20230223152154252" style="zoom: 33%;" />
 
 &emsp;&emsp;2、左侧链接器栏 → 输入 → 附加依赖项，添加如下内容：
 
@@ -103,7 +103,7 @@ OpenGL32.lib; glu32.lib; glaux.lib
 
 【注】：各个库用空格分开，否则会出现链接错误。
 
-<img src="../img/image-20230223152946378.png" alt="image-20230223152946378" style="zoom: 33%;" />
+<img src="./img/image-20230223152946378.png" alt="image-20230223152946378" style="zoom: 33%;" />
 
 ### 三、设置窗口样式
 
@@ -444,6 +444,526 @@ void CGLSample1View::OnDraw(CDC* pDC)
 
 
 
-## 课时二 2023.3.1 课
+## 课时二 OpenGL 建模【2023.3.1 课】
 
-### 课程说明
+
+
+VS2012 多行注释：Ctrl + K + C
+
+### 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第六章、第七章
+
+
+
+### 一、三维物体绘制
+
+#### 1 添加头文件
+
+首先，我们要在 `GLSample1View.cpp` 文件顶部添加 `glaux.h` 头文件，否则后面绘制时会报错。
+
+```
+#include "gl/glaux.h"
+```
+
+<img src="./img/image-20230315214004375.png" alt="image-20230315214004375" style="zoom:65%;" />
+
+#### 2 绘制三维物体
+
+接下来，我们在 `OnDraw()` 函数上方，添加 `DrawObject()` 函数用于绘制物体，其内容如下：
+
+```c++
+void CGLSample1View::DrawObject()
+{ // 网状体（wire）和实心体（solid）
+	// 网状球
+	glPushMatrix();
+	glTranslatef(-250, 150, 0);
+	auxWireSphere(90);
+	glPopMatrix();
+	// 实心球
+	glPushMatrix();
+	glTranslatef(-250, -150, 0);
+	auxSolidSphere(90);
+	glPopMatrix();
+	// 实心茶壶
+	glPushMatrix();
+	glTranslatef(0, 150, 0);
+	glutSolidTeapot(100);
+	glPopMatrix();
+	// 网状茶壶
+	glPushMatrix();
+	glTranslatef(0, -150, 0);
+	auxWireTeapot(100);
+	glPopMatrix();
+	// 实心十二面体
+	glPushMatrix();
+	glTranslatef(250, 0, 0);
+	auxSolidDodecahedron(120);
+	glPopMatrix();
+	// 网状十二面体
+	glPushMatrix();
+	glTranslatef(500, 0, 0);
+	auxWireDodecahedron(120);
+	glPopMatrix();
+}
+```
+
+然后，必须在 `CGLSample1View` 类的头文件中公开声明 `DrawObject()` 函数才能正常使用
+
+<img src="./img/image-20230315223354750.png" alt="image-20230315223354750" style="zoom:65%;" />
+
+接着在 `CGLSample1View` 类的 `OnDraw()` 函数中调用 `DrawObject()` 函数
+
+```c++
+DrawObject();
+```
+
+最后，运行项目即可在把多个图形同时绘制好显示在屏幕上
+
+<img src="./img/image-20230315223652543.png" alt="image-20230315223652543" style="zoom: 65%;" />
+
+
+
+### 二、几何图元绘制
+
+#### 1 几何图元绘制函数
+
+下面我们进行几何图元的绘制，先创建 `DrawGeometry()` 函数用于绘制几何图元，后续操作步骤同上，这里不再赘述
+
+- 创建函数；声明函数；调用函数
+- 函数内容如下，包括点、线、多边形、闭合三角形，四种图元的绘制
+- 这里我们绘制时，以 *==**左上角**==* 为起始点，以 *==**逆时针**==* 方向进行绘制
+
+```c++
+void CGLSample1View::DrawGeometry()
+{
+    // 设置颜色
+    glColor3f(1.0f, 1.0f, 1.0f);
+    // 绘制 GL_POINTS
+    // 控制点的大小
+    glPointSize(5);
+    glBegin(GL_POINTS);
+        glVertex3f(-100, 100, 0);
+        glVertex3f(-100, -100, 0);
+        glVertex3f(100, -100, 0);
+        glVertex3f(100, 100, 0);
+    glEnd();
+    // 绘制 GL_LINES
+    // 控制线的粗细
+	glLineWidth(8);
+    glBegin(GL_LINES);
+        glVertex3f(-100, 0, 0);
+        glVertex3f(100, 0, 0);
+        glVertex3f(0, -100, 0);
+        glVertex3f(0, 100, 0);
+    glEnd();
+    // 绘制 GL_POLYGON
+    glBegin(GL_POLYGON);
+        glVertex3f(120, 50, 0);
+        glVertex3f(120, -50, 0);
+        glVertex3f(200, -50, 0);
+        glVertex3f(200, 50, 0);
+    glEnd();
+    // 绘制 GL_TRIANGLES
+    glBegin(GL_TRIANGLES);
+        glVertex3f(250, 0, 0);
+        glVertex3f(300, -50, 0);
+        glVertex3f(300, 50, 0);
+        glVertex3f(350, 0, 0);
+        glVertex3f(400, -50, 0);
+        glVertex3f(400, 50, 0);
+    glEnd();
+}
+```
+
+#### 2 控制细节
+
+在 `DrawGeometry()` 函数中，我们可以控制绘制图元的颜色和大小，相关代码如下：
+
+```c++
+// 设置颜色
+glColor3f(1.0f, 1.0f, 1.0f);
+// 控制点的大小
+glPointSize(5);
+// 控制线的粗细
+glLineWidth(8);
+```
+
+#### 3 运行结果
+
+要注意的是，我们在运行绘制前，先把上一步的绘制函数 `DrawObject()` 注释掉：
+
+<img src="./img/image-20230315230039840.png" alt="image-20230315230039840" style="zoom:80%;" />
+
+此时再运行，绘制结果如下图所示：
+
+<img src="./img/image-20230315232951080.png" alt="image-20230315232951080" style="zoom:75%;" />
+
+### 三、绘制方向
+
+OpenGL 中默认使用逆时针绘制多边形表示正面，而使用顺时针绘制则表示背面。
+
+在上节中，我们使用 逆时针 方向进行绘制得到了可见的图像，接下来，我们以正方形的绘制为例，进行顺时针图像的绘制，以此来进行对比。
+
+这里由于 OpenGL 关闭了面剔除功能，所以我们需要在函数中设置开启。
+
+```c++
+void CGLSample1View::DrawSquare()
+{
+	GLfloat vertices[] = {
+        // 四个点按顺时针方向排列
+		-50.0f,  50.0f, 0.0f, // 左上角
+		 50.0f,  50.0f, 0.0f, // 右上角
+		 50.0f, -50.0f, 0.0f, // 右下角
+		-50.0f, -50.0f, 0.0f // 左下角
+	};
+    // 开启面剔除功能
+    glEnable(GL_CULL_FACE);
+    // 设置剔除背面
+    glCullFace(GL_BACK);
+    // 绘制正方形，使用 GL_POLYGON 模式
+    glBegin(GL_POLYGON);
+    	// 循环传递四个顶点给 OpenGL
+        for (int i = 0; i < 4; i++) {
+            glVertex3fv(&vertices[i * 3]); // 将顶点传递给OpenGL
+        }
+    glEnd();
+    // 关闭面剔除功能
+    glDisable(GL_CULL_FACE);
+}
+```
+
+此时的运行结果显示的是正方形的背面，但是由于 OpenGL 进行了背面剔除，所以显示界面空无一物。
+
+![image-20230316002724684](./img/image-20230316002724684.png)
+
+
+
+### 课程小结
+
+
+
+## 课时三 物体的平移与旋转【2023.3.8 课】
+
+
+
+### 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第八章
+
+工具栏
+
+
+
+弹出颜色对话框
+
+
+
+## 课时四 坐标轴与物体颜色【2023.3.15 课】
+
+
+
+### 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第八章、第九章
+
+
+
+### 1 绘制 x，y，z 三轴坐标系
+
+
+
+```c++
+void CGLSample1View::DrawString(const char* str)
+{
+    static int isFirstCall = 1;
+    static GLuint lists;
+
+    if( isFirstCall ) 
+	{	// 如果是第一次调用，执行初始化
+        // 为每一个ASCII字符产生一个显示列表
+        isFirstCall = 0; 
+        // 申请MAX_CHAR个连续的显示列表编号
+        lists = glGenLists(MAX_CHAR); 
+        // 把每个字符的绘制命令都装到对应的显示列表中
+        wglUseFontBitmaps(wglGetCurrentDC(), 0, MAX_CHAR, lists);
+    }
+    // 调用每个字符对应的显示列表，绘制每个字符
+    for(; *str!='\0'; ++str)
+        glCallList(lists + *str);
+}
+```
+
+
+
+
+
+### 2 物体正反面，颜色修改
+
+
+
+## 课时五 物体的光照与材质【2023.3.22 课】
+
+
+
+### 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第十章
+
+
+
+### 1 光照
+
+```c++
+void CGLSample1View::OnLight()
+{
+    // 设置0号光照位置
+	GLfloat light_position[] = { 1.0, 1.0, 1.0, 0.0 };
+	// 使用0号光源
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    // 设置光照颜色
+	GLfloat light_ambient [] = { 0.0, 0.0, 0.0, 1.0 };
+	GLfloat light_diffuse [] = { 1.0, 1.0, 1.0, 1.0 };
+	GLfloat light_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+	glLightfv(GL_LIGHT0, GL_DIFFUSE , light_diffuse );
+	glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+	// 启动光照
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0); // 启动0号光源
+    // 设置1号光照位置
+	GLfloat light_position1[] = { 10.0, 0.0, 0.0, 0.0 };
+	// 使用1号光源
+	glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+	GLfloat light_ambient1 [] = { 0.0, 1.0, 0.0, 1.0 };
+	glLightfv(GL_LIGHT1, GL_AMBIENT , light_ambient1);
+	glEnable(GL_LIGHT1); // 启动0号光源
+}
+```
+
+
+
+### 2 材质
+
+
+
+
+
+### 3 工具栏按钮
+
+视图 → 资源视图 → Toolbar → 绘制图像 → 设置ID
+
+
+
+![image-20230322204223360](./img/image-20230322204223360.png)
+
+
+
+
+
+类视图 → 类向导 → 新ID → 添加点击事件Onbuttonm0
+
+
+
+```c++
+// 加上前面所讲到的wglUseFontBitmaps函数，即可显示中文字符了。
+void CGLSample1View::drawCNString(const char* str)
+{
+    int len, i;
+    wchar_t* wstring;
+    HDC hDC = wglGetCurrentDC();
+    GLuint list = glGenLists(1); 
+    // 计算字符的个数
+    // 如果是双字节字符的（比如中文字符），两个字节才算一个字符
+    // 否则一个字节算一个字符
+    len = 0;
+    for(i=0; str[i]!='\0'; ++i)
+    {
+        if( IsDBCSLeadByte(str[i]) )
+            ++i;
+        ++len;
+    } 
+    // 将混合字符转化为宽字符
+    wstring = (wchar_t*)malloc((len+1) * sizeof(wchar_t));
+    MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str, -1, wstring, len);
+    wstring[len] = L'\0'; 
+    // 逐个输出字符
+    for(i=0; i<len; ++i)
+    {
+        wglUseFontBitmapsW(hDC, wstring[i], 1, list);
+        glCallList(list);
+    } 
+    // 回收所有临时资源
+    free(wstring);
+    glDeleteLists(list, 1);
+}
+
+```
+
+
+
+## 课时六 绘制纹理与地形【2023.3.29 课】
+
+
+
+### 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第十二章纹理
+
+
+
+创建纹理函数
+
+```cpp
+bool CGLSample1View::CreateTexture(UINT &ntexture,LPSTR strFileName )
+{
+	AUX_RGBImageRec *pImage = NULL;
+	FILE *pFile = NULL; 
+	if(!strFileName) 
+		return false; 
+	// 以只读模式打开文件 
+	if((pFile = fopen(strFileName, "rb")) == NULL) 
+	{
+		// 如果文件无法打开，则显示错误信息
+		AfxMessageBox("Unable to load BMP File!" );
+		return NULL;
+	} 
+	// 装入位图
+	pImage = auxDIBImageLoad(strFileName); 
+	// 确保位图数据已经装入
+	if(pImage == NULL)								
+		return false; 
+	// 生成纹理
+	  
+	// ::wglMakeCurrent(m_hDC, m_hRC); 
+	 glGenTextures(1, &ntexture);
+	// 设置像素格式
+	glPixelStorei (GL_UNPACK_ALIGNMENT, 1); 
+	// 捆绑纹理
+	glBindTexture(GL_TEXTURE_2D, ntexture); 
+	gluBuild2DMipmaps(GL_TEXTURE_2D, 3, pImage->sizeX, 
+	pImage->sizeY, GL_RGB, GL_UNSIGNED_BYTE, pImage->data);	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);  
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);// GL_NEAREST);  
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);//  GL_NEAREST);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE); 
+	//  释放位图数据占据的内存资源
+	if (pImage)	
+	{
+		if (pImage->data)	
+		{
+			free(pImage->data);
+		}
+		free(pImage);	
+	} 
+		// 返回true
+    return true;
+}
+
+```
+
+
+
+在头文件中添加
+
+```c++
+//纹理
+unsigned int texture[2];
+```
+
+在视图类文件中
+
+```cpp
+CreateTexture(texture[0], "D://dem1.bmp" ); 
+	glEnable(GL_TEXTURE_2D);   
+	glBindTexture(GL_TEXTURE_2D, texture[0]);  
+	glBegin(GL_QUADS); 
+		//glTexCoord2f(0.0, 0.0);
+		glVertex3f(-200.0, -200.0, 0.0);
+		//glTexCoord2f(0.0, 1.0); 
+		glVertex3f(-200.0, 200.0, 0.0);
+		//glTexCoord2f(1.0, 1.0);
+		glVertex3f(200.0, 200.0, 0.0);
+		//glTexCoord2f(1.0, 0.0); 
+		glVertex3f(200.0, -200.0, 0.0);  
+	glEnd();
+```
+
+
+
+参考：[error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead._菜鸟知识搬运工的博客-CSDN博客](https://blog.csdn.net/qq_30815237/article/details/87005968)
+
+```cpp
+#define _CRT_SECURE_NO_WARNINGS
+```
+
+
+
+### 纹理坐标的映射
+
+画两个三角形，将纹理附到三角形上
+
+
+
+100
+
+
+
+0	50	100	150	200
+
+
+
+```cpp
+// 绘制三角形
+glBegin(GL_TRIANGLE_STRIP);
+    glVertex3f(0.0,0.0,0.0);
+    glVertex3f(100.0,0.0,0.0);
+    glVertex3f(50.0,100.0,0); 
+glEnd();
+```
+
+
+
+
+
+## 地表模型建立
+
+将ondraw()函数内容清空
+
+
+
+加入数学函数库
+
+```cpp
+#include <math.h>
+```
+
+
+
+复制代码
+
+
+
+定义高程的最大值最小值
+
+```cpp
+float minz,maxz;
+```
+
+
+
+![image-20230329204128158](./img/image-20230329204128158.png)
+
+
+
+```cpp
+BOOL CGLSample1View::OnEraseBkgnd(CDC* pDC)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	return false;
+	return CView::OnEraseBkgnd(pDC);
+}
+```
+
+
+
