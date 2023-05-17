@@ -10,9 +10,9 @@
 
 
 
-## 课时一 OpenGL 开发环境配置【2023.2.22 课】
+## 第1章 OpenGL 开发环境配置
 
-### 课程说明
+### 1.1 章节说明
 
 &emsp;&emsp;使用 OpenGL 创建一个显示图像的 Windows 程序，通过这个程序学习用 OpenGL 编程的基本要求。
 
@@ -26,9 +26,9 @@
  - 产生 RC
  - 设置为当前 RC
 
-### 一、创建工程
+### 1.2 创建工程
 
-#### 1.1 新建工程
+#### 1.2.1 新建工程
 
 1. 首先，创建在电脑上创建一个名为 `GIS-3DM` 的文件夹，用于存放后续所有操作项目
 2. 打开 VS2012，顶部工具栏 → 文件 → 新建项目 → MFC 应用程序
@@ -37,63 +37,63 @@
 
 ![image-20230223135834385](./img/image-20230223135834385.png)
 
-#### 1.2 MFC 应用配置
+#### 1.2.2 MFC 应用配置
 
 - 设置应用程序类型
 
-<img src="./img/image-20230223142036169.png" alt="image-20230223142036169" style="zoom:36%;" />
+![image-20230223142036169](./img/image-20230223142036169.png)
 
 - 设置复合文档支持【维持默认即可】
 
-<img src="./img/image-20230223142221147.png" alt="image-20230223142221147" style="zoom:36%;" />
+![image-20230223142221147](./img/image-20230223142221147.png)
 
 - 设置文档模板属性【维持默认即可】
 
-<img src="./img/image-20230223142310467.png" alt="image-20230223142310467" style="zoom:36%;" />
+![image-20230223142310467](./img/image-20230223142310467.png)
 
 - 设置数据库支持【维持默认即可】
 
-<img src="./img/image-20230223142345317.png" alt="image-20230223142345317" style="zoom:36%;" />
+![image-20230223142345317](./img/image-20230223142345317.png)
 
 - 设置用户界面功能【维持默认即可】
 
-<img src="./img/image-20230223142444476.png" alt="image-20230223142444476" style="zoom:36%;" />
+![image-20230223142444476](./img/image-20230223142444476.png)
 
 - 设置高级功能【维持默认即可】
 
-<img src="./img/image-20230223142608025.png" alt="image-20230223142608025" style="zoom:36%;" />
+![image-20230223142608025](./img/image-20230223142608025.png)
 
 - 设置生成的类【维持默认即可】
 
-<img src="./img/image-20230223142650361.png" alt="image-20230223142650361" style="zoom:36%;" />
+![image-20230223142650361](./img/image-20230223142650361.png)
 
-#### 1.3 进入项目界面
+#### 1.2.3 进入项目界面
 
 ![image-20230223150431405](./img/image-20230223150431405.png)
 
-### 二、添加 OpenGL 库
+### 1.3 添加 OpenGL 库
 
 &emsp;&emsp;接下来我们要将此工程所需的 OpenGL 文件和相关库加入到工程中。
 
-#### 2.1 拷贝 OpenGL  相关文件
+#### 1.3.1 拷贝 OpenGL  相关文件
 
 &emsp;&emsp;1、将相关的头文件拷贝到 `VS安装路径/VC/include/GL` 目录下
 
-<img src="./img/image-20230301150053924.png" alt="image-20230301150053924" style="zoom:36%;" />
+![image-20230301150053924](./img/image-20230301150053924.png)
 
 &emsp;&emsp;2、将相关的 `*.lib` 文件拷贝到 `VS安装路径/VC/lib` 目录下
 
-<img src="./img/image-20230301150358052.png" alt="image-20230301150358052" style="zoom:36%;" />
+![image-20230301150358052](./img/image-20230301150358052.png)
 
 &emsp;&emsp;3、将相关的 `*.DLL` 文件，拷贝到项目工程文件所在的目录下
 
-<img src="./img/image-20230301152410557.png" alt="image-20230301152410557" style="zoom:36%;" />
+![image-20230301152410557](./img/image-20230301152410557.png)
 
-#### 2.2 项目属性配置
+#### 1.3.2 项目属性配置
 
 &emsp;&emsp;1、在顶部工具栏 → 项目 → 属性，进入项目设置界面，将字符集改为：“使用多字节字符集”
 
-<img src="./img/image-20230223152154252.png" alt="image-20230223152154252" style="zoom: 33%;" />
+![image-20230223152154252](./img/image-20230223152154252.png)
 
 &emsp;&emsp;2、左侧链接器栏 → 输入 → 附加依赖项，添加如下内容：
 
@@ -103,11 +103,11 @@ OpenGL32.lib; glu32.lib; glaux.lib
 
 【注】：各个库用空格分开，否则会出现链接错误。
 
-<img src="./img/image-20230223152946378.png" alt="image-20230223152946378" style="zoom: 33%;" />
+![image-20230223152946378](./img/image-20230223152946378.png)
 
-### 三、设置窗口样式
+### 1.4 设置窗口样式
 
-#### 3.1 窗口风格介绍
+#### 1.4.1 窗口风格介绍
 
 &emsp;&emsp;OpenGL 需要对窗口添加两种风格：
 
@@ -115,7 +115,7 @@ OpenGL32.lib; glu32.lib; glaux.lib
 2. `WS_CLIPSIBLINGS`：创建子窗口使用的 Windows 风格，用于重绘时剪裁其他子窗口所覆盖的区域
 3. 这两个样式可以提高窗口的绘制效率和避免子控件之间的绘制冲突。
 
-#### 3.2 修改 `PreCreateWindow` 函数
+#### 1.4.2 修改 `PreCreateWindow` 函数
 
 &emsp;&emsp;右侧源文件 → 打开 `GLSample1View.cpp` 文件 → 找到 `PreCreateWindow` 函数并修改，如下图所示
 
@@ -129,7 +129,9 @@ BOOL CGLSample1View::PreCreateWindow(CREATESTRUCT& cs)
 }
 ```
 
-#### 3.3 代码解释
+![image-20230223193627657](./img/image-20230223193627657.png)
+
+#### 1.4.3 代码解释
 
 &emsp;&emsp;这是一个 MFC 的视图类 `CGLSample1View` 中的 `PreCreateWindow` 函数。
 
@@ -137,11 +139,9 @@ BOOL CGLSample1View::PreCreateWindow(CREATESTRUCT& cs)
 2. 在该函数中，将 CREATESTRUCT 结构体中的样式 `cs.style` 进行修改，增加了 `WS_CLIPCHILDREN` 和 `WS_CLIPSIBLINGS` 样式
 3. 最后，函数调用 `CView::PreCreateWindow(cs)`来执行视图类的默认行为，并返回结果。
 
-![image-20230223193627657](./img/image-20230223193627657.png)
+### 1.5 设置窗口像素格式
 
-### 四、设置窗口像素格式
-
-#### 4.1 RC 概念介绍
+#### 1.5.1 RC 概念介绍
 
 &emsp;&emsp;OpenGL 中，RC 指的是渲染上下文（Render Context），它是一个抽象概念，用于表示 OpenGL 的渲染状态和资源。
 
@@ -151,7 +151,7 @@ BOOL CGLSample1View::PreCreateWindow(CREATESTRUCT& cs)
 
 &emsp;&emsp;当我们需要在 Windows 平台上使用 OpenGL 进行绘制时，需要创建一个渲染上下文（RC），并将其绑定到当前的设备上下文（DC）中。这样才能正确地进行 OpenGL 绘制操作。 
 
-#### 4.2 定义窗口像素格式
+#### 1.5.2 定义窗口像素格式
 
 &emsp;&emsp;产生一个 RC 的第一步是定义窗口的像素格式。像素格式决定窗口着所显示的图形在内存中是如何表示的。
 
@@ -252,9 +252,9 @@ CGLSample1View::CGLSample1View()
 
 
 
-### 五、产生 RC
+### 1.6 产生 RC
 
-#### 5.1 设置当前产生绘制环境
+#### 1.6.1 设置当前产生绘制环境
 
 &emsp;&emsp;1、在 `CGLSample1View` 中加入一个成员函数 `BOOL CreateViewGLContext(HDC hDC)`，使之如下所示：
 
@@ -282,7 +282,7 @@ BOOL CGLSample1View::CreateViewGLContext(HDC hDC)
 
 接下来，我们要添加一系列函数以完善项目程序。
 
-#### 5.2 `OnCreate()` 函数
+#### 1.6.2 `OnCreate()` 函数
 
 &emsp;&emsp;1、用 `ClassWizard` 添加 `WM_CREATE` 的消息处理函数
 
@@ -308,9 +308,9 @@ int CGLSample1View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 }
 ```
 
-#### 5.3 `OnDestroy()` 函数
+#### 1.6.3 `OnDestroy()` 函数
 
-- 添加 `WM_DESTROY` 的消息处理函数 `OnDestroy( )`，**添加过程同 5.2**，并将其修改为如下内容：
+- 添加 `WM_DESTROY` 的消息处理函数 `OnDestroy( )`，**添加过程同 1.6.2**，并将其修改为如下内容：
 
 ```c++
 void CGLSample1View::OnDestroy()
@@ -330,7 +330,7 @@ void CGLSample1View::OnDestroy()
 }
 ```
 
-#### 5.4 `OnSize()` 函数
+#### 1.6.4 `OnSize()` 函数
 
 - 添加 `WM_SIZE` 的消息处理函数 `OnSize( )`，**添加过程同 5.2**，并将其修改为如下内容：
 
@@ -364,7 +364,7 @@ void CGLSample1View::OnSize(UINT nType, int cx, int cy)
 }
 ```
 
-#### 5.5 `OnDraw()` 函数
+#### 1.6.5 `OnDraw()` 函数
 
 - 在 `CGLSample1View.cpp` 文件中找到函数 `OnDraw( )`，将其修改为如下内容
 
@@ -416,7 +416,7 @@ void CGLSample1View::OnDraw(CDC* pDC)
 }
 ```
 
-#### 5.6 添加头文件
+#### 1.6.6 添加头文件
 
 - 在 `CGLSample1View.cpp` 的 CPP 头文件包含位置中，加入如下三行代码：
 
@@ -428,7 +428,7 @@ void CGLSample1View::OnDraw(CDC* pDC)
 
 ![image-20230301111716020](./img/image-20230301111716020.png)
 
-### 课程小结
+### 1.7 章节小结
 
 &emsp;&emsp;至此，我们已经构造好了框架，使程序可以利用 OpenGL 进行画图了。我们在程序开头产生了一个 RC，自始自终都使用它。这与大多数的 GDI 程序不同。在 GDI 程序中，DC 在需要时才产生，并且是画完立刻释放掉。实际上，RC 也可以这样做；但要记住，产生一个 RC 需要很多处理器时间。因此，要想获得高性能流畅的图像和图形，最好只产生 RC 一次，并始终用它，直到程序结束。
 
@@ -444,21 +444,19 @@ void CGLSample1View::OnDraw(CDC* pDC)
 
 
 
-## 课时二 OpenGL 建模【2023.3.1 课】
+## 第2章 OpenGL 简单建模
 
 
 
-VS2012 多行注释：Ctrl + K + C
+### 2.1 教材参考
 
-### 教材参考
-
-- OpenGL 教程 / OpenGL 基础图形编程 / 第六章、第七章
+- OpenGL 教程 / OpenGL 基础图形编程 / 第六章、第七章 OpenGL 辅助库与建模
 
 
 
-### 一、三维物体绘制
+### 2.2 三维物体绘制
 
-#### 1 添加头文件
+#### 2.2.1 添加头文件
 
 首先，我们要在 `GLSample1View.cpp` 文件顶部添加 `glaux.h` 头文件，否则后面绘制时会报错。
 
@@ -466,9 +464,9 @@ VS2012 多行注释：Ctrl + K + C
 #include "gl/glaux.h"
 ```
 
-<img src="./img/image-20230315214004375.png" alt="image-20230315214004375" style="zoom:65%;" />
+![image-20230315214004375](./img/image-20230315214004375.png)
 
-#### 2 绘制三维物体
+#### 2.2.2 绘制三维物体
 
 接下来，我们在 `OnDraw()` 函数上方，添加 `DrawObject()` 函数用于绘制物体，其内容如下：
 
@@ -510,7 +508,7 @@ void CGLSample1View::DrawObject()
 
 然后，必须在 `CGLSample1View` 类的头文件中公开声明 `DrawObject()` 函数才能正常使用
 
-<img src="./img/image-20230315223354750.png" alt="image-20230315223354750" style="zoom:65%;" />
+![image-20230315223354750](./img/image-20230315223354750.png)
 
 接着在 `CGLSample1View` 类的 `OnDraw()` 函数中调用 `DrawObject()` 函数
 
@@ -520,13 +518,13 @@ DrawObject();
 
 最后，运行项目即可在把多个图形同时绘制好显示在屏幕上
 
-<img src="./img/image-20230315223652543.png" alt="image-20230315223652543" style="zoom: 65%;" />
+![image-20230315223652543](./img/image-20230315223652543.png)
 
 
 
-### 二、几何图元绘制
+### 2.3 几何图元绘制
 
-#### 1 几何图元绘制函数
+#### 2.3.1 几何图元绘制函数
 
 下面我们进行几何图元的绘制，先创建 `DrawGeometry()` 函数用于绘制几何图元，后续操作步骤同上，这里不再赘述
 
@@ -576,7 +574,7 @@ void CGLSample1View::DrawGeometry()
 }
 ```
 
-#### 2 控制细节
+#### 2.3.2 控制细节
 
 在 `DrawGeometry()` 函数中，我们可以控制绘制图元的颜色和大小，相关代码如下：
 
@@ -589,17 +587,17 @@ glPointSize(5);
 glLineWidth(8);
 ```
 
-#### 3 运行结果
+#### 2.3.3 运行结果
 
 要注意的是，我们在运行绘制前，先把上一步的绘制函数 `DrawObject()` 注释掉：
 
-<img src="./img/image-20230315230039840.png" alt="image-20230315230039840" style="zoom:80%;" />
+![image-20230315230039840](./img/image-20230315230039840.png)
 
 此时再运行，绘制结果如下图所示：
 
-<img src="./img/image-20230315232951080.png" alt="image-20230315232951080" style="zoom:75%;" />
+![image-20230315232951080](./img/image-20230315232951080.png)
 
-### 三、绘制方向
+### 2.4 绘制方向
 
 OpenGL 中默认使用逆时针绘制多边形表示正面，而使用顺时针绘制则表示背面。
 
@@ -637,41 +635,124 @@ void CGLSample1View::DrawSquare()
 
 ![image-20230316002724684](./img/image-20230316002724684.png)
 
+### 2.5 章节小结
 
-
-### 课程小结
-
-
-
-## 课时三 物体的平移与旋转【2023.3.8 课】
+本章就 OpenGL 的基本建模操作进行介绍，并绘制了多个三维物体和几何图元。
 
 
 
-### 教材参考
+## 第3章 物体的平移与旋转
 
-- OpenGL 教程 / OpenGL 基础图形编程 / 第八章
+### 3.1 教材参考
 
-工具栏
+- OpenGL 教程 / OpenGL 基础图形编程 / 第八章 OpenGL 变换
+
+### 3.2 物体平移
+
+#### 3.2.1 函数介绍
+
+```cpp
+void glTranslatef{fd}(TYPE x,TYPE y,TYPE z)
+```
+
+三个函数参数就是目标分别沿三个轴向平移的偏移量。这个函数表示用这三个偏移量生成的矩阵乘以当前矩阵。当参数是 `(0.0, 0.0, 0.0)` 时，表示对函数 `glTranslate*()` 的操作是单位矩阵，也就是对物体没有影响。
+
+#### 3.2.2 功能实现
+
+```cpp
+glPushMatrix();
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+    glScalef(0.5,0.5,0.5);//缩放功能(针对原点缩放)
+    glTranslatef(-500.0f,0.0f,0.0f); // 左移 500 单位
+    DrawTriangle();
+glPopMatrix();
+glPushMatrix();
+    glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+    glTranslatef(250.0f,0.0f,0.0f); // 右移 250 单位
+    glScalef(2,2,2);//缩放功能
+    DrawQuad();
+glPopMatrix();
+glPushMatrix();
+    glTranslatef(0.0f,-250.0f,0.0f); // 下移 250 单位
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);
+    DrawQuad();
+glPopMatrix();
+glPushMatrix();
+    glTranslatef(0.0f,300.0f,0.0f); // 上移 300 单位
+    DrawQuad();
+glPopMatrix();
+```
+
+### 3.3 物体旋转
+
+#### 3.3.1 函数介绍
+
+```cpp
+void glRotatef{fd}(TYPE angle,TYPE x,TYPE y,TYPE z)
+```
+
+函数中第一个参数是表示目标沿从点 `(x, y, z)` 到原点的方向逆时针旋转的角度，后三个参数是旋转的方向点坐标。这个函数表示用这四个参数生成的矩阵乘以当前矩阵。当角度参数是 `0.0` 时，表示对物体没有影响。
+
+#### 3.3.2 功能实现
+
+旋转功能，旋转函数 `glRotatef()`（在 Ontime 添加 angle）
+
+1、在 `GLsample1View.h` 中定义 angle 函数
+
+```cpp
+double angleZ;
+double angleY;
+double angleX;
+```
+
+2、在 `GLsample1View.cpp` 中添加写旋转函数代码
+
+```cpp
+void CGLSample1View::OnTimer(UINT_PTR nIDEvent)
+{
+    angleZ+=1; ///绕 Z 轴转动
+    angleY+=1;
+    this->Invalidate();
+    CView::OnTimer(nIDEvent);
+}
+```
+
+3、用旋转函数 `glRotatef()` 实现旋转功能
+
+```cpp
+glPushMatrix();
+    glRotatef(60,0,1,0); //旋转
+    glTranslatef(0,100,0);//上移 100 单位
+    DrawTriangle();
+glPopMatrix();
+```
+
+4、三角形绕着 z 轴旋转
+
+```cpp
+glPushMatrix();
+    glRotatef(45,0,1,0); //绕 y 轴旋转 45°
+    glTranslatef(0,100,0);//上移 100 单位
+    DrawTriangle();
+glPopMatrix();
+glPushMatrix();
+    glTranslatef(200,0,0);
+    glRotatef(angleZ,0,0,1);//点击鼠标绕Z轴旋转
+    DrawTriangle();
+glPopMatrix();
+```
 
 
+
+## 第4章 坐标轴绘制
+
+### 4.1 教材参考
+
+- OpenGL 教程 / OpenGL 基础图形编程 / 第八章、第九章 OpenGL 变换与颜色
 
 弹出颜色对话框
 
-
-
-## 课时四 坐标轴与物体颜色【2023.3.15 课】
-
-
-
-### 教材参考
-
-- OpenGL 教程 / OpenGL 基础图形编程 / 第八章、第九章
-
-
-
-### 1 绘制 x，y，z 三轴坐标系
-
-
+### 4.2 绘制 x，y，z 三轴坐标系
 
 ```c++
 void CGLSample1View::DrawString(const char* str)
@@ -696,23 +777,15 @@ void CGLSample1View::DrawString(const char* str)
 
 
 
+## 第5章 物体的光照与材质
 
+### 5.1 教材参考
 
-### 2 物体正反面，颜色修改
+- OpenGL 教程 / OpenGL 基础图形编程 / 第十章 OpenGL 光照
 
+### 5.2 光照与材质
 
-
-## 课时五 物体的光照与材质【2023.3.22 课】
-
-
-
-### 教材参考
-
-- OpenGL 教程 / OpenGL 基础图形编程 / 第十章
-
-
-
-### 1 光照
+#### 5.2.1 光照代码实现
 
 ```c++
 void CGLSample1View::OnLight()
@@ -740,29 +813,59 @@ void CGLSample1View::OnLight()
 }
 ```
 
+#### 5.2.2 材质代码实现
+
+在 `OnDrow()` 中添加光照材质代码：
+
+```cpp
+glPushMatrix();//第一个茶壶
+    //Light();//零号光源
+    glTranslatef(0,0,0);
+    glRotatef(angleZ,0,0,1);
+    /* 设置材质的各种光的颜色成分反射比率 */
+    GLfloat light_position[] = { 1.0, 1.0, 1.0, 0.0 };
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    GLfloat mat_ambient[] = {0.8,0.8,0.8,1.0};
+    GLfloat mat_diffuse[] = {0.8,0.0,0.8,1.0};// 紫色 */
+    GLfloat mat_specular[] = { 1.0, 0.0, 1.0, 1.0 };// 亮紫色 */
+    GLfloat mat_shininess[] = { 50.0 };
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+	glutSolidTeapot(80);
+glPopMatrix();
+glPushMatrix();//第二个茶壶
+    glRotatef(angleY,0,1,0);
+    GLfloat mat_ambient2[] = {1.0,1.0,1.0,1.0};
+    GLfloat mat_diffuse2[] = {0.9,0.0,0.0,1.0};// 紫色
+    GLfloat mat_specular2[] = { 1.0, 0.0, 0.0, 1.0 };// 亮紫色
+    GLfloat mat_shininess2[] = { 50.0 };
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient2);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse2);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular2);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess2);
+    glTranslatef(400,200,0);
+    glRotatef(angleY,0,1,0);
+    glutSolidTeapot(80);
+glPopMatrix();
+```
+
+#### 5.2.3 绘制结果
+
+![image-20230419161146406](./img/image-20230419161146406.png)
 
 
-### 2 材质
 
-
-
-
-
-### 3 工具栏按钮
+### 5.4 制作工具栏按钮
 
 视图 → 资源视图 → Toolbar → 绘制图像 → 设置ID
 
-
-
 ![image-20230322204223360](./img/image-20230322204223360.png)
 
-
-
-
-
-类视图 → 类向导 → 新ID → 添加点击事件Onbuttonm0
-
-
+类视图 → 类向导 → 新ID → 添加点击事件 `Onbutton`
 
 ```c++
 // 加上前面所讲到的wglUseFontBitmaps函数，即可显示中文字符了。
@@ -801,17 +904,13 @@ void CGLSample1View::drawCNString(const char* str)
 
 
 
-## 课时六 绘制纹理与地形【2023.3.29 课】
+## 第6章 绘制物体纹理
 
+### 6.1 教材参考
 
+- OpenGL 教程 / OpenGL 基础图形编程 / 第十二章 OpenGL 纹理
 
-### 教材参考
-
-- OpenGL 教程 / OpenGL 基础图形编程 / 第十二章纹理
-
-
-
-创建纹理函数
+### 6.2 创建纹理函数
 
 ```cpp
 bool CGLSample1View::CreateTexture(UINT &ntexture,LPSTR strFileName )
@@ -859,59 +958,48 @@ bool CGLSample1View::CreateTexture(UINT &ntexture,LPSTR strFileName )
 		// 返回true
     return true;
 }
-
 ```
 
+### 6.3 功能实现
 
-
-在头文件中添加
+在头文件中添加：
 
 ```c++
 //纹理
 unsigned int texture[2];
 ```
 
-在视图类文件中
+在视图类文件中：
 
 ```cpp
 CreateTexture(texture[0], "D://dem1.bmp" ); 
-	glEnable(GL_TEXTURE_2D);   
-	glBindTexture(GL_TEXTURE_2D, texture[0]);  
-	glBegin(GL_QUADS); 
-		//glTexCoord2f(0.0, 0.0);
-		glVertex3f(-200.0, -200.0, 0.0);
-		//glTexCoord2f(0.0, 1.0); 
-		glVertex3f(-200.0, 200.0, 0.0);
-		//glTexCoord2f(1.0, 1.0);
-		glVertex3f(200.0, 200.0, 0.0);
-		//glTexCoord2f(1.0, 0.0); 
-		glVertex3f(200.0, -200.0, 0.0);  
-	glEnd();
+glEnable(GL_TEXTURE_2D);   
+glBindTexture(GL_TEXTURE_2D, texture[0]);  
+glBegin(GL_QUADS); 
+    //glTexCoord2f(0.0, 0.0);
+    glVertex3f(-200.0, -200.0, 0.0);
+    //glTexCoord2f(0.0, 1.0); 
+    glVertex3f(-200.0, 200.0, 0.0);
+    //glTexCoord2f(1.0, 1.0);
+    glVertex3f(200.0, 200.0, 0.0);
+    //glTexCoord2f(1.0, 0.0); 
+    glVertex3f(200.0, -200.0, 0.0);  
+glEnd();
 ```
 
-
+### 6.4 fopen() 问题解决
 
 参考：[error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead._菜鸟知识搬运工的博客-CSDN博客](https://blog.csdn.net/qq_30815237/article/details/87005968)
+
+在 VS2012 中，在视图类的头文件添加以下代码即可正常运行 `fopen()` 函数。
 
 ```cpp
 #define _CRT_SECURE_NO_WARNINGS
 ```
 
+### 6.5 纹理坐标映射
 
-
-### 纹理坐标的映射
-
-画两个三角形，将纹理附到三角形上
-
-
-
-100
-
-
-
-0	50	100	150	200
-
-
+首先绘制两个三角形，然后将绘制的纹理附到三角形上，即可实现物体纹理显示的效果
 
 ```cpp
 // 绘制三角形
@@ -924,37 +1012,27 @@ glEnd();
 
 
 
+## 第7章 地表模型建立
 
+### 7.1 模型建立准备
 
-## 地表模型建立
-
-将ondraw()函数内容清空
-
-
-
-加入数学函数库
+首先，将 `ondraw()` 函数内容清空，然后在头部位置加入数学函数库
 
 ```cpp
 #include <math.h>
 ```
 
-
-
-复制代码
-
-
-
-定义高程的最大值最小值
+接下来，在头文件中定义高程的最大值最小值
 
 ```cpp
 float minz,maxz;
 ```
 
-
+使用类向导创建 `OnEraseBkgnd()` 函数
 
 ![image-20230329204128158](./img/image-20230329204128158.png)
 
-
+随后将函数代码修改为如下内容：
 
 ```cpp
 BOOL CGLSample1View::OnEraseBkgnd(CDC* pDC)
@@ -965,5 +1043,93 @@ BOOL CGLSample1View::OnEraseBkgnd(CDC* pDC)
 }
 ```
 
+### 7.2 功能实现
+
+1、此时我们的 `OnDraw()` 函数内容如下：
+
+```cpp
+void CGLSample1View::OnDraw(CDC* pDC)
+{
+    CGLSample1Doc* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+    HWND hwnd=GetSafeHwnd();
+    HDC hdc=::GetDC(hwnd);
+    wglMakeCurrent(hdc,m_hGLContext); 
+    glPolygonMode(GL_BACK,GL_FILL);
+    glPolygonMode(GL_FRONT,GL_FILL);
+    glShadeModel(GL_SMOOTH); 
+    glEnable(GL_AUTO_NORMAL);
+    glEnable(GL_NORMALIZE); 
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    glClearColor(0,0,0,1);
+    glClear(GL_COLOR_BUFFER_BIT);  
+    glLoadIdentity();
+    glTranslatef(movex,-movey,movez);	
+    glRotatef(m_rotatex,1,0,0);
+    glRotatef(m_rotatez,0,0,1);
+    glDisable(GL_LIGHTING);   
+    DrawPoints();
+    SwapBuffers(hdc);
+    glFlush();
+    wglMakeCurrent(NULL,NULL); 
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+}
+```
+
+2、绘制格网线框模型并添加纹理
+
+在 `GLSample1View.cpp` 的 `DrawGridLine()` 添加线框代码、并声明函数，引用函数实现格网模型绘制
+
+```cpp
+void CGLSample1View::DrawGridLine()//格网线框模型
+{
+    float dt=10;
+    float x0=-500;
+    float y0=-500;
+    ::glPushMatrix();
+    for(float x=x0;x<500;x+=dt)
+    {
+        glBegin(GL_LINE_STRIP);
+            for(float y=y0;y<=500;y+=dt)
+            {
+                float z=GetZ(x,y);
+                float r=GetRGB(z,minz,maxz,1,1);
+                float g=GetRGB(z,minz,maxz,1,0);
+                float b=GetRGB(z,minz,maxz,1,0);
+                glColor3f(r,g,b);
+                float x1=GetxyzV(x,-500,500);
+                float y1=GetxyzV(y,-500,500);
+                glTexCoord2f(x1,y1);
+                glVertex3f(x,y,z+5);
+            }
+        glEnd();
+    }
+    for(float y=y0;y<500;y+=dt)
+    {
+        glBegin(GL_LINE_STRIP);
+            for(float x=x0;x<=500;x+=dt)
+            {
+                float z=GetZ(x,y);
+                float r=GetRGB(z,minz,maxz,1,1);
+                float g=GetRGB(z,minz,maxz,1,0);
+                float b=GetRGB(z,minz,maxz,1,0);
+                // glColor3f(r,g,b);
+                float x1=GetxyzV(x,-500,500);
+                float y1=GetxyzV(y,-500,500);
+                glTexCoord2f(x1,y1);
+                glVertex3f(x,y,z+5);
+            }
+        glEnd();
+    }
+    ::glPopMatrix();
+}
+```
+   
+
+### 7.3 绘制结果
+
+![image-20230419174034961](./img/image-20230419174034961.png)
 
 
+
+![image-20230419174001854](./img/image-20230419174001854.png)
