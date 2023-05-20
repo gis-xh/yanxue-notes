@@ -324,11 +324,9 @@ Map.addLayer(classified, classVis, 'Classification');
 
 NPP数据来源：MOD17A3HGF数据集，年度数据
 
-量化气候因子对于人类社会的贡献
+量化气候因子对于人类社会的贡献，线性拟合
 
 气象数据来源：中国气象科学数据共享服务网，日度数据
-
-
 
 -  *重力卫星*GRACE，研究地下水
 
@@ -340,11 +338,9 @@ NPP数据来源：MOD17A3HGF数据集，年度数据
 
 ## 第 9 课 回归分析
 
-教学参考：GEE教程：回归分析
+教学参考：GEE教程 | 回归分析
 
 [Gee-tutorials | Advanced Image Processing |Interpreting an Image Regression (google-earth-engine.com)](https://google-earth-engine.com/Advanced-Image-Processing/Interpreting-an-Image-Regression/)
-
-
 
 线性拟合：一元一次回归方程
 
@@ -353,3 +349,28 @@ NPP数据来源：MOD17A3HGF数据集，年度数据
 1. 求得自变量数据的回归方程
 2. 以点数据建立回归模型应用于整个场景，以此来推演面数据
 
+
+
+## 第 10 课 时间序列拟合
+
+教学参考：GEE教程 | 时间序列拟合
+
+[Gee-tutorials | Interpreting Image Series |Fitting Functions to Time Series (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Image-Series/Fitting-Functions-to-Time-Series/)
+
+
+
+时序分析最好不要按照云量筛选，建议采用掩膜方法去云
+
+
+
+将图表封装成函数，利用button获取坐标，传入到函数中，实现图表变化
+
+
+
+对数据进行差分处理，将数据变得更平稳后，再进行趋势分析
+
+
+
+线性拟合 linearFit：一元一次
+
+线性回归 linearRegression：多元一次

@@ -1,3 +1,7 @@
+---
+comments: false
+---
+
 # 长大地科研学课程记录【2022级】
 
 ## 介绍
@@ -24,11 +28,5 @@
 
 ## 6 土地信息系统：[Land Information System](./LIS/index.md)
 
-## 7 地理信息系统三维建模：[GIS 3D modeling](./GIS-3DM/index.md)
-
-
-
-## 参与贡献
-
-1.  亚瑟 [gis-xh](https://github.com/gis-xh)
+## 7 地理信息系统三维建模：[GIS 3D modeling](./GIS-3DM/test-report.md)
 

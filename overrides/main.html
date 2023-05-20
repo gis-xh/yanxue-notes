@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+<!-- Add scripts that need to run before here -->
+{{ super() }}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJELHJB34C"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FJELHJB34C');
+</script>
+
+{% endblock %}

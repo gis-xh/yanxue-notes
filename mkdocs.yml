@@ -8,6 +8,7 @@ site_description: 长大地科研学课程记录公开站【2022级】
 ## [top]
 theme:
   name: material
+  custom_dir: overrides
   palette: 
       - scheme: default # 默认日间模式
         primary: indigo # 上方的颜色为靛蓝色
@@ -49,6 +50,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/gis-xh
       name: GitHub | gis-xh # 鼠标悬浮提示
+  analytics: # 站点分析
+    provider: google
+    property: G-FJELHJB34C
 
 # [Navigtion] 导航栏
 nav:
@@ -62,22 +66,26 @@ nav:
       - 练习三 SQL 的 6 个基本操作: SDB/practice/03.md
       - 练习四 论文研读: SDB/practice/04.md
       - 练习五 邻接矩阵: SDB/practice/05.md
+    - 结课报告: SDB/cousrework.md
   - 综合英语: 
     - 选词填空 (25分): English/words-in-use.md
     - 英翻汉 (30分): English/translation.md
     - 阅读 (30分): English/reading.md
     - 作文 (15分): English/writing-task.md
-  - 遥感数字图像分析与处理: 
-    - RS-DIP/index.md
-    - 课后练习: 
-      - 练习一: RS-DIP/practice/01.md
-      - 练习二: RS-DIP/practice/02.md
-      - 练习三: RS-DIP/practice/03.md
-    - 结课大作业:
-      - 基于 LT-GEE 的武汉市森林扰动地图制作: RS-DIP/practice/coursework.md
+  - 遥感系列课程:
+    - 遥感数字图像分析与处理: 
+      - RS/RS-DIP/index.md
+      - 课后练习: 
+        - 练习一: RS/RS-DIP/practice/01.md
+        - 练习二: RS/RS-DIP/practice/02.md
+        - 练习三: RS/RS-DIP/practice/03.md
+      - 结课大作业:
+        - 基于 LT-GEE 的武汉市森林扰动地图制作: RS/RS-DIP/practice/coursework.md
+    - 定量遥感: 
+      - 课堂笔记: RS/QRS/index.md
   - 大数据系列课程: 
     - BigData/index.md
-    - 地质大数据课后练习:
+    - 地质大数据:
       - 练习一 配置 Hadoop 环境: 
         - 虚拟机服务器版: BigData/GGBD/practice/01-aliyun.md
         - 阿里云服务器版: BigData/GGBD/practice/01-vm.md
@@ -91,20 +99,25 @@ nav:
       - 练习四 安装并使用 MongoDB: BigData/GGBD/practice/04.md
       - 练习五 安装并使用 HIVE: BigData/GGBD/practice/05.md
     - 大数据理论与应用: BigData/BigData-reports.md
-    - 数据分析与数据挖掘: BigData/DADM/notes.md
+    - 数据分析与数据挖掘: 
+      - 课堂笔记: BigData/DADM/notes.md
+      - 结课报告: BigData/DADM/cousrework.md
+    - 地学多元数据统计:
+      - 课堂笔记: BigData/MSA/index.md
+      - 结课报告: BigData/MSA/practice/01.md
   - 土地信息系统:
-    - LIS/index.md
+    - 课堂笔记: LIS/index.md
     - 智慧城市空间信息服务平台时空数据建库: LIS/01.md
   - 地理信息系统三维建模:
-    - GIS-3DM/index.md
-    - 课堂实验报告: GIS-3DM/test-report.md
+    - 实验报告: GIS-3DM/test-report.md
+  - 网络信息系统: 
+    - 课堂笔记: WebGIS/index.md
 
 
 
 # [Extensions] 扩展
 plugins:
   - search:
-    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
       lang:
         - en
         - ja
@@ -114,7 +127,10 @@ plugins:
       # ["date","datetime","iso_date","iso_datetime","timeago","custom"]
       type: timeago
       enable_creation_date: true # 创建时间
+  - git-authors # 显示作者
   - glightbox # 图像缩放
+  - meta-manager # 元数据管理
+
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
@@ -124,12 +140,16 @@ markdown_extensions:
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
-      # linenums: true # 显示行号
+      linenums: true # 显示行号
+      linenums_style: table
       # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
-  - meta # 支持Markdown文件上方自定义标题标签等
+  # - meta # 支持Markdown文件上方自定义标题标签等
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
   - pymdownx.details # admonition需要
+  - pymdownx.caret # markdown上标显示
+  - pymdownx.tilde # markdown下标显示
+  - pymdownx.mark # markdown突出显示
 
 extra_javascript:
   # latex支持
