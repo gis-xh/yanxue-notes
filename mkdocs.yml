@@ -28,7 +28,7 @@ theme:
     - navigation.top # 返回顶部的按钮 在上滑时出现
     - navigation.footer # 页面底部上一个下一个按钮
     - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章
-    - navigation.expand # 打开Tab时左侧目录全部展开
+    # - navigation.expand # 打开Tab时左侧目录全部展开
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
     - search.share # 将搜索结果分享
@@ -104,7 +104,8 @@ nav:
       - 结课报告: BigData/DADM/cousrework.md
     - 地学多元数据统计:
       - 课堂笔记: BigData/MSA/index.md
-      - 结课报告: BigData/MSA/practice/01.md
+      - 练习一 箱型图绘制: BigData/MSA/practice/01.md
+      - 练习二 回归分析: BigData/MSA/practice/02.md
   - 土地信息系统:
     - 课堂笔记: LIS/index.md
     - 智慧城市空间信息服务平台时空数据建库: LIS/01.md

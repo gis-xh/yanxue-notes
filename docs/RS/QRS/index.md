@@ -374,3 +374,36 @@ NPP数据来源：MOD17A3HGF数据集，年度数据
 线性拟合 linearFit：一元一次
 
 线性回归 linearRegression：多元一次
+
+
+
+## 第 11 课 分类与精度评价
+
+
+
+教学参考：GEE教程 | 解释图像：分类
+
+[Gee-tutorials | Interpreting-Images | Interpreting-an-Image-Classification (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Interpreting-an-Image-Classification/)
+
+教学参考：GEE教程 | 解释图像：精度评估量化分类质量
+
+[Gee-tutorials | Interpreting Images |Accuracy Assessment Quantifying Classification Quality (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Accuracy-Assessment-Quantifying-Classification-Quality/)
+
+
+
+## 第 12 课 雷达卫星与洪水监测
+
+教学参考：NASA ARSET：使用谷歌地球引擎进行洪水测绘的 SAR 影像
+
+[ARSET - SAR for Disasters and Hydrological Applications | NASA Applied Sciences](https://appliedsciences.nasa.gov/join-mission/training/english/arset-sar-disasters-and-hydrological-applications)
+
+雷达影像很少使用点样本，防止样本点正好处于噪音上，尽量使用面要素样本。
+
+
+$$
+L_1(a_1,\dots,a_k) =\prod_{i=1}^k p(s_i\mid a_i) = {1\over\Gamma(m)^k}\left[\prod_i{a_i\over m}\right]^{-m}\left[\prod_i s_i\right]^{m-1}\exp(-m\sum_i{s_i\over a_i}) \tag{3.3}
+$$
+
+$$
+L_0(a) = \prod_{i=1}^k p(s_i\mid a) = {1\over\Gamma(m)^k} \left[{a\over m}\right]^{-mk}\left[\prod_i s_i\right]^{m-1}\exp(-{m\over a}\sum_i s_i) \tag{3.4}
+$$
