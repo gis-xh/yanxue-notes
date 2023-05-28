@@ -2123,21 +2123,21 @@ MSI = SWIR / NIR \tag*{(2)}
 <p><a class="glightbox" href="../img/evi_msi_scatter.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="evi_msi_scatter" src="../img/evi_msi_scatter.png" /></a></p>
 <p><center>图 2 长江流域月度 EVI 与 MSI 散点图 (2018 - 2022)</center></p>
 <h3 id="5-ols-regression">5 OLS Regression 普通最小二乘回归<a class="headerlink" href="#5-ols-regression" title="Permanent link">&para;</a></h3>
-<p>本次实验目标，是研究长江流域的生态环境和植被覆盖情况，选择增强植被指数作为因变量，设置两个自变量，分别是水量平衡和干旱指数。使用多元线性回归模型来分析因变量和自变量之间的线性关系，分析植被生长和退化的原因和效应。</p>
-<p>多元线性回归模型的一般形式为：
-$$
+<p>本次实验目标是研究长江流域的生态环境和植被覆盖情况，选择增强植被指数作为因变量，设置两个自变量，分别是水量平衡和干旱指数。使用多元线性回归模型来分析因变量和自变量之间的线性关系，分析植被生长和退化的原因和效应。</p>
+<p>多元线性回归模型的一般形式为：</p>
+<div class="arithmatex">\[
 y=\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_kx_k+\epsilon \tag*{(3)}
-$$
-其中，<span class="arithmatex">\(y\)</span> 是因变量，<span class="arithmatex">\(x_1,x_2,...,x_k\)</span> 是自变量，<span class="arithmatex">\(β_0,β_1,β_2,...,β_k\)</span> 是回归系数，<span class="arithmatex">\(ϵ\)</span> 是误差项。</p>
+\]</div>
+<p>其中，<span class="arithmatex">\(y\)</span> 是因变量，<span class="arithmatex">\(x_1,x_2,...,x_k\)</span> 是自变量，<span class="arithmatex">\(β_0,β_1,β_2,...,β_k\)</span> 是回归系数，<span class="arithmatex">\(ϵ\)</span> 是误差项。</p>
 <ol>
 <li>首先，使用水量平衡和干旱指数两个自变量建立回归模型</li>
 </ol>
 <p><a class="glightbox" href="../img/image-20230529000051773.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20230529000051773" src="../img/image-20230529000051773.png" /></a></p>
-<p>根据上述表格得到的是一个二元线性回归模型，有两个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是水量平衡和 MSI 干旱指数，得到的回归方程为：
-$$
-evi = 0.9165 + 0.0002 \times balance_water - 0.8000 \times msi + \epsilon
-$$
-并得到回归报告：</p>
+<p>根据上述表格得到的是一个二元线性回归模型，有两个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是水量平衡和 MSI 干旱指数，得到的回归方程为：</p>
+<div class="arithmatex">\[
+evi = 0.9165 + 0.0002 \times balance\_water - 0.8000 \times msi + \epsilon  \tag*{(4)}
+\]</div>
+<p>并得到回归报告：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2152,11 +2152,11 @@ strong multicollinearity or other numerical problems.
 <li>通过上面的回归方程发现水平衡的权重很低，所以接下来剔除掉水平衡 balance_mean 再次建立模型，回归分析结果如下：</li>
 </ol>
 <p><a class="glightbox" href="../img/image-20230529000520109.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20230529000520109" src="../img/image-20230529000520109.png" /></a></p>
-<p>根据上述表格得到的是一个一元线性回归模型，只有一个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是 MSI 干旱指数，得到的回归方程为：
-$$
-evi = 0.9836 - 0.8708 \times msi + \epsilon
-$$
-并得到回归报告：</p>
+<p>根据上述表格得到的是一个一元线性回归模型，只有一个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是 MSI 干旱指数，得到的回归方程为：</p>
+<div class="arithmatex">\[
+evi = 0.9836 - 0.8708 \times msi + \epsilon  \tag*{(5)}
+\]</div>
+<p>并得到回归报告：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
@@ -2184,7 +2184,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
         <!-- mkdocs-git-revision-date-localized-plugin -->
         
         最后更新:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-28T16:34:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-28</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-28T16:41:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-28</span>
         
         <br />
         创建日期:
