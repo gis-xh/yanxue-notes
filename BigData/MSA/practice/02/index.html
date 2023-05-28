@@ -2133,7 +2133,11 @@ $$
 <li>首先，使用水量平衡和干旱指数两个自变量建立回归模型</li>
 </ol>
 <p><a class="glightbox" href="../img/image-20230529000051773.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20230529000051773" src="../img/image-20230529000051773.png" /></a></p>
-<p>得到回归报告：</p>
+<p>根据上述表格得到的是一个二元线性回归模型，有两个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是水量平衡和 MSI 干旱指数，得到的回归方程为：
+$$
+evi = 0.9165 + 0.0002 \times balance_water - 0.8000 \times msi + \epsilon
+$$
+并得到回归报告：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2145,10 +2149,14 @@ strong multicollinearity or other numerical problems.
 <p>【1】标准误差是假设误差项的协方差矩阵是正确指定的。</p>
 <p>【2】条件数很大，为1.44e+03。这可能表明存在强的多重共线性或其他数值问题。</p>
 <ol>
-<li>接下来我们剔除掉水平衡 balance_mean 再次建立模型，回归分析结果如下：</li>
+<li>通过上面的回归方程发现水平衡的权重很低，所以接下来剔除掉水平衡 balance_mean 再次建立模型，回归分析结果如下：</li>
 </ol>
 <p><a class="glightbox" href="../img/image-20230529000520109.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20230529000520109" src="../img/image-20230529000520109.png" /></a></p>
-<p>得到回归报告：</p>
+<p>根据上述表格得到的是一个一元线性回归模型，只有一个自变量和一个因变量。因变量是增强植被指数 EVI，自变量是 MSI 干旱指数，得到的回归方程为：
+$$
+evi = 0.9836 - 0.8708 \times msi + \epsilon
+$$
+并得到回归报告：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
@@ -2176,7 +2184,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
         <!-- mkdocs-git-revision-date-localized-plugin -->
         
         最后更新:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-28T16:18:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-28</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-28T16:34:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-28</span>
         
         <br />
         创建日期:
