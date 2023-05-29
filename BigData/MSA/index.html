@@ -1730,28 +1730,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    实验二 掷骰子【Python】
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    实验三 趋势面分析【书】
+    实验二 回归分析
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    实验四 因子分析【书】
+    实验三 趋势面分析【书】
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
+    实验四 因子分析【书】
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
     实验五 判别分析【书】
   </a>
   
@@ -1759,6 +1759,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    扩展内容
+  </a>
   
 </li>
       
@@ -1785,91 +1792,40 @@
 
 <h1 id="_1">地学数据多元统计分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">参考书籍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>《地球科学 大数据挖掘与机器学习》</p>
+<ul>
+<li>《地球科学 大数据挖掘与机器学习》</li>
+</ul>
 <h2 id="_3">课后作业<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">作业要求<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>1、实验写报告纸上（不要超过一张报告纸），用铅笔与直尺画图、表</p>
-<p>2、</p>
+<ul>
+<li>写报告纸上（不要超过一张报告纸），用铅笔与直尺画图、表</li>
+</ul>
 <h3 id="_5">实验一 绘制箱型图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>使用专业数据做箱型图</p>
-<h3 id="python">实验二 掷骰子【Python】<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<p>参考：<a href="https://blog.csdn.net/boyames/article/details/91491550">【Python 3.7】同时掷三个骰子：如果你同时掷三个 D6骰子，可能得到的最小点数为 3，而 最大点数为 18。请通过可视化展示同时掷三个 D6骰子的结果。_boyames的博客-CSDN博客</a></p>
-<p>【Python 3.7】同时掷三个骰子：如果同时掷三个 D6 骰子，可能得到的最小点数为 3，而最大点数为 18。请通过可视化展示同时掷三个 D6 骰子的结果。其中 <code>die.py</code> 中的程序为：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="k">class</span> <span class="nc">Die</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;表示一个骰子的类&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;骰子默认为6面&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">num_sides</span>
-    <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;返回一个位于1和骰子面数之间的随机值&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_sides</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>同时掷三个骰子的程序为:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pygal</span>
-<span class="kn">from</span> <span class="nn">die</span> <span class="kn">import</span> <span class="n">Die</span>
-<span class="c1"># 创建两个D6骰子</span>
-<span class="n">die_1</span> <span class="o">=</span> <span class="n">Die</span><span class="p">()</span>
-<span class="n">die_2</span> <span class="o">=</span> <span class="n">Die</span><span class="p">()</span>
-<span class="n">die_3</span> <span class="o">=</span> <span class="n">Die</span><span class="p">()</span>
-<span class="c1"># 掷骰子多次，并将结果存储到一个列表中</span>
-<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">roll_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50000</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">die_1</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span> <span class="o">+</span> <span class="n">die_2</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span> <span class="o">+</span> <span class="n">die_3</span><span class="o">.</span><span class="n">roll</span><span class="p">()</span>
-    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="c1"># 分析结果</span>
-<span class="n">frequencies</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">max_result</span> <span class="o">=</span> <span class="n">die_1</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">+</span> <span class="n">die_2</span><span class="o">.</span><span class="n">num_sides</span> <span class="o">+</span> <span class="n">die_3</span><span class="o">.</span><span class="n">num_sides</span>
-<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">max_result</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">frequency</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-    <span class="n">frequencies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
-<span class="c1"># 可视化结果</span>
-<span class="n">hist</span> <span class="o">=</span> <span class="n">pygal</span><span class="o">.</span><span class="n">Bar</span><span class="p">()</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Results of rolling three D6 dice 50,000 times.&quot;</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">x_labels</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span><span class="s1">&#39;13&#39;</span><span class="p">,</span><span class="s1">&#39;14&#39;</span><span class="p">,</span><span class="s1">&#39;15&#39;</span><span class="p">,</span><span class="s1">&#39;16&#39;</span><span class="p">,</span><span class="s1">&#39;17&#39;</span><span class="p">,</span><span class="s1">&#39;18&#39;</span><span class="p">]</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">x_title</span> <span class="o">=</span> <span class="s2">&quot;Result&quot;</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">y_title</span> <span class="o">=</span> <span class="s2">&quot;Frequency of Result&quot;</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;D6 + D6 + D6&#39;</span><span class="p">,</span> <span class="n">frequencies</span><span class="p">)</span>
-<span class="n">hist</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="s1">&#39;同时掷三个骰子.svg&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="_6">实验三 趋势面分析【书】<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>书 P49 例题 3-4</p>
-<h3 id="_7">实验四 因子分析【书】<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>书 P109 例题 5-1</p>
-<h3 id="_8">实验五 判别分析【书】<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>书 P77 例题 4-4，4-6，4-7</p>
+<ul>
+<li><a href="practice/01/">使用专业数据做箱型图</a></li>
+</ul>
+<h3 id="_6">实验二 回归分析<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="practice/02/">使用专业数据做回归分析</a></li>
+</ul>
+<h3 id="_7">实验三 趋势面分析【书】<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>书 P49 例题 3-4</li>
+</ul>
+<h3 id="_8">实验四 因子分析【书】<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>书 P109 例题 5-1</li>
+</ul>
+<h3 id="_9">实验五 判别分析【书】<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>书 P77 例题 4-4，4-6，4-7</li>
+</ul>
+<h2 id="_10">扩展内容<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/Rtx3dMTSRuOqmC-Rz_-btw">强推！地球科学Python开源工具包合集 | 微信公众号 | 水文康的研究所</a></li>
+<li><a href="https://mp.weixin.qq.com/s/nabJIFejiPfVJ_2CdT8YDw">Editorial 文章：Geocomputation and GeoAI for Mapping | 微信公众号 | 扎克</a></li>
+<li><a href="https://mp.weixin.qq.com/s/kyPJDIJLtbaXJrgJTGdGUQ">教你使用Python Statsmodel进行假设检验和线性回归 | 微信公众号 | Python大数据分析</a></li>
+</ol>
 
   
 
@@ -1883,7 +1839,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
         <!-- mkdocs-git-revision-date-localized-plugin -->
         
         最后更新:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-04-19T02:13:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-04-19</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-29T01:26:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-29</span>
         
         <br />
         创建日期:
