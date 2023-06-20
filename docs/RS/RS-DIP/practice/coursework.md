@@ -1,6 +1,6 @@
 # 基于 LT-GEE 的武汉市森林扰动地图制作
 
-- 本文在线地址：[https://gis-xh.github.io/yanxue-notes/RS-DIP/practice/coursework/](https://gis-xh.github.io/yanxue-notes/RS-DIP/practice/coursework/)
+- 本文在线地址：[https://gis-xh.github.io/yanxue-notes/RS/RS-DIP/practice/coursework/](https://gis-xh.github.io/yanxue-notes/RS/RS-DIP/practice/coursework/)
 
 
 

@@ -112,3 +112,48 @@ Ajax：Js 异步传输技术
 2、包括在项目中
 
 3、
+
+
+
+## 实操
+
+在查看需要安装包的名称及其使用
+
+https://www.npmjs.com/
+
+
+
+安装parcel打包器
+
+```sh
+npm install parcel
+```
+
+安装后，在空项目中会有个包管理器
+
+
+
+安装openlayer包
+
+```sh
+npm install ol
+```
+
+
+
+项目初始化
+
+```sh
+npm init -y
+```
+
+
+
+地图滑块
+
+参考：https://openlayers.org/en/v6.15.1/apidoc/module-ol_control_ZoomSlider-ZoomSlider.html
+
+
+
+
+
