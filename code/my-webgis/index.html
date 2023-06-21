@@ -7,11 +7,21 @@
     <title>谢泓-网络地理信息系统结课作业</title>
   </head>
   <body>
+    <div id="menu">
+      <label style="font-weight: bold;">
+        几何图形类型：&nbsp;
+      </label>
+      <select id="drawType">
+        <option value="None">无</option>
+        <option value="Point" selected="selected">点</option>
+        <option value="Polygon">多边形</option>
+      </select>
+    </div>
     <div id="map"></div>
-	<div id="drawTool">
-		<!-- <button id="startdraw">开始绘制</button> -->
-		<!-- <button id="enddraw">结束绘制</button> -->
-	</div>
+    <div id="drawTool">
+      <button id="startDraw">开始绘制</button>
+      <button id="endDraw" disabled>结束绘制</button>
+    </div>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

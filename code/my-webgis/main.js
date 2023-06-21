@@ -1,13 +1,16 @@
 import './style.css';
-import { Map, View } from 'ol';
-// import TileLayer from 'ol/layer/Tile';
+import {
+  Map,
+  View
+} from 'ol';
 import ImageLayer from 'ol/layer/Image';
-import { OSM, ImageWMS } from 'ol/source';
+import {
+  OSM,
+  ImageWMS
+} from 'ol/source';
 // 缩放滑动工具条
 import ZoomSlider from 'ol/control/ZoomSlider';
-// 添加投影，单位，获取中心
-// import Projection from 'ol/proj/Projection';
-// import { METERS_PER_UNIT } from 'ol/proj/Units';
+// 获取地图中心
 import { getCenter } from 'ol/extent';
 // 绘制矢量
 import Draw from 'ol/interaction/Draw';
@@ -20,8 +23,10 @@ import LS from 'ol/geom/LineString';
 import PY from 'ol/geom/Polygon';
 // 绘制风格
 import {
-  Style,
-  Stroke
+  Circle,
+  Fill,
+  Stroke,
+  Style
 } from 'ol/style';
 // 选择和编辑
 import {
@@ -62,3 +67,62 @@ const map = new Map({
   })
 });
 map.addControl(new ZoomSlider());
+
+// 绘制样式
+const fill = new Fill({ color: 'rgba(255,255,255,0.4)', });
+const stroke = new Stroke({
+  color: '#ffcc33',
+  width: 2,
+});
+// 创建一个矢量数据源对象
+const vecSource = new VectorSource();
+// 创建一个矢量图层对象
+const vecLayer = new VectorLayer({
+  source: vecSource,
+  style: new Style({
+    //填充
+    fill: fill,
+    //线
+    stroke: stroke,
+    //图像
+    image: new Circle({
+      fill: fill,
+      stroke: stroke,
+      // 图像大小
+      radius: 5
+    })
+  })
+});
+
+// 绘制对象类型
+const typeSelect = document.getElementById('drawType');
+const drawType = typeSelect.value;
+const draw = new Draw({
+  source: vecSource,
+  type: drawType,
+  // maxPoints: 3
+});
+
+// 开始绘制按钮
+const startDraw = document.getElementById('startDraw');
+startDraw.addEventListener('click', () => {
+  // 将下拉选择框和开始绘制按钮设置为不可用状态
+  typeSelect.disabled = true;
+  startDraw.disabled = true;
+  // 切换开始绘制按钮为可用状态
+  endDraw.disabled = false;
+  // 将绘制交互对象添加到地图上
+  map.addInteraction(draw);
+});
+// 结束绘制按钮
+const endDraw = document.getElementById('endDraw');
+endDraw.addEventListener('click', () => {
+  // 将下拉选择框和开始绘制按钮设置为可用状态
+  typeSelect.disabled = false;
+  startDraw.disabled = false;
+  // 切换结束绘制按钮为不可用状态
+  endDraw.disabled = true;
+  // 移除地图上的绘制交互对象
+  map.removeInteraction(draw);
+});
+

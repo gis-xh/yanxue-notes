@@ -1,6 +1,7 @@
 @import "node_modules/ol/ol.css";
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
 }
@@ -13,9 +14,19 @@ html, body {
   height: 100%;
 }
 
-#drawTool{
-    position:absolute;
-    float:right;
-    top:30px;
-    right:50px;
+#drawTool {
+  position: absolute;
+  float: right;
+  top: 30px;
+  right: 50px;
+}
+
+#menu {
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  left: 10px;
 }

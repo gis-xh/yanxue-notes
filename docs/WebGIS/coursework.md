@@ -10,9 +10,15 @@
 
 3、进行交互式绘制点与面
 
-4、将刚才绘制好的形状变成要素，然后在点的位置添加该点文字标准，如“海滨公园”；在多边形内部添加气泡式的提示信息。
+4、将刚才绘制好的形状变成要素，然后在点的位置添加该点文字标注，如“海滨公园”；在多边形内部添加气泡式的提示信息。
 
 
+
+## 参考
+
+- [Geoserver配置以及发布geojson服务教程_geoserver 发布geojson_迷茫的小猿的博客-CSDN博客](https://blog.csdn.net/weixin_43747076/article/details/106081501)
+- [openlayers加载geoserver的wms服务_布偶不说话的博客-CSDN博客](https://blog.csdn.net/long_Amber/article/details/110553202)
+- 
 
 
 
@@ -38,7 +44,7 @@ npm create ol-app my-webgis
 
 ![image-20230620195509507](./img/image-20230620195509507.png)
 
-<center>图 1 npm 创建 openlayers 项目</center>
+<center>图 1-1 npm 创建 openlayers 项目</center>
 
 #### 3、启动项目
 
@@ -54,7 +60,7 @@ npm start
 
 ![image-20230620200508146](./img/image-20230620200508146.png)
 
-<center>图 2 编辑器打开项目</center>
+<center>图 1-2 编辑器打开项目</center>
 
 #### 4、查看运行结果
 
@@ -62,7 +68,7 @@ npm start
 
 ![image-20230620201005219](./img/image-20230620201005219.png)
 
-<center>图 3 项目初始界面</center>
+<center>图 1-3 项目初始界面</center>
 
 ### 1.2 安装配置 Geoserver
 
@@ -78,7 +84,7 @@ java -version
 
 ![image-20230620152656402](./img/image-20230620152656402.png)
 
-<center>图 4 检查 Java 环境</center>
+<center>图 1-4 检查 Java 环境</center>
 
 由于当前本机的 JRE 版本是 JRE8，所以选择安装 Geoserver `2.22.3` 版本。
 
@@ -87,7 +93,7 @@ java -version
 
 ![image-20230620154429003](./img/image-20230620154429003.png)
 
-<center>图 5 安装 Geoserver（一）下载安装程序</center>
+<center>图 1-5 安装 Geoserver（一）下载安装程序</center>
 
 #### 2、安装 Geoserver | 读取 Java 目录
 
@@ -95,7 +101,7 @@ java -version
 
 ![image-20230620152341860](./img/image-20230620152341860.png)
 
-<center>图 6 安装 Geoserver（二）读取 Java 目录</center>
+<center>图 1-6 安装 Geoserver（二）读取 Java 目录</center>
 
 #### 3、安装 Geoserver | 设置软件目录
 
@@ -113,7 +119,7 @@ E:\researchData\GeoServer
 
 ![image-20230620154022911](./img/image-20230620154022911.png)
 
-<center>图 7 安装 Geoserver（三）完成安装设置</center>
+<center>图 1-7 安装 Geoserver（三）完成安装设置</center>
 
 #### 5、安装完成
 
@@ -236,114 +242,7 @@ view: new View({
 
 进行交互式绘制点与面，并将绘制好的形状变成要素
 
-```html
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Openlayers交互式绘制点与面</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css">
-  <style>
-    #map {
-      width: 800px;
-      height: 600px;
-    }
-    #popup {
-      background-color: white;
-      border: 1px solid black;
-      padding: 10px;
-      position: absolute;
-      min-width: 100px;
-    }
-    #popup-closer {
-      float: right;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div id="map"></div>
-  <div id="popup" style="display:none;">
-    <span id="popup-closer">X</span>
-    <div id="popup-content"></div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
-  <script>
-    // 监听绘制完成事件
-    draw.on('drawend', function(event) {
-      // 获取绘制的要素对象
-      var feature = event.feature;
 
-      // 获取要素的几何类型
-      var type = feature.getGeometry().getType();
-
-      // 根据几何类型设置不同的样式
-      if (type === 'Point') {
-        // 设置点要素的样式，包括圆形和文本
-        feature.setStyle(new ol.style.Style({
-          image: new ol.style.Circle({
-            radius: 5,
-            fill: new ol.style.Fill({
-              color: 'red'
-            }),
-            stroke: new ol.style.Stroke({
-              color: 'black',
-              width: 2
-            })
-          }),
-          text: new ol.style.Text({
-            text: '海滨公园', // 可以改为其他文本
-            font: '14px Arial',
-            fill: new ol.style.Fill({
-              color: 'black'
-            }),
-            stroke: new ol.style.Stroke({
-              color: 'white',
-              width: 3
-            }),
-            offsetX: 10,
-            offsetY: -10
-          })
-        }));
-      } else if (type === 'Polygon') {
-        // 设置面要素的样式，包括填充和边框
-        feature.setStyle(new ol.style.Style({
-          fill: new ol.style.Fill({
-            color: 'rgba(0, 255, 0, 0.5)'
-          }),
-          stroke: new ol.style.Stroke({
-            color: 'green',
-            width: 2
-          })
-        }));
-
-        // 获取面要素的中心点坐标
-        var center = feature.getGeometry().getInteriorPoint().getCoordinates();
-
-        // 创建一个气泡对象
-        var popup = new ol.Overlay({
-          element: document.getElementById('popup'),
-          position: center,
-          offset: [0, -10]
-        });
-
-        // 设置气泡的内容
-        document.getElementById('popup-content').innerHTML = '这是一个多边形'; // 可以改为其他内容
-
-        // 将气泡添加到地图上
-        map.addOverlay(popup);
-
-        // 监听气泡关闭按钮的点击事件
-        document.getElementById('popup-closer').onclick = function() {
-          // 移除气泡
-          map.removeOverlay(popup);
-          return false;
-        };
-      }
-    });
-  </script>
-</body>
-</html>
-```
 
 
 
