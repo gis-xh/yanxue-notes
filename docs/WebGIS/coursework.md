@@ -18,7 +18,10 @@
 
 - [Geoserver配置以及发布geojson服务教程_geoserver 发布geojson_迷茫的小猿的博客-CSDN博客](https://blog.csdn.net/weixin_43747076/article/details/106081501)
 - [openlayers加载geoserver的wms服务_布偶不说话的博客-CSDN博客](https://blog.csdn.net/long_Amber/article/details/110553202)
-- 
+- [Draw Features (openlayers.org)](https://openlayers.org/en/latest/examples/draw-features.html)
+- [Draw and Modify Features (openlayers.org)](https://openlayers.org/en/latest/examples/draw-and-modify-features.html)
+- [Select Features (openlayers.org)](https://openlayers.org/en/latest/examples/select-features.html)
+- [Vector Labels (openlayers.org)](https://openlayers.org/en/latest/examples/vector-labels.html)
 
 
 

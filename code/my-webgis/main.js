@@ -10,15 +10,12 @@ import { getCenter } from "ol/extent";
 import Draw from "ol/interaction/Draw";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
-// 点线面要素
-import Feature from "ol/Feature";
-import PT from "ol/geom/Point";
-import LS from "ol/geom/LineString";
-import PY from "ol/geom/Polygon";
 // 绘制风格
 import { Circle, Fill, Stroke, Style } from "ol/style";
 // 选择和编辑
 import { Select, Modify } from "ol/interaction";
+// 地图事件: 单击和悬停
+import { click, pointerMove } from "ol/events/condition";
 
 //地图范围
 const extent = [60, -80, 160, 80];
@@ -54,52 +51,63 @@ const map = new Map({
 });
 map.addControl(new ZoomSlider());
 
-// 绘制样式
-const fill = new Fill({ color: "rgba(255,255,255,0.4)" });
-const stroke = new Stroke({
-  color: "#ffcc33",
-  width: 2,
-});
 // 创建矢量数据源对象
 const vecSource = new VectorSource();
 // 创建矢量图层对象
 const vecLayer = new VectorLayer({
   source: vecSource,
-  style: new Style({
-    //填充
-    fill: fill,
-    //线
-    stroke: stroke,
-    //图像
-    image: new Circle({
-      fill: fill,
-      stroke: stroke,
-      // 图像大小
-      radius: 5,
-    }),
-  }),
 });
 map.addLayer(vecLayer);
 
 // 选择对象类型
 const typeSelect = document.getElementById("drawType");
 let draw;
-function addInteraction() {
+function addDrawInteraction() {
   const value = typeSelect.value;
-  if (value !== "None") {
-    draw = new Draw({
-      source: vecSource,
-      type: typeSelect.value,
-    });
-    map.addInteraction(draw);
-  }
+  draw = new Draw({
+    source: vecSource,
+    type: value,
+  });
+  map.addInteraction(draw);
 }
 // 监听下拉选择框的变化
 typeSelect.onchange = () => {
   map.removeInteraction(draw);
   // 将绘制交互对象添加到地图上
-  addInteraction();
+  addDrawInteraction();
 };
+
+// 选择要素
+// 高亮要素的样式
+const highlight = new Style({
+  fill: new Fill({
+    color: "rgba(0, 0, 0, 0)", // 设置为全透明
+  }),
+  stroke: new Stroke({
+    color: "rgba(255, 0, 0, 0.7)", // 设置为红色
+    width: 2,
+  }),
+});
+// 选中要素的样式
+const selected = new Style({
+  fill: new Fill({
+    color: "rgba(0, 0, 0, 0.3)", // 设置为伪透明
+  }),
+  stroke: new Stroke({
+    color: "rgba(255, 0, 0, 0.7)", // 设置为红色
+    width: 2,
+  }),
+});
+// 悬停时高亮要素
+const highlightPointerMove = new Select({
+  condition: pointerMove,
+  style: highlight,
+});
+// 单击时选中要素
+const selectClick = new Select({
+  condition: click,
+  style: selected,
+});
 
 // 绘制开关
 const changeState = document.getElementById("drawState");
@@ -107,12 +115,18 @@ function handleDraw() {
   if (changeState.checked) {
     // 将下拉选择框设置为可用状态
     typeSelect.disabled = false;
-    addInteraction();
+    // 移除其他交互，只保留绘制交互
+    map.removeInteraction(highlightPointerMove);
+    map.removeInteraction(selectClick);
+    addDrawInteraction();
   } else {
     // 将下拉选择框设置为不可用状态
     typeSelect.disabled = true;
     // 保留已绘图形，停止绘制交互
     map.removeInteraction(draw);
+    // 添加两个交互到地图上
+    map.addInteraction(highlightPointerMove);
+    map.addInteraction(selectClick);
   }
 }
 // 监听绘制开关的变化
