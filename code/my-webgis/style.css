@@ -19,14 +19,11 @@ body {
   float: right;
   top: 30px;
   right: 50px;
+  font-family: "微软雅黑";
+  /* 防止换行 */
+  white-space: nowrap;
 }
 
-#menu {
-  text-align: center;
-  width: 100%;
-  height: 20px;
-  padding: 5px 10px;
-  font-size: 14px;
-  font-family: "微软雅黑";
-  left: 10px;
+.centerItems {
+  align-items: center;
 }
