@@ -1956,7 +1956,7 @@
       
         <li class="md-nav__item">
   <a href="#4_2" class="md-nav__link">
-    4 编辑绘制要素
+    4 添加标注
   </a>
   
 </li>
@@ -2249,7 +2249,7 @@
       
         <li class="md-nav__item">
   <a href="#4_2" class="md-nav__link">
-    4 编辑绘制要素
+    4 添加标注
   </a>
   
 </li>
@@ -2289,6 +2289,8 @@
 <li><a href="https://openlayers.org/en/latest/examples/draw-and-modify-features.html">Draw and Modify Features (openlayers.org)</a></li>
 <li><a href="https://openlayers.org/en/latest/examples/select-features.html">Select Features (openlayers.org)</a></li>
 <li><a href="https://openlayers.org/en/latest/examples/vector-labels.html">Vector Labels (openlayers.org)</a></li>
+<li><a href="https://openlayers.org/en/latest/examples/overlay.html">Overlay (openlayers.org)</a></li>
+<li><a href="https://openlayers.org/en/latest/examples/popup.html">Popup (openlayers.org)</a></li>
 </ul>
 <h2 id="1">1 配置开发环境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11-openlayers">1.1 创建 OpenLayers 项目<a class="headerlink" href="#11-openlayers" title="Permanent link">&para;</a></h3>
@@ -2444,132 +2446,8 @@ E:\researchData\GeoServer
 <p>进行交互式绘制点与面，并将绘制好的形状变成要素</p>
 <h3 id="31">3.1 选择绘制类型<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <h3 id="32">3.2 控制绘制按钮<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<h2 id="4_2">4 编辑绘制要素<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h2>
+<h2 id="4_2">4 添加标注<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h2>
 <p>然后在点的位置添加该点文字标准，如“海滨公园”；在多边形内部添加气泡式的提示信息。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 绘制点线面</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">Draw</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/interaction/Draw&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">VectorLayer</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/layer/Vector&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 修改为正确的导入语句</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">VectorSource</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/source/Vector&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 修改为正确的导入语句</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">Feature</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/Feature&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">PT</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/geom/Point&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">LS</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/geom/LineString&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">PY</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ol/geom/Polygon&#39;</span><span class="p">;</span>
-
-<span class="c1">// 定义一个函数，用来实现交互式绘制点与面的功能</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">drawFeature</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// 创建一个矢量数据源对象，用来存储绘制的要素</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">VectorSource</span><span class="p">();</span>
-
-<span class="w">  </span><span class="c1">// 创建一个矢量图层对象，用来显示绘制的要素，并设置样式</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">VectorLayer</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="nx">source</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Style</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">fill</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(255, 255, 255, 0.2)&#39;</span>
-<span class="w">      </span><span class="p">}),</span>
-<span class="w">      </span><span class="nx">stroke</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Stroke</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#ffcc33&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
-<span class="w">      </span><span class="p">}),</span>
-<span class="w">      </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Circle</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">radius</span><span class="o">:</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">fill</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#ffcc33&#39;</span>
-<span class="w">        </span><span class="p">})</span>
-<span class="w">      </span><span class="p">})</span>
-<span class="w">    </span><span class="p">})</span>
-<span class="w">  </span><span class="p">});</span>
-
-<span class="w">  </span><span class="c1">// 将矢量图层添加到地图上</span>
-<span class="w">  </span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">layer</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// 创建一个绘制交互对象，指定绘制类型为&#39;Point&#39;或&#39;Polygon&#39;</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">draw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Draw</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="nx">source</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Point&#39;</span><span class="w"> </span><span class="c1">// 可以改为&#39;Polygon&#39;</span>
-<span class="w">  </span><span class="p">});</span>
-
-<span class="w">  </span><span class="c1">// 将绘制交互对象添加到地图上</span>
-<span class="w">  </span><span class="nx">map</span><span class="p">.</span><span class="nx">addInteraction</span><span class="p">(</span><span class="nx">draw</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// 监听绘制完成事件，获取绘制的要素对象，并根据类型进行处理</span>
-<span class="w">  </span><span class="nx">draw</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;drawend&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">feature</span><span class="p">;</span><span class="w"> </span><span class="c1">// 获取绘制的要素对象</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">feature</span><span class="p">.</span><span class="nx">getGeometry</span><span class="p">().</span><span class="nx">getType</span><span class="p">();</span><span class="w"> </span><span class="c1">// 获取要素的几何类型</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Point&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// 如果是点要素，可以在这里添加文本标注或其他操作</span>
-<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;绘制了一个点要素&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Polygon&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// 如果是面要素，可以在这里添加气泡提示或其他操作</span>
-<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;绘制了一个面要素&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">});</span>
-<span class="p">}</span>
-
-<span class="c1">// 调用函数，实现交互式绘制点与面的功能</span>
-<span class="nx">drawFeature</span><span class="p">();</span>
-</code></pre></div></td></tr></table></div>
 
   
 
@@ -2583,7 +2461,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
         <!-- mkdocs-git-revision-date-localized-plugin -->
         
         最后更新:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-06-21T14:13:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-06-21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-06-22T02:48:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-06-22</span>
         
         <br />
         创建日期:
