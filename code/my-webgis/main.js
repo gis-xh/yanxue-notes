@@ -117,6 +117,17 @@ const highlight = new Style({
     color: "rgba(255, 0, 0, 0.7)", // 设置为红色
     width: 2,
   }),
+  // 添加一个image属性，用于设置点要素的图形和颜色
+  image: new Circle({
+    radius: 5,
+    fill: new Fill({
+      color: "rgba(255, 0, 0, 0.7)", // 设置为红色
+    }),
+    stroke: new Stroke({
+      color: "rgba(255, 255, 255, 0.7)", // 设置为白色
+      width: 2,
+    }),
+  }),
 });
 // 悬停时高亮要素
 const highlightPointerMove = new Select({
@@ -140,6 +151,17 @@ const selected = new Style({
     color: "rgba(255, 0, 0, 0.7)", // 设置为红色
     width: 2,
   }),
+  // 添加一个image属性，用于设置点要素的图形和颜色
+  image: new Circle({
+    radius: 5,
+    fill: new Fill({
+      color: "rgba(255, 0, 0, 0.7)", // 设置为红色
+    }),
+    stroke: new Stroke({
+      color: "rgba(255, 255, 255, 0.7)", // 设置为白色
+      width: 2,
+    }),
+  }),
 });
 // 单击时选中要素
 const selectClick = new Select({
@@ -162,25 +184,18 @@ const selectFeature = () => {
       if (feature) {
         // 设置弹出窗口的位置
         overlay.setPosition(evt.coordinate);
-        // 获取要素的标注属性，如果没有则设置为空字符串
-        const label = feature.get("label") || "";
-        // 在弹出窗口的内容元素中添加一个input元素，用于输入要素的标注
-        content.innerHTML =
-          "<p>你点击的是：" +
-          "</p>" +
-          "<p>请输入要素的标注：</p>" +
-          '<input id="label-input" type="text" value="' +
-          label +
-          '">';
-        // 获取input元素
-        const input = document.getElementById("label-input");
-        // 给input元素添加一个change事件的监听器
-        input.addEventListener("change", function () {
-          // 获取用户输入的值
-          const newLabel = input.value;
-          // 设置到要素的属性中
-          feature.set("label", newLabel);
-        });
+        // 获取要素类型
+        const featureType = feature.getGeometry().getType();
+        // 获取要素名称
+        const featureName = feature.getGeometryName();
+        // 获取模板元素的内容
+        const template = document.getElementById("popup-template").innerHTML;
+        // 替换其中的变量
+        const contentHtml = template
+          .replace("{featureType}", featureType)
+          .replace("{featureName}", featureName);
+        // 在弹出窗口的内容元素中设置HTML内容
+        content.innerHTML = contentHtml;
       } else {
         // 如果没有要素被点击，隐藏弹出窗口
         overlay.setPosition(undefined);
