@@ -20,11 +20,11 @@ body {
   top: 30px;
   right: 50px;
   font-family: "微软雅黑";
-  /* 防止换行 */
-  white-space: nowrap;
 }
 
 .centerItems {
+  /* 防止换行 */
+  white-space: nowrap;
   align-items: center;
 }
 

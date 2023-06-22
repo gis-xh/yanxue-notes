@@ -168,6 +168,36 @@ const selectClick = new Select({
   condition: click,
   style: selected,
 });
+// 全局声明要素标记内容
+let featureMarker;
+let markerInput;
+// 编辑要素标记函数
+const editMarker = (editBtn, saveBtn) => {
+  // 获取弹出窗口中的input元素
+  markerInput = document.getElementById("feature-marker");
+  // 移除input元素的readonly属性，使其可以编辑
+  markerInput.removeAttribute("readonly");
+  // 修改input元素的class属性，使其样式变化
+  markerInput.setAttribute("class", "form-control");
+  console.log(markerInput);
+  // 将保存按钮设置为可用状态
+  editBtn.disabled = true;
+  saveBtn.disabled = false;
+};
+// 保存要素标记函数
+const saveMarker = (editBtn, saveBtn) => {
+  // 获取弹出窗口中的input元素
+  markerInput = document.getElementById("feature-marker");
+  // 添加input元素的readonly属性，使其不可编辑
+  markerInput.setAttribute("readonly", "readonly");
+  // 修改input元素的class属性，使其样式变化
+  markerInput.setAttribute("class", "form-control-plaintext");
+  console.log(markerInput);
+  // 将编辑按钮设置为可用状态
+  editBtn.disabled = false;
+  saveBtn.disabled = true;
+};
+
 // 单击选中要素函数
 const selectFeature = () => {
   map.addInteraction(selectClick);
@@ -186,16 +216,27 @@ const selectFeature = () => {
         overlay.setPosition(evt.coordinate);
         // 获取要素类型
         const featureType = feature.getGeometry().getType();
-        // 获取要素名称
-        const featureName = feature.getGeometryName();
+        // 获取要素标记内容，如果没有则设置为空字符串
+        featureMarker = feature.get("name");
         // 获取模板元素的内容
         const template = document.getElementById("popup-template").innerHTML;
         // 替换其中的变量
         const contentHtml = template
           .replace("{featureType}", featureType)
-          .replace("{featureName}", featureName);
+          .replace("{featureMarker}", featureMarker);
         // 在弹出窗口的内容元素中设置HTML内容
         content.innerHTML = contentHtml;
+        // 获取弹出窗口中的编辑和保存按钮
+        const editBtn = document.getElementById("edit-btn");
+        const saveBtn = document.getElementById("save-btn");
+        // 监听编辑按钮的点击
+        editBtn.onclick = () => {
+          editMarker(editBtn, saveBtn);
+        };
+        // 监听编辑按钮的点击
+        saveBtn.onclick = () => {
+          saveMarker(editBtn, saveBtn);
+        };
       } else {
         // 如果没有要素被点击，隐藏弹出窗口
         overlay.setPosition(undefined);
@@ -206,7 +247,7 @@ const selectFeature = () => {
    * 添加一个点击处理程序来隐藏弹出框
    * @return {boolean}
    */
-  closer.onclick = function () {
+  closer.onclick = () => {
     overlay.setPosition(undefined);
     closer.blur();
     return false;
