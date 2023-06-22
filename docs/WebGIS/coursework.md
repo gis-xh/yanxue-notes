@@ -22,6 +22,8 @@
 - [Draw and Modify Features (openlayers.org)](https://openlayers.org/en/latest/examples/draw-and-modify-features.html)
 - [Select Features (openlayers.org)](https://openlayers.org/en/latest/examples/select-features.html)
 - [Vector Labels (openlayers.org)](https://openlayers.org/en/latest/examples/vector-labels.html)
+- [Overlay (openlayers.org)](https://openlayers.org/en/latest/examples/overlay.html)
+- [Popup (openlayers.org)](https://openlayers.org/en/latest/examples/popup.html)
 
 
 
@@ -257,75 +259,11 @@ view: new View({
 
 
 
-## 4 编辑绘制要素
+## 4 添加标注
 
 然后在点的位置添加该点文字标准，如“海滨公园”；在多边形内部添加气泡式的提示信息。
 
-```js
-// 绘制点线面
-import Draw from 'ol/interaction/Draw';
-import VectorLayer from 'ol/layer/Vector'; // 修改为正确的导入语句
-import VectorSource from 'ol/source/Vector'; // 修改为正确的导入语句
-import Feature from 'ol/Feature';
-import PT from 'ol/geom/Point';
-import LS from 'ol/geom/LineString';
-import PY from 'ol/geom/Polygon';
 
-// 定义一个函数，用来实现交互式绘制点与面的功能
-function drawFeature() {
-  // 创建一个矢量数据源对象，用来存储绘制的要素
-  var source = new VectorSource();
-
-  // 创建一个矢量图层对象，用来显示绘制的要素，并设置样式
-  var layer = new VectorLayer({
-    source: source,
-    style: new ol.style.Style({
-      fill: new ol.style.Fill({
-        color: 'rgba(255, 255, 255, 0.2)'
-      }),
-      stroke: new ol.style.Stroke({
-        color: '#ffcc33',
-        width: 2
-      }),
-      image: new ol.style.Circle({
-        radius: 7,
-        fill: new ol.style.Fill({
-          color: '#ffcc33'
-        })
-      })
-    })
-  });
-
-  // 将矢量图层添加到地图上
-  map.addLayer(layer);
-
-  // 创建一个绘制交互对象，指定绘制类型为'Point'或'Polygon'
-  var draw = new Draw({
-    source: source,
-    type: 'Point' // 可以改为'Polygon'
-  });
-
-  // 将绘制交互对象添加到地图上
-  map.addInteraction(draw);
-
-  // 监听绘制完成事件，获取绘制的要素对象，并根据类型进行处理
-  draw.on('drawend', function(event) {
-    var feature = event.feature; // 获取绘制的要素对象
-    var type = feature.getGeometry().getType(); // 获取要素的几何类型
-    if (type === 'Point') {
-      // 如果是点要素，可以在这里添加文本标注或其他操作
-      console.log('绘制了一个点要素');
-    } else if (type === 'Polygon') {
-      // 如果是面要素，可以在这里添加气泡提示或其他操作
-      console.log('绘制了一个面要素');
-    }
-  });
-}
-
-// 调用函数，实现交互式绘制点与面的功能
-drawFeature();
-
-```
 
 
 
