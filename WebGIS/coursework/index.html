@@ -2448,6 +2448,11 @@ E:\researchData\GeoServer
 <h3 id="32">3.2 控制绘制按钮<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <h2 id="4_2">4 添加标注<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h2>
 <p>然后在点的位置添加该点文字标准，如“海滨公园”；在多边形内部添加气泡式的提示信息。</p>
+<p>1.点击编辑按钮，将input标签中的文本内容由readonly只读变为输入框，并且编辑按钮替换成保存按钮
+2.点击保存按钮，将输入框的文本内容转化为input标签的readonly只读的文本内容，并将保存按钮替换成编辑按钮</p>
+<p>3.以上操作，均在单击选中要素弹出气泡框后，才能使用</p>
+<p>editMarker函数：获取当前选中的要素和弹出窗口中的input元素，将input元素的readonly属性设置为false，使其可以编辑，并且将编辑按钮隐藏，保存按钮显示。</p>
+<p>saveMarker函数：获取当前选中的要素和弹出窗口中的input元素，将input元素的value属性赋值给要素的name属性，更新要素名称，并且将input元素的readonly属性设置为true，使其不可编辑，并且将保存按钮隐藏，编辑按钮显示。</p>
 
   
 
@@ -2461,7 +2466,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/source-fil
         <!-- mkdocs-git-revision-date-localized-plugin -->
         
         最后更新:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-06-22T02:48:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-06-22</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-06-22T10:47:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-06-22</span>
         
         <br />
         创建日期:
