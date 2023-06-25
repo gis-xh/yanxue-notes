@@ -82,7 +82,8 @@ nav:
       - 结课大作业:
         - 基于 LT-GEE 的武汉市森林扰动地图制作: RS/RS-DIP/practice/coursework.md
     - 定量遥感: 
-      - 课堂笔记: RS/QRS/index.md
+      - 课堂笔记: RS/QRS/notes.md
+      - 考试复习资料: RS/QRS/reviews.md
   - 大数据系列课程: 
     - BigData/index.md
     - 地质大数据:
@@ -112,7 +113,7 @@ nav:
   - 地理信息系统三维建模:
     - 实验报告: GIS-3DM/test-report.md
   - 网络信息系统: 
-    - 课堂笔记: WebGIS/index.md
+    - 课堂笔记: WebGIS/notes.md
     - 结课作业（未完成）: WebGIS/coursework.md
 
 

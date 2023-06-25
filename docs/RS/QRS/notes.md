@@ -20,11 +20,15 @@
 
 ### 2 考核
 
-第 17 周，文献分享：精读一篇外文遥感方向的文献，制作 PPT 分享
+- 第 17 周，文献分享：精读一篇外文遥感方向的文献，制作 PPT 分享
 
-第 18 周，结课考试：遥感、定量遥感基础、方案设计，占 70%
+- 第 18 周，结课考试：遥感、定量遥感基础、方案设计，占 70%
 
+### 3 考试
 
+- 考试时间：6月26日 周一 10:00-11:50；开卷；武教A206
+
+- 题型：名词解释（5题，20分）、单选（5题，10分）、简答（6题，30分）、论述（2题，40分）
 
 
 
@@ -103,10 +107,10 @@ L3：
 1. NDVI：归一化植被差值指数
 
 - 健康的植被红波段接近于 0，NDVI 值接近于一，水体接近于0的负值
-- 比值植被指数：$$RVI = NIR / RED$$
-- 差值植被指数：$$DVI = NIR / RED$$
+- 比值植被指数：$$RVI = \frac{NIR}{RED}$$
+- 差值植被指数：$$DVI = \frac{NIR}{RED}$$
 - 通过模型计算，可以推算地表发射率
-- $$NDVI = (NIR - RED) / (NIR + RED)$$
+- $$NDVI = \frac{(NIR - RED)}{(NIR + RED)}$$
 
 2. NDWI：归一化水体差值指数
 
@@ -379,15 +383,15 @@ NPP数据来源：MOD17A3HGF数据集，年度数据
 
 ## 第 11 课 分类与精度评价
 
+教学参考：
 
+- GEE教程 | 解释图像：分类
 
-教学参考：GEE教程 | 解释图像：分类
+  [Gee-tutorials | Interpreting-Images | Interpreting-an-Image-Classification (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Interpreting-an-Image-Classification/)
 
-[Gee-tutorials | Interpreting-Images | Interpreting-an-Image-Classification (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Interpreting-an-Image-Classification/)
+- GEE教程 | 解释图像：精度评估量化分类质量
 
-教学参考：GEE教程 | 解释图像：精度评估量化分类质量
-
-[Gee-tutorials | Interpreting Images |Accuracy Assessment Quantifying Classification Quality (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Accuracy-Assessment-Quantifying-Classification-Quality/)
+  [Gee-tutorials | Interpreting Images |Accuracy Assessment Quantifying Classification Quality (google-earth-engine.com)](https://google-earth-engine.com/Interpreting-Images/Accuracy-Assessment-Quantifying-Classification-Quality/)
 
 
 

@@ -245,9 +245,58 @@ view: new View({
 
 ## 3 交互式绘制点与面
 
-进行交互式绘制点与面，并将绘制好的形状变成要素
+进行交互式绘制点与面要素
 
 ### 3.1 选择绘制类型
+
+#### 1、绘制类型选择框
+
+在 `index.html` 中，添加下拉选择框，包含了点、线、面三要素，并且默认选择多边形作为绘制待选。
+
+```html
+<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="drawType" disabled>
+    <option value="Point">点</option>
+    <option value="LineString">线</option>
+    <option value="Polygon" selected>多边形</option>
+</select>
+```
+
+#### 2、创建矢量图层
+
+接下来，在 `main.js` 中创建矢量数据源对象和矢量图层对象，用于存放和显示绘制的矢量数据。
+
+```js
+const vecSource = new VectorSource();
+const vecLayer = new VectorLayer({
+  source: vecSource,
+});
+map.addLayer(vecLayer);
+```
+
+#### 3、绘制几何图形
+
+根据 `id` 值获取 `html` 选择框标签元素，监听选择框的选中情况，将不同的点线面交互式绘制操作添加到地图容器上。
+
+```js
+const typeSelect = document.getElementById("drawType");
+let draw;
+const addDrawInteraction = () => {
+  const value = typeSelect.value;
+  draw = new Draw({
+    source: vecSource,
+    type: value,
+  });
+  map.addInteraction(draw);
+};
+typeSelect.onchange = () => {
+  map.removeInteraction(draw);
+  addDrawInteraction();
+};
+```
+
+
+
+
 
 
 
@@ -277,6 +326,10 @@ editMarker函数：获取当前选中的要素和弹出窗口中的input元素�
 saveMarker函数：获取当前选中的要素和弹出窗口中的input元素，将input元素的value属性赋值给要素的name属性，更新要素名称，并且将input元素的readonly属性设置为true，使其不可编辑，并且将保存按钮隐藏，编辑按钮显示。
 
 
+
+## 5 总结
+
+通过本次实验，学习了 OpenLayers，GeoServer，Bootstrap，ES6 相关知识并走通了对应的技术路线。实现了数据发布、数据可视化、交互式绘制矢量要素、为矢量要素添加和编辑标注等一系列地理信息的操作步骤。
 
 
 

@@ -18,7 +18,7 @@ comments: false
 ## 3 遥感
 
 - 遥感数字图像分析与处理：[RS-DIP-Study-Notes](./RS/RS-DIP/index.md)
-- 定量遥感：[QRS-Study-Notes](./RS/QRS/index.md)
+- 定量遥感：[QRS-Study-Notes](./RS/QRS/notes.md)
 
 
 ## 4 中特: [ZT-Review](./zt-review.md)
