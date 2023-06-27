@@ -38,11 +38,7 @@ const closer = document.getElementById("popup-closer");
  */
 const overlay = new Overlay({
   element: container,
-  autoPan: {
-    animation: {
-      duration: 250,
-    },
-  },
+  autoPan: { animation: { duration: 250 } },
 });
 
 //地图初始化
@@ -77,9 +73,7 @@ map.addControl(new ZoomSlider());
 // 创建矢量数据源对象
 const vecSource = new VectorSource();
 // 创建矢量图层对象
-const vecLayer = new VectorLayer({
-  source: vecSource,
-});
+const vecLayer = new VectorLayer({ source: vecSource });
 map.addLayer(vecLayer);
 
 /**
@@ -110,9 +104,7 @@ typeSelect.onchange = () => {
  */
 // 高亮要素的样式
 const highlight = new Style({
-  fill: new Fill({
-    color: "rgba(0, 0, 0, 0)", // 设置为全透明
-  }),
+  fill: new Fill({ color: "rgba(0, 0, 0, 0)" }),
   stroke: new Stroke({
     color: "rgba(255, 0, 0, 0.7)", // 设置为红色
     width: 2,
@@ -120,9 +112,7 @@ const highlight = new Style({
   // 添加一个image属性，用于设置点要素的图形和颜色
   image: new Circle({
     radius: 5,
-    fill: new Fill({
-      color: "rgba(255, 0, 0, 0.7)", // 设置为红色
-    }),
+    fill: new Fill({ color: "rgba(255, 0, 0, 0.7)" }),
     stroke: new Stroke({
       color: "rgba(255, 255, 255, 0.7)", // 设置为白色
       width: 2,
@@ -144,9 +134,7 @@ const highlightFeature = () => {
  */
 // 选中要素的样式
 const selected = new Style({
-  fill: new Fill({
-    color: "rgba(0, 0, 0, 0.3)", // 设置为伪透明
-  }),
+  fill: new Fill({ color: "rgba(0, 0, 0, 0.3)" }),
   stroke: new Stroke({
     color: "rgba(255, 0, 0, 0.7)", // 设置为红色
     width: 2,
@@ -154,9 +142,7 @@ const selected = new Style({
   // 添加一个image属性，用于设置点要素的图形和颜色
   image: new Circle({
     radius: 5,
-    fill: new Fill({
-      color: "rgba(255, 0, 0, 0.7)", // 设置为红色
-    }),
+    fill: new Fill({ color: "rgba(255, 0, 0, 0.7)" }),
     stroke: new Stroke({
       color: "rgba(255, 255, 255, 0.7)", // 设置为白色
       width: 2,
