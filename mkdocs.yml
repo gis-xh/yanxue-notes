@@ -2,7 +2,7 @@
 site_name: 长大地科研学课程记录【2022级】 # 左上角标题
 site_url: https://github.com/gis-xh/yanxue-notes
 site_author: gis-xh
-site_description: 长大地科研学课程记录公开站【2022级】
+site_description: 长江大学地球科学学院研究生课程记录网站【2022级】
 
 # [UI] 界面设置
 ## [top]
@@ -121,6 +121,7 @@ nav:
 # [Extensions] 扩展
 plugins:
   - search:
+    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
       lang:
         - en
         - ja
@@ -130,6 +131,7 @@ plugins:
       # ["date","datetime","iso_date","iso_datetime","timeago","custom"]
       type: timeago
       enable_creation_date: true # 创建时间
+      timezone: Asia/Shanghai
   - git-authors # 显示作者
   - glightbox # 图像缩放
   - meta-manager # 元数据管理
@@ -143,11 +145,11 @@ markdown_extensions:
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
-      linenums: true # 显示行号
+      linenums: false # 显示行号
       linenums_style: table
       # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
-  # - meta # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.inlinehilite # 段落中内置的小代码高亮
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
   - pymdownx.details # admonition需要
   - pymdownx.caret # markdown上标显示
@@ -162,5 +164,5 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
-  - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+  - mkdocs/css/unordered-list-symbols.css # 多个无序列表符号
   - mkdocs/css/img-center.css # 图像居中

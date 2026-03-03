@@ -45,7 +45,7 @@ npm create ol-app my-webgis
 
 #### 3、启动项目
 
-&emsp;&emsp;使用编辑器打开 my-webgis 目录，在创建项目时会自动生成 openlayers 所需要的一系列基础文件，如 `package.json` 文件。在编辑器中调出命令行，输入命令，启动项目。
+&emsp;&emsp;使用编辑器打开 my-webgis 目录，在创建项目时会自动生成 OpenLayers 所需要的一系列基础文件，如 `package.json` 文件。在编辑器中调出命令行，输入命令，启动项目。
 
 ```sh
 npm start
@@ -67,9 +67,9 @@ npm start
 
 <center>图 1-3 项目初始界面</center>
 
-### 1.2 安装配置 Geoserver
+### 1.2 安装配置 GeoServer
 
-&emsp;&emsp;Geoserver 是用 Java 编写的开源软件服务器，在运行前需要安装配置 Java 环境。需要注意的是，Geoserver 最后一个支持 JRE8 的版本是 `2.22.x`。从 `2.23.x` 版本开始，Geoserver 需要 Java 11 或 Java 17 环境（JRE）才能运行。
+&emsp;&emsp;GeoServer 是用 Java 编写的开源软件服务器，在运行前需要安装配置 Java 环境。需要注意的是，GeoServer 最后一个支持 JRE8 的版本是 `2.22.x`。从 `2.23.x` 版本开始，GeoServer 需要 Java 11 或 Java 17 环境（JRE）才能运行。
 
 #### 1、检查本机 JRE 版本
 
@@ -83,7 +83,7 @@ java -version
 
 <center>图 1-4 检查 Java 环境</center>
 
-&emsp;&emsp;由于当前本机的 JRE 版本是 JRE8，所以选择安装 Geoserver `2.22.3` 版本。
+&emsp;&emsp;由于当前本机的 JRE 版本是 JRE8，所以选择安装 GeoServer `2.22.3` 版本。
 
 - 官方下载地址：(https://sourceforge.net/projects/geoserver/files/GeoServer/2.22.3/)
 - 官方安装教程：(https://docs.geoserver.org/2.22.x/en/user/installation/win_installer.html)
@@ -92,7 +92,7 @@ java -version
 
 <center>图 1-5 安装 Geoserver（一）下载安装程序</center>
 
-#### 2、安装 Geoserver | 读取 Java 目录
+#### 2、安装 GeoServer | 读取 Java 目录
 
 &emsp;&emsp;在安装时，会自动检测当前设备的 JRE 版本及其所在的位置，符合依赖条件才能进行下一步安装。
 
@@ -100,7 +100,7 @@ java -version
 
 <center>图 1-6 安装 Geoserver（二）读取 Java 目录</center>
 
-#### 3、安装 Geoserver | 设置软件目录
+#### 3、安装 GeoServer | 设置软件目录
 
 &emsp;&emsp;接下来根据本机文件结构，将 GeoServer 及其数据安装到手动设置的对应目录中。
 
@@ -110,7 +110,7 @@ E:\program\GeoServer
 E:\researchData\GeoServer
 ```
 
-#### 4、安装 Geoserver | 正式安装
+#### 4、安装 GeoServer | 正式安装
 
 &emsp;&emsp;接下来设置好管理员用户名和密码以及地图服务发布的端口号，就可以正式开始安装了。
 
@@ -120,7 +120,7 @@ E:\researchData\GeoServer
 
 #### 5、安装完成
 
-&emsp;&emsp;启动 Geoserver 服务后，在浏览器中输入以下地址即可访问，登录后的界面如下图所示。
+&emsp;&emsp;启动 GeoServer 服务后，在浏览器中输入以下地址即可访问，登录后的界面如下图所示。
 
 ```
 http://localhost:8080/geoserver
@@ -132,17 +132,17 @@ http://localhost:8080/geoserver
 
 
 
-## 2 加载 Geoserver 服务
+## 2 加载 GeoServer 服务
 
-### 2.1 查看 Geoserver 示例数据
+### 2.1 查看 GeoServer 示例数据
 
-#### 1、启动 Geoserver
+#### 1、启动 GeoServer
 
-&emsp;&emsp;启动 Geoserver 服务，打开 `http://localhost:8080/geoserver` 链接
+&emsp;&emsp;启动 GeoServer 服务，打开 `http://localhost:8080/geoserver` 链接
 
 #### 2、查看待加载图层
 
-&emsp;&emsp;登录账户后，左侧 Data → Layers → Countries 图层，这是 Geoserver 在安装时自带的数据
+&emsp;&emsp;登录账户后，左侧 Data → Layers → Countries 图层，这是 GeoServer 在安装时自带的数据
 
 ![image-20230620205829145](./img/image-20230620205829145.png)
 
@@ -158,7 +158,7 @@ http://localhost:8080/geoserver
 
 #### 4、图层预览
 
-&emsp;&emsp;并且也可以在 Geoserver 中对图层数据进行预览，左侧 Data → Layer Preview → Countries → OpenLayers，即可进行数据预览。
+&emsp;&emsp;并且也可以在 GeoServer 中对图层数据进行预览，左侧 Data → Layer Preview → Countries → OpenLayers，即可进行数据预览。
 
 ![image-20230620222328438](./img/image-20230620222328438.png)
 
@@ -185,7 +185,7 @@ import { getCenter } from 'ol/extent';
 
 #### 2、添加相关设置
 
-&emsp;&emsp;定义并设置地图范围、地图中心点、坐标系以及基于 Geoserver 的 WMS 访问基地址。
+&emsp;&emsp;定义并设置地图范围、地图中心点、坐标系以及基于 GeoServer 的 WMS 访问基地址。
 
 ```js
 const extent = [60, -80, 160, 80];
@@ -227,7 +227,7 @@ view: new View({
 
 #### 5、运行项目
 
-&emsp;&emsp;此时可以看到已经成功将 Geoserver 服务数据加载到了地图中。
+&emsp;&emsp;此时可以看到已经成功将 GeoServer 服务数据加载到了地图中。
 
 ![image-20230620224539198](./img/image-20230620224539198.png)
 
@@ -587,7 +587,7 @@ const selectFeature = () => {
 
 ## 参考
 
-[1] [Geoserver配置以及发布geojson服务教程_geoserver 发布geojson_迷茫的小猿的博客-CSDN博客](https://blog.csdn.net/weixin_43747076/article/details/106081501)
+[1] [GeoServer配置以及发布geojson服务教程_geoserver 发布geojson_迷茫的小猿的博客-CSDN博客](https://blog.csdn.net/weixin_43747076/article/details/106081501)
 
 [2] [openlayers加载geoserver的wms服务_布偶不说话的博客-CSDN博客](https://blog.csdn.net/long_Amber/article/details/110553202)
 
